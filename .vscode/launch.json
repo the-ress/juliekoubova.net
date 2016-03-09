@@ -2,12 +2,12 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch",
+			"name": "Production",
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceRoot}/build.js",
 			"stopOnEntry": false,
-			"args": [],
+			"args": ["--production"],
 			"cwd": "${workspaceRoot}",
 			"runtimeExecutable": null,
 			"runtimeArgs": [

@@ -2,11 +2,12 @@ var _ = require('lodash');
 var compress = require('metalsmith-gzip');
 var fs = require('fs');
 var Handlebars = require('handlebars');
-var htmlMinifier = require("metalsmith-html-minifier");
-var inPlace = require('metalsmith-in-place');
 var Metalsmith = require('metalsmith');
+var metalsmithHtmlMinifier = require("metalsmith-html-minifier");
+var metalsmithInPlace = require('metalsmith-in-place');
 var metalsmithMyth = require('metalsmith-myth');
 var myth = require('myth');
+var Q = require('q');
 var uncss = require('uncss');
 
 const PartialsDir = 'partials';
@@ -19,9 +20,17 @@ const UncssOptions = {
   ignoreSheets: [/\/\/fonts.googleapis.com\/.*/]
 };
 
+function metalsmithPromise(fn) {
+  var metalsmith = Metalsmith(__dirname);
+  fn(metalsmith);
+
+  return Q.nfcall(
+    _.bind(metalsmith.build, metalsmith)
+  );
+}
 
 function loadPartials() {
-  fs.readdirSync(PartialsDir).forEach(function (file) {
+  fs.readdirSync(PartialsDir).forEach(function(file) {
     var source = `${__dirname}/${PartialsDir}/${file}`;
     var contents = fs.readFileSync(source).toString();
 
@@ -29,54 +38,57 @@ function loadPartials() {
   });
 }
 
-function buildStage1() {
-  Metalsmith(__dirname)
-  .source('src')
-  .destination(TempDir)
-  .use(inPlace({
-    engine: 'handlebars'
-  }))
-  .use(metalsmithMyth({ compress: true }))
-  .use(htmlMinifier())
-  .build(function (err) {
-    if (err) throw err;
-    inlineIndexCss();
-  });
+function buildTemp() {
+  return metalsmithPromise(m => m
+    .source('src')
+    .destination(TempDir)
+    .use(metalsmithInPlace({ engine: 'handlebars' }))
+    .use(metalsmithMyth({ compress: true }))
+    .use(metalsmithHtmlMinifier())
+  );
 }
 
-function inlineIndexCss() {
-  uncss(
+function uncssPromise(files, options) {
+  return Q.nfcall(uncss, files, options);
+}
+
+function uncssIndexCss() {
+  return uncssPromise(
     [TempIndex],
     _.defaults(UncssOptions, {
       stylesheets: ['index.css']
-    }),
-    function (error, output) {
-      if (error) throw error;
-      
-      output = myth(output, {compress: true});
-      
-      var indexHtml = fs.readFileSync(TempIndex).toString();
-      
-      indexHtml  = indexHtml.replace(
-        /<link[^>]+href=['"]?index.css['"]?[^>]*>/, 
-        '<style>' + output + '</style>'
-      );
-      
-      fs.writeFileSync(TempIndex, indexHtml);
-      buildStage2();
-    }
-);
+    })
+  );
 }
 
-function buildStage2() {
-  Metalsmith(__dirname)
+function inlineIndexCss(indexCss) {
+  return uncssIndexCss().then(function(output) {
+    var indexCss = myth(output, { compress: true });
+    var indexHtml = fs.readFileSync(TempIndex).toString();
+
+    indexHtml = indexHtml.replace(
+      /<link[^>]+href=['"]?index.css['"]?[^>]*>/,
+      '<style>' + output + '</style>'
+    );
+
+    fs.writeFileSync(TempIndex, indexHtml);
+  });
+};
+
+function buildGzipped() {
+  return metalsmithPromise(m => m
     .source(TempDir)
     .destination(DestinationDir)
     .use(compress())
-    .build(function (err) {
-      if (err) throw err;    
-    });
+  );
 }
 
 loadPartials();
-buildStage1();  
+
+var promise = buildTemp();
+
+if (_.includes(process.argv, '--production')) {
+  promise.then(inlineIndexCss).then(buildGzipped)
+}
+
+promise.catch(function(error){ throw error;})
