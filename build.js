@@ -3,6 +3,7 @@ var compress = require('metalsmith-gzip');
 var fs = require('fs');
 var Handlebars = require('handlebars');
 var Metalsmith = require('metalsmith');
+var metalsmithAnalytics = require('./lib/metalsmith-analytics');
 var metalsmithExpress = require('metalsmith-express');
 var metalsmithHtmlMinifier = require("metalsmith-html-minifier");
 var metalsmithInPlace = require('metalsmith-in-place');
@@ -10,6 +11,7 @@ var metalsmithMyth = require('metalsmith-myth');
 var metalsmithWatch = require('metalsmith-watch');
 var myth = require('myth');
 var Q = require('q');
+var uglifyjs = require('uglifyjs');
 var uncss = require('uncss');
 
 var inliner = require('./lib/inliner');
@@ -47,8 +49,18 @@ function buildTemp(options) {
     m.source('src');
     m.destination(TempDir);
 
-    m.use(metalsmithInPlace({ engine: 'handlebars' }));
-    m.use(metalsmithMyth({ compress: !options.live }));
+    m.use(metalsmithInPlace({ 
+      engine: 'handlebars' 
+    }));
+
+    m.use(metalsmithMyth({ 
+      compress: !options.live 
+    }));
+    
+    m.use(metalsmithAnalytics(
+      'UA-58690305-1', 
+      { exclude:/^pinterest-.*\.html$/ }
+    ));
 
     if (options.live) {
       m.use(metalsmithExpress());
@@ -79,10 +91,10 @@ function uncssIndexCss() {
 function inlineIndexCss() {
   return uncssIndexCss().then(function(output) {
     var cssCompressed = myth(output[0], { compress: true });
-    inliner.inlineCss(TempIndex, 'index.css', cssCompressed);
-    fs.unlink(`${TempDir}/index.css`);
+    inliner.inlineCss(TempDir, 'index.html', 'index.css', cssCompressed);
   });
 };
+
 
 function buildGzipped() {
   return metalsmithPromise(m => m

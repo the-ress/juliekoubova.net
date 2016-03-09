@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "escape-regexp": "0.0.1",
     "handlebars": "^4.0.5",
     "lodash": "^4.6.1",
     "metalsmith": "^2.1.0",
