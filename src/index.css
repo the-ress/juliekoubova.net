@@ -90,6 +90,15 @@ ul {
   fill: #FF7AA6;
 }
 
+.contacts a:focus {
+  outline: none;
+}
+.contacts a:hover svg,
+.contacts a:focus svg  {
+  transform: scale(1.05);
+  transition: transform 200ms;
+}
+
 .contacts a:hover circle,
 .contacts a:focus circle {
   fill: #D10045;
