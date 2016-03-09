@@ -12,6 +12,8 @@ var myth = require('myth');
 var Q = require('q');
 var uncss = require('uncss');
 
+var inliner = require('./lib/inliner');
+
 const PartialsDir = 'partials';
 const TempDir = 'build-stage1';
 const TempIndex = `${TempDir}/index.html`;
@@ -76,15 +78,9 @@ function uncssIndexCss() {
 
 function inlineIndexCss() {
   return uncssIndexCss().then(function(output) {
-    var indexCss = myth(output[0], { compress: true });
-    var indexHtml = fs.readFileSync(TempIndex).toString();
-
-    indexHtml = indexHtml.replace(
-      /<link[^>]+href=['"]?index.css['"]?[^>]*>/,
-      '<style>' + indexCss + '</style>'
-    );
-
-    fs.writeFileSync(TempIndex, indexHtml);
+    var cssCompressed = myth(output[0], { compress: true });
+    inliner.inlineCss(TempIndex, 'index.css', cssCompressed);
+    fs.unlink(`${TempDir}/index.css`);
   });
 };
 
@@ -113,4 +109,4 @@ if (!live && hasSwitch) {
 
 promise.catch(function(error) {
   throw error;
-})
+});
