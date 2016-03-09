@@ -1,0 +1,163 @@
+
+@import '../node_modules/normalize.css/normalize.css';
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0.2;
+  }
+  5% {
+    transform: translateY(-100%);
+    opacity: 0.2;
+  }
+  15% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-50%);
+  }
+  40% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+  text-align: center;
+  transform-style: preserve-3d;
+  background: #fff;
+  max-width: 30em;
+  margin-top: 1em;
+  margin: 1em auto;
+}
+
+h1 {
+  color: #555;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 2.6em;
+  animation: fade-in 800ms ease-out;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts {
+  animation: bounce 1200ms ease-out;
+}
+
+.contacts li {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+.contacts path {
+  fill: white;
+}
+
+.contacts circle {
+  fill: #FF7AA6;
+}
+
+.contacts a:hover circle,
+.contacts a:focus circle {
+  fill: #D10045;
+}
+
+.contacts a:hover path,
+.contacts a:focus path {
+  fill: white;
+}
+
+.tags {
+  margin-top: 2em;
+  font-variant: small-caps;
+  line-height: 1.5;
+  animation: fade-in 800ms ease-out;
+}
+
+.tags li {
+  display: inline-block;
+  padding-right: 0.5em;
+}
+
+.tags li::before {
+  content: "#";
+}
+
+.portrait {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.portrait img {
+  display: inline;
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+footer {
+  font-size: 0.6em;
+  font-weight: 200;
+  color: #ccc;
+  margin: 4em 0;
+  animation: fade-in 800ms ease-out;
+}
+
+::selection {
+  background: #D10045;
+  color: #fff;
+}
+
+@media screen and (min-device-height: 480px) and (orientation: portrait),
+screen and (min-device-height: 560px) and (orientation: landscape) {
+  body {
+    margin-top: 4em;
+  }
+  h1 {
+    line-height: 2;
+  }
+  .portrait {
+    width: 192px;
+    height: 192px;
+  }
+  .portrait > img {
+    width: 192px;
+    height: 192px;
+  }
+}
