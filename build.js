@@ -74,14 +74,14 @@ function uncssIndexCss() {
   );
 }
 
-function inlineIndexCss(indexCss) {
+function inlineIndexCss() {
   return uncssIndexCss().then(function(output) {
-    var indexCss = myth(output, { compress: true });
+    var indexCss = myth(output[0], { compress: true });
     var indexHtml = fs.readFileSync(TempIndex).toString();
 
     indexHtml = indexHtml.replace(
       /<link[^>]+href=['"]?index.css['"]?[^>]*>/,
-      '<style>' + output + '</style>'
+      '<style>' + indexCss + '</style>'
     );
 
     fs.writeFileSync(TempIndex, indexHtml);
@@ -92,7 +92,9 @@ function buildGzipped() {
   return metalsmithPromise(m => m
     .source(TempDir)
     .destination(DestinationDir)
-    .use(compress())
+    .use(compress({
+      gzip: {level:9}
+    }))
   );
 }
 

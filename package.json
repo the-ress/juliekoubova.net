@@ -7,7 +7,7 @@
     "test": "node build.js",
     "live": "node build.js --live",
     "build": "node build.js --production",
-    "deploy": "rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
+    "deploy": "test -d build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
   "author": "",
   "license": "ISC",
