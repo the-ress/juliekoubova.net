@@ -3,9 +3,11 @@ var compress = require('metalsmith-gzip');
 var fs = require('fs');
 var Handlebars = require('handlebars');
 var Metalsmith = require('metalsmith');
+var metalsmithExpress = require('metalsmith-express');
 var metalsmithHtmlMinifier = require("metalsmith-html-minifier");
 var metalsmithInPlace = require('metalsmith-in-place');
 var metalsmithMyth = require('metalsmith-myth');
+var metalsmithWatch = require('metalsmith-watch');
 var myth = require('myth');
 var Q = require('q');
 var uncss = require('uncss');
@@ -38,14 +40,25 @@ function loadPartials() {
   });
 }
 
-function buildTemp() {
-  return metalsmithPromise(m => m
-    .source('src')
-    .destination(TempDir)
-    .use(metalsmithInPlace({ engine: 'handlebars' }))
-    .use(metalsmithMyth({ compress: true }))
-    .use(metalsmithHtmlMinifier())
-  );
+function buildTemp(options) {
+  return metalsmithPromise(function(m) {
+    m.source('src');
+    m.destination(TempDir);
+
+    m.use(metalsmithInPlace({ engine: 'handlebars' }));
+    m.use(metalsmithMyth({ compress: !options.live }));
+
+    if (options.live) {
+      m.use(metalsmithExpress());
+      m.use(metalsmithWatch({
+        paths: { '${source}/**/*': true },
+        livereload: true
+      }));
+    }
+    else {
+      m.use(metalsmithHtmlMinifier());
+    }
+  });
 }
 
 function uncssPromise(files, options) {
@@ -83,12 +96,19 @@ function buildGzipped() {
   );
 }
 
+function hasSwitch(arg) {
+  return _.includes(process.argv, `--${arg}`);
+}
+
 loadPartials();
 
-var promise = buildTemp();
+var live = hasSwitch('live');
+var promise = buildTemp({ live: live });
 
-if (_.includes(process.argv, '--production')) {
+if (!live && hasSwitch) {
   promise.then(inlineIndexCss).then(buildGzipped)
 }
 
-promise.catch(function(error){ throw error;})
+promise.catch(function(error) {
+  throw error;
+})

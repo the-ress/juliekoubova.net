@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node build.js",
+    "live": "node build.js --live",
     "build": "node build.js --production",
     "deploy": "rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
@@ -14,11 +15,13 @@
     "handlebars": "^4.0.5",
     "lodash": "^4.6.1",
     "metalsmith": "^2.1.0",
+    "metalsmith-express": "^0.1.0",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-html-minifier": "^2.0.0",
     "metalsmith-in-place": "^1.4.3",
     "metalsmith-myth": "0.0.0",
     "metalsmith-partial": "^0.1.0",
+    "metalsmith-watch": "^1.0.1",
     "myth": "^1.5.0",
     "normalize.css": "^3.0.3",
     "q": "^1.4.1",
