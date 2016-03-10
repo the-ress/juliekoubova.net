@@ -115,7 +115,7 @@ loadPartials();
 var live = hasSwitch('live');
 var promise = buildTemp({ live: live });
 
-if (!live && hasSwitch) {
+if (!live && hasSwitch('production')) {
   promise.then(inlineIndexCss).then(buildGzipped)
 }
 
