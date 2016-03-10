@@ -1,29 +1,20 @@
 var _ = require('lodash');
-var compress = require('metalsmith-gzip');
 var fs = require('fs');
 var Handlebars = require('handlebars');
 var Metalsmith = require('metalsmith');
 var metalsmithAnalytics = require('./lib/metalsmith-analytics');
+var metalsmithCssInliner = require('./lib/inliner');
 var metalsmithExpress = require('metalsmith-express');
+var metalsmithGzip = require('metalsmith-gzip');
 var metalsmithHtmlMinifier = require("metalsmith-html-minifier");
 var metalsmithInPlace = require('metalsmith-in-place');
 var metalsmithMyth = require('metalsmith-myth');
+var metalsmithUncss = require('metalsmith-uncss');
 var metalsmithWatch = require('metalsmith-watch');
 var myth = require('myth');
 var Q = require('q');
-var uncss = require('uncss');
-
-var inliner = require('./lib/inliner');
 
 const PartialsDir = 'partials';
-const TempDir = 'build-stage1';
-const TempIndex = `${TempDir}/index.html`;
-const DestinationDir = 'build';
-
-const UncssOptions = {
-  htmlroot: `${__dirname}/${TempDir}`,
-  ignoreSheets: [/\/\/fonts.googleapis.com\/.*/]
-};
 
 function metalsmithPromise(fn) {
   var metalsmith = Metalsmith(__dirname);
@@ -43,23 +34,49 @@ function loadPartials() {
   });
 }
 
-function buildTemp(options) {
+function build(options) {
   return metalsmithPromise(function(m) {
     m.source('src');
-    m.destination(TempDir);
+    m.destination('build');
 
-    m.use(metalsmithInPlace({ 
-      engine: 'handlebars' 
+    m.use(metalsmithInPlace({
+      engine: 'handlebars'
     }));
 
-    m.use(metalsmithMyth({ 
-      compress: !options.live 
+    // first, process all the @import rules
+    m.use(metalsmithMyth({
+      compress: !options.live
     }));
-    
+
     m.use(metalsmithAnalytics(
-      'UA-58690305-1', 
-      { exclude:/^pinterest-.*\.html$/ }
+      'UA-58690305-1',
+      { exclude: /^pinterest-.*\.html$/ }
     ));
+
+    m.use(metalsmithUncss({
+      css: ['main.css'],
+      html: ['index.html'],
+      output: 'index.css',
+      uncss: {
+        ignoreSheets: [/\/\/fonts.googleapis.com\/.*/]
+      }
+    }));
+
+    // reprocess uncss output
+    m.use(metalsmithMyth({
+      compress: !options.live
+    }));
+
+    m.use(metalsmithCssInliner({
+      css: 'index.css',
+      html: 'index.html'
+    }));
+
+    if (options.gzip) {
+      m.use(metalsmithGzip({
+        gzip: { level: 9 }
+      }));
+    }
 
     if (options.live) {
       m.use(metalsmithExpress());
@@ -67,42 +84,10 @@ function buildTemp(options) {
         paths: { '${source}/**/*': true },
         livereload: true
       }));
-    }
-    else {
+    } else {
       m.use(metalsmithHtmlMinifier());
     }
   });
-}
-
-function uncssPromise(files, options) {
-  return Q.nfcall(uncss, files, options);
-}
-
-function uncssIndexCss() {
-  return uncssPromise(
-    [TempIndex],
-    _.defaults(UncssOptions, {
-      stylesheets: ['index.css']
-    })
-  );
-}
-
-function inlineIndexCss() {
-  return uncssIndexCss().then(function(output) {
-    var cssCompressed = myth(output[0], { compress: true });
-    inliner.inlineCss(TempDir, 'index.html', 'index.css', cssCompressed);
-  });
-};
-
-
-function buildGzipped() {
-  return metalsmithPromise(m => m
-    .source(TempDir)
-    .destination(DestinationDir)
-    .use(compress({
-      gzip: {level:9}
-    }))
-  );
 }
 
 function hasSwitch(arg) {
@@ -111,13 +96,11 @@ function hasSwitch(arg) {
 
 loadPartials();
 
-var live = hasSwitch('live');
-var promise = buildTemp({ live: live });
+var options = {
+  live: hasSwitch('live'),
+  gzip: hasSwitch('production')
+};
 
-if (!live && hasSwitch('production')) {
-  promise.then(inlineIndexCss).then(buildGzipped)
-}
-
-promise.catch(function(error) {
+build(options).catch(function(error) {
   throw error;
 });
