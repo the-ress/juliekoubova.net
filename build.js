@@ -55,12 +55,6 @@ function build(options) {
     html: 'index.html'
   }));
 
-  if (options.gzip) {
-    m.use(metalsmithGzip({
-      gzip: { level: 9 }
-    }));
-  }
-
   if (options.live) {
     m.use(metalsmithExpress());
     m.use(metalsmithWatch({
@@ -69,6 +63,12 @@ function build(options) {
     }));
   } else {
     m.use(metalsmithHtmlMinifier());
+    
+    if (options.gzip) {
+      m.use(metalsmithGzip({
+        gzip: { level: 9 }
+      }));
+    }
   }
 
   return Q.nfcall(_.bind(m.build, m));
