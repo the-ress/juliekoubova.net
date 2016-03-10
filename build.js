@@ -11,7 +11,6 @@ var metalsmithMyth = require('metalsmith-myth');
 var metalsmithWatch = require('metalsmith-watch');
 var myth = require('myth');
 var Q = require('q');
-var uglifyjs = require('uglifyjs');
 var uncss = require('uncss');
 
 var inliner = require('./lib/inliner');
