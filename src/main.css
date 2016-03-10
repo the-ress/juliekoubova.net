@@ -151,7 +151,7 @@ footer {
   font-weight: 200;
   color: #ccc;
   margin: 4em 0;
-  animation: fade-in 800ms ease-out;
+  animation: fade-in 2000ms ease-out;
 }
 
 ::selection {
