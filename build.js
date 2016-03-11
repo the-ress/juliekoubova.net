@@ -4,11 +4,13 @@ var Q = require('q');
 var Metalsmith = require('metalsmith');
 var analytics = require('./lib/metalsmith-analytics');
 var cssInliner = require('./lib/metalsmith-css-inliner');
+var define = require('metalsmith-define');
 var express = require('metalsmith-express');
 var handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 var gzip = require('metalsmith-gzip');
 var htmlMinifier = require("metalsmith-html-minifier");
 var inPlace = require('metalsmith-in-place');
+var layouts = require('metalsmith-layouts');
 var myth = require('metalsmith-myth');
 var uncss = require('metalsmith-uncss');
 var watch = require('metalsmith-watch');
@@ -19,6 +21,14 @@ function build(options) {
   m.source('src');
   m.destination('build');
 
+  m.use(define({
+    css: 'main.css',
+    description:
+     'Market anarchist. Sex-positive feminist. Software gardeness.' +
+    'Enjoys photography, singing, theatre, and shooting guns.',
+    title: 'Julie Koubová'
+  }));
+
   m.use(handlebarsPartials({
     root: 'partials'
   }));
@@ -27,10 +37,14 @@ function build(options) {
     engine: 'handlebars'
   }));
 
-  // first, process all the @import rules
-  m.use(myth({
-    compress: !options.live
+  m.use(layouts({
+    default: 'default.html',
+    engine: 'handlebars',
+    pattern: '*.html'
   }));
+
+  // first, process all the @import rules
+  m.use(myth());
 
   m.use(analytics(
     'UA-58690305-1',
@@ -46,7 +60,7 @@ function build(options) {
     }
   }));
 
-  // reprocess uncss output
+  // compress uncss output
   m.use(myth({
     compress: !options.live
   }));
@@ -64,7 +78,7 @@ function build(options) {
     }));
   } else {
     m.use(htmlMinifier());
-    
+
     if (options.gzip) {
       m.use(gzip({ gzip: { level: 9 } }));
     }
@@ -81,4 +95,4 @@ build({
   live: hasSwitch('live'),
   gzip: hasSwitch('production')
 })
-.done();
+  .done();
