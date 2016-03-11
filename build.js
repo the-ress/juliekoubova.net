@@ -1,42 +1,43 @@
 var _ = require('lodash');
-var Metalsmith = require('metalsmith');
-var metalsmithAnalytics = require('./lib/metalsmith-analytics');
-var metalsmithCssInliner = require('./lib/metalsmith-css-inliner');
-var metalsmithExpress = require('metalsmith-express');
-var metalsmithHandlebarsPartials = require('./lib/metalsmith-handlebars-partials');
-var metalsmithGzip = require('metalsmith-gzip');
-var metalsmithHtmlMinifier = require("metalsmith-html-minifier");
-var metalsmithInPlace = require('metalsmith-in-place');
-var metalsmithMyth = require('metalsmith-myth');
-var metalsmithUncss = require('metalsmith-uncss');
-var metalsmithWatch = require('metalsmith-watch');
 var Q = require('q');
 
+var Metalsmith = require('metalsmith');
+var analytics = require('./lib/metalsmith-analytics');
+var cssInliner = require('./lib/metalsmith-css-inliner');
+var express = require('metalsmith-express');
+var handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+var gzip = require('metalsmith-gzip');
+var htmlMinifier = require("metalsmith-html-minifier");
+var inPlace = require('metalsmith-in-place');
+var myth = require('metalsmith-myth');
+var uncss = require('metalsmith-uncss');
+var watch = require('metalsmith-watch');
+
 function build(options) {
-  var m = Metalsmith(__dirname);
+  var m = new Metalsmith(__dirname);
 
   m.source('src');
   m.destination('build');
 
-  m.use(metalsmithHandlebarsPartials({
+  m.use(handlebarsPartials({
     root: 'partials'
   }));
 
-  m.use(metalsmithInPlace({
+  m.use(inPlace({
     engine: 'handlebars'
   }));
 
   // first, process all the @import rules
-  m.use(metalsmithMyth({
+  m.use(myth({
     compress: !options.live
   }));
 
-  m.use(metalsmithAnalytics(
+  m.use(analytics(
     'UA-58690305-1',
     { exclude: /^pinterest-.*\.html$/ }
   ));
 
-  m.use(metalsmithUncss({
+  m.use(uncss({
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
@@ -46,28 +47,26 @@ function build(options) {
   }));
 
   // reprocess uncss output
-  m.use(metalsmithMyth({
+  m.use(myth({
     compress: !options.live
   }));
 
-  m.use(metalsmithCssInliner({
+  m.use(cssInliner({
     css: 'index.css',
     html: 'index.html'
   }));
 
   if (options.live) {
-    m.use(metalsmithExpress());
-    m.use(metalsmithWatch({
+    m.use(express());
+    m.use(watch({
       paths: { '${source}/**/*': true },
       livereload: true
     }));
   } else {
-    m.use(metalsmithHtmlMinifier());
+    m.use(htmlMinifier());
     
     if (options.gzip) {
-      m.use(metalsmithGzip({
-        gzip: { level: 9 }
-      }));
+      m.use(gzip({ gzip: { level: 9 } }));
     }
   }
 
