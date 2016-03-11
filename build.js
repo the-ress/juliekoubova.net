@@ -42,7 +42,7 @@ function build(options) {
     html: ['index.html'],
     output: 'index.css',
     uncss: {
-      ignoreSheets: [/\/\/fonts.googleapis.com\/.*/]
+      ignoreSheets: [/\/\/fonts\.googleapis\.com\//]
     }
   }));
 
