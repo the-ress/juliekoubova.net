@@ -1,32 +1,29 @@
 (function (
   window, doc, script, gaUrl, tkUrl, gaFuncName, createElement,
-  async, src, head, appendChild, tkConfig, a, gaFunc) {
-    
+  async, src, appendChild, tkConfig, a, gaFunc, h) {
+  
   GoogleAnalyticsObject = gaFuncName;
-  window[gaFuncName] = gaFunc = function() {
-    gaFunc.q.push(arguments)
-  };
-  gaFunc.l = +Date();
-  gaFunc.q = [
+  window[gaFuncName] = { l: +Date(), q: [
     ['create', '{{googleAnalyticsProperty}}', 'auto'],
     ['send', 'pageview']
-  ];
+  ] };
   
   a = doc[createElement](script);
   a[async] = 1;
   a[src] = gaUrl;
-  doc[head][appendChild](a);
+  h = doc.head;
+  h[appendChild](a);
 
   a = doc[createElement](script),
   a[async] = tkConfig[async] = 1;
   a[src] = tkUrl;
-  a.onload = a.onreadystatechange = function (e) {
+  a.onload = a.onreadystatechange = function (ers) {
     try { 
-      (/^(c|l.*d$)/.test(e.readyState||'c')) && Typekit.load(tkConfig)
+      (/^(c|l.*d$)/.test(ers.readyState||'c')) && Typekit.load(tkConfig)
     } catch(e) {      
     }
   };
-  doc[head][appendChild](a);
+  h[appendChild](a);
   
 })(
   this,
@@ -38,7 +35,6 @@
   'createElement', 
   'async',
   'src',
-  'head',
   'appendChild', 
   {}
 );
