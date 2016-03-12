@@ -1,31 +1,37 @@
-var _ = require('lodash');
-var Q = require('q');
+'use strict';
 
-var Metalsmith = require('metalsmith');
-var analytics = require('./lib/metalsmith-analytics');
-var cssInliner = require('./lib/metalsmith-css-inliner');
-var define = require('metalsmith-define');
-var express = require('metalsmith-express');
-var handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
-var gzip = require('metalsmith-gzip');
-var htmlMinifier = require("metalsmith-html-minifier");
-var inPlace = require('metalsmith-in-place');
-var layouts = require('metalsmith-layouts');
-var myth = require('metalsmith-myth');
-var uncss = require('metalsmith-uncss');
-var watch = require('metalsmith-watch');
+const _ = require('lodash');
+const Q = require('q');
+
+const Metalsmith = require('metalsmith');
+const analytics = require('./lib/metalsmith-analytics');
+const cssInliner = require('./lib/metalsmith-css-inliner');
+const define = require('metalsmith-define');
+const express = require('metalsmith-express');
+const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+const gzip = require('metalsmith-gzip');
+const htmlMinifier = require("metalsmith-html-minifier");
+const inPlace = require('metalsmith-in-place');
+const layouts = require('metalsmith-layouts');
+const myth = require('metalsmith-myth');
+const uncss = require('metalsmith-uncss');
+const watch = require('metalsmith-watch');
+
+const UncssOptions = {
+  ignoreSheets: [/\/\/fonts\.googleapis\.com\//]
+};
 
 function build(options) {
-  var m = new Metalsmith(__dirname);
+  let m = new Metalsmith(__dirname);
 
   m.source('src');
   m.destination('build');
 
   m.use(define({
-    css: 'main.css',
+    css: '/main.css',
     description:
-     'Market anarchist. Sex-positive feminist. Software gardeness.' +
-    'Enjoys photography, singing, theatre, and shooting guns.',
+      'Market anarchist. Sex-positive feminist. Software gardeness.' +
+      'Enjoys photography, singing, theatre, and shooting guns.',
     title: 'Julie Koubová'
   }));
 
@@ -40,7 +46,7 @@ function build(options) {
   m.use(layouts({
     default: 'default.html',
     engine: 'handlebars',
-    pattern: '*.html'
+    pattern: '**/*.html'
   }));
 
   // first, process all the @import rules
@@ -51,15 +57,23 @@ function build(options) {
     { exclude: /^pinterest-.*\.html$/ }
   ));
 
+  // uncss main.css based on index.html into index.css
+  // which will be later inlined into index.html
   m.use(uncss({
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
-    uncss: {
-      ignoreSheets: [/\/\/fonts\.googleapis\.com\//]
-    }
+    removeOriginal: false,
+    uncss: UncssOptions
   }));
 
+  // uncss main.css based on all html files
+  m.use(uncss({
+    css: ['main.css'],
+    output: 'main.css',
+    uncss: UncssOptions
+  }));
+  
   // compress uncss output
   m.use(myth({
     compress: !options.live
