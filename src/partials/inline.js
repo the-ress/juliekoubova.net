@@ -5,7 +5,6 @@
   window['GoogleAnalyticsObject'] = gaFuncName;
   window[gaFuncName] = gaFunc = function() {
     gaFunc.q.push(arguments)
-    // window[gaFuncName].q.push(arguments)
   };
   gaFunc.l = 1 * new Date();
   gaFunc.q = [
