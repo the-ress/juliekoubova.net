@@ -13,6 +13,7 @@ const htmlMinifier = require("metalsmith-html-minifier");
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const myth = require('metalsmith-myth');
+const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
@@ -34,6 +35,14 @@ function build(options) {
     googleAnalyticsProperty: 'UA-58690305-1',
     title: 'Julie Koubová',
     typekitId: 'qai6bjn'
+  }));
+
+  m.use(uglify({
+    output: {
+      beautify: options.live,
+      inline_script: true
+    },
+    removeOriginal: true
   }));
 
   m.use(handlebarsPartials({

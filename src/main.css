@@ -57,6 +57,7 @@
 }
 
 body {
+  font-family: proxima-nova, sans-serif;
   transform-style: preserve-3d;
   background: #fff;
   max-width: 30em;
@@ -68,10 +69,10 @@ body {
 }
 
 .index h1 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: proxima-nova-soft, sans-serif;
+  font-size: 3em;
+  font-weight: 400;
   color: #555;
-  font-weight: 600;
-  font-size: 2.6em;
   animation: fade-in 800ms ease-out;
 }
 
@@ -119,7 +120,7 @@ body {
 
 .tags {
   margin-top: 2em;
-  font-variant: small-caps;
+  font-weight: 100;
   line-height: 1.5;
   animation: fade-in 800ms ease-out;
 }
