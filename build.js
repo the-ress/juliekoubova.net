@@ -4,7 +4,6 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
-const analytics = require('./lib/metalsmith-analytics');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
@@ -32,7 +31,9 @@ function build(options) {
     description:
       'Market anarchist. Sex-positive feminist. Software gardeness.' +
       'Enjoys photography, singing, theatre, and shooting guns.',
-    title: 'Julie Koubová'
+    googleAnalyticsProperty: 'UA-58690305-1',
+    title: 'Julie Koubová',
+    typekitId: 'qai6bjn'
   }));
 
   m.use(handlebarsPartials({
@@ -51,11 +52,6 @@ function build(options) {
 
   // first, process all the @import rules
   m.use(myth());
-
-  m.use(analytics(
-    'UA-58690305-1',
-    { exclude: /^pinterest-.*\.html$/ }
-  ));
 
   // uncss main.css based on index.html into index.css
   // which will be later inlined into index.html
