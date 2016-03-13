@@ -43,7 +43,7 @@
   'replace',
   'script',
   '//google-analytics.com/analytics.js',
-  '//use.typekit.net/{{ typekitId }}.js',
+  'https://use.typekit.net/{{ typekitId }}.js',
   'createElement',
   'async',
   'src',

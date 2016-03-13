@@ -38,7 +38,7 @@ function build(options) {
     googleAnalyticsProperty: 'UA-58690305-1',
     title: 'Julie Koubová',
     typekitId: 'qai6bjn',
-    typekitTimeout: 2500
+    typekitTimeout: 1250
   }));
 
   m.use(uglify({
