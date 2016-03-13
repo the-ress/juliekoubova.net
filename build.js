@@ -17,6 +17,13 @@ const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
+function mythImports() {
+  var mm = require('myth');
+  return myth({
+    features: _(mm.features).without('import').keyBy(() => false).value()
+  });
+}
+
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -26,8 +33,8 @@ function build(options) {
   m.use(define({
     css: '/main.css',
     description:
-      'Market anarchist. Sex-positive feminist. Software gardeness.' +
-      'Enjoys photography, singing, theatre, and shooting guns.',
+    'Market anarchist. Sex-positive feminist. Software gardeness.' +
+    'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
     title: 'Julie Koubová',
     typekitId: 'qai6bjn',
@@ -56,8 +63,7 @@ function build(options) {
     pattern: '**/*.html'
   }));
 
-  // first, process all the @import rules
-  m.use(myth());
+  m.use(mythImports());
 
   // uncss main.css based on index.html into index.css
   // which will be later inlined into index.html
@@ -73,7 +79,7 @@ function build(options) {
     css: ['main.css'],
     output: 'main.css'
   }));
-  
+
   // compress uncss output
   m.use(myth({
     compress: !options.live
