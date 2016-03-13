@@ -10,7 +10,14 @@ body: index
 
   <h1 class="typekit-animation">Julie Koubová</h1>
 
+  <p class="print-only">{{ description }}</p>
+
   <ul class="contacts animated fadeInDown">
+    <li class="homepage-link">
+      <a href="https://juliekoubova.net/">
+        {{> home.svg }}
+      </a>
+    </li>
     <li>
       <a title="Facebook" href="https://facebook.com/julie.e.harshaw">
         {{> facebook.svg }}
@@ -27,7 +34,9 @@ body: index
       </a>
     </li>
     <li>
-      <a title="Email" href="mailto:juliekoubova@icloud.com">{{> email.svg }}</a>
+      <a title="Email" href="mailto:juliekoubova@icloud.com">
+        {{> email.svg }}
+      </a>
     </li>
   </ul>
 </header>
@@ -42,7 +51,7 @@ body: index
   <li>firearms</li>
 </ul>
 
-<footer class="typekit-animation">
+<footer class="cookie-law typekit-animation">
   Tato stránka možná používá cookies. Pokud vám vadí, vypněte si je. 
   Eurosoudruzi nechť si trhnou ploutví.
 </footer>

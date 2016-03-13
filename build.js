@@ -33,7 +33,7 @@ function build(options) {
   m.use(define({
     css: '/main.css',
     description:
-    'Market anarchist. Sex-positive feminist. Software gardeness.' +
+    'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
     title: 'Julie Koubová',
