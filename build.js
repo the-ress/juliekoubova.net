@@ -17,10 +17,6 @@ const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
-const UncssOptions = {
-  ignoreSheets: [/\/\/fonts\.googleapis\.com\//]
-};
-
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -69,15 +65,13 @@ function build(options) {
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
-    removeOriginal: false,
-    uncss: UncssOptions
+    removeOriginal: false
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
-    output: 'main.css',
-    uncss: UncssOptions
+    output: 'main.css'
   }));
   
   // compress uncss output
