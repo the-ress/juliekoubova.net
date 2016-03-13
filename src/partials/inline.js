@@ -1,41 +1,41 @@
-(function (
-  window, doc, script, gaUrl, tkUrl, gaFuncName, createElement,
-  async, src, appendChild, tkConfig, a, gaFunc, h) {
-  
-  GoogleAnalyticsObject = gaFuncName;
-  window[gaFuncName] = { l: +Date(), q: [
-    ['create', '{{googleAnalyticsProperty}}', 'auto'],
-    ['send', 'pageview']
-  ] };
-  
-  a = doc[createElement](script);
-  a[async] = 1;
-  a[src] = gaUrl;
-  h = doc.head;
-  h[appendChild](a);
+(function(doc, script, gaUrl, tkUrl, createElement, async, src, appendChild,
+  tkConfig, gaElement, tkElement, head) {
 
-  a = doc[createElement](script),
-  a[async] = tkConfig[async] = 1;
-  a[src] = tkUrl;
-  a.onload = a.onreadystatechange = function (ers) {
-    try { 
-      (/^(c|l.*d$)/.test(ers.readyState||'c')) && Typekit.load(tkConfig)
-    } catch(e) {      
-    }
+  GoogleAnalyticsObject = 'ga';
+  ga = {
+    l: +Date(),
+    q: [
+      ['create', '{{googleAnalyticsProperty}}', 'auto'],
+      ['send', 'pageview']
+    ]
   };
-  h[appendChild](a);
+
+  gaElement = doc[createElement](script);
+  gaElement[src] = gaUrl;
   
+  tkElement = doc[createElement](script);
+  tkElement[src] = tkUrl;
+
+  gaElement[async] = tkElement[async] = tkConfig[async] = 1;
+
+  tkElement.onload = tkElement.onreadystatechange = function(ers) {
+    try {
+      (/^(c|l.*d$)/.test(ers.readyState || 'c')) && Typekit.load(tkConfig)
+    } catch (e) { }
+  };
+
+  head = doc.head;
+  head[appendChild](gaElement);
+  head[appendChild](tkElement);
 })(
-  this,
   document,
   'script',
-  '//www.google-analytics.com/analytics.js',
+  '//google-analytics.com/analytics.js',
   '//use.typekit.net/{{ typekitId }}.js',
-  'ga',
-  'createElement', 
+  'createElement',
   'async',
   'src',
-  'appendChild', 
+  'appendChild',
   {}
 );
 
