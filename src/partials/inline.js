@@ -1,16 +1,14 @@
 (function(doc, docElement, className, replace, script, gaUrl, tkUrl, createElement, async, src, appendChild,
-  tkConfig, gaElement, tkElement, tkTimeout, html, head) {
+  tkConfig, gaElement, tkElement, html, head) {
 
   html = doc[docElement];
   html[className] = html[className][replace](/\bno-js\b/g, 'js');
 
   function showTypekitFonts() {
-    clearTimeout(tkTimeout);
-    html[className] = 
-      html[className][replace](/\bno-typekit\b/g, '');    
+    html[className] = html[className][replace](/\bno-typekit\b/g, '');    
   }
   
-  tkTimeout = setTimeout(showTypekitFonts, '{{typekitTimeout}}');
+  setTimeout(showTypekitFonts, '{{typekitTimeout}}');
 
   GoogleAnalyticsObject = 'ga';
   ga = {
