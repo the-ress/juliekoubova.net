@@ -86,7 +86,7 @@ body {
 
 .tags li {
   display: inline-block;
-  margin-right: 0.5em;
+  margin: 0 0.5em;
 }
 
 .tags li::before {
