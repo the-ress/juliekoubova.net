@@ -1,5 +1,16 @@
-(function(doc, script, gaUrl, tkUrl, createElement, async, src, appendChild,
-  tkConfig, gaElement, tkElement, head) {
+(function(doc, docElement, className, replace, script, gaUrl, tkUrl, createElement, async, src, appendChild,
+  tkConfig, gaElement, tkElement, tkTimeout, html, head) {
+
+  html = doc[docElement];
+  html[className] = html[className][replace](/\bno-js\b/g, 'js');
+
+  function showTypekitFonts() {
+    clearTimeout(tkTimeout);
+    html[className] = 
+      html[className][replace](/\bno-typekit\b/g, '');    
+  }
+  
+  tkTimeout = setTimeout(showTypekitFonts, '{{typekitTimeout}}');
 
   GoogleAnalyticsObject = 'ga';
   ga = {
@@ -20,7 +31,8 @@
 
   tkElement.onload = tkElement.onreadystatechange = function(ers) {
     try {
-      (/^(c|l.*d$)/.test(ers.readyState || 'c')) && Typekit.load(tkConfig)
+      tkConfig.active = showTypekitFonts;
+      /^(c|l.*d$)/.test(ers.readyState || 'c') && Typekit.load(tkConfig);
     } catch (e) { }
   };
 
@@ -29,6 +41,9 @@
   head[appendChild](tkElement);
 })(
   document,
+  'documentElement',
+  'className',
+  'replace',
   'script',
   '//google-analytics.com/analytics.js',
   '//use.typekit.net/{{ typekitId }}.js',

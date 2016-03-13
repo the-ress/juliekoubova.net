@@ -76,6 +76,13 @@ body {
   animation: fade-in 800ms ease-out;
 }
 
+.js.no-typekit .index h1,
+.js.no-typekit .index .tags,
+.js.no-typekit .index footer {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
 .index ul {
   list-style: none;
   padding: 0;

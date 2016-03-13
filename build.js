@@ -34,7 +34,8 @@ function build(options) {
       'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
     title: 'Julie Koubová',
-    typekitId: 'qai6bjn'
+    typekitId: 'qai6bjn',
+    typekitTimeout: 2000
   }));
 
   m.use(uglify({
