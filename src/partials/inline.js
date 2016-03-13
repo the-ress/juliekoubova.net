@@ -1,11 +1,8 @@
-(function(doc, docElement, className, replace, script, gaUrl, tkUrl, createElement, async, src, appendChild,
-  tkConfig, gaElement, tkElement, html, head) {
-
-  html = doc[docElement];
-  html[className] = html[className][replace](/\bno-js\b/g, 'js');
+(function(doc, className, replace, script, gaUrl, tkUrl, createElement, async, 
+  src, appendChild, tkConfig, gaElement, tkElement, element) {
 
   function showTypekitFonts() {
-    html[className] = html[className][replace](/\bno-typekit\b/g, '');    
+    element[className] = element[className][replace](/\bno-typekit\b/, '');    
   }
   
   setTimeout(showTypekitFonts, '{{typekitTimeout}}');
@@ -34,12 +31,14 @@
     } catch (e) { }
   };
 
-  head = doc.head;
-  head[appendChild](gaElement);
-  head[appendChild](tkElement);
+  element = doc.head;
+  element[appendChild](gaElement);
+  element[appendChild](tkElement);
+  
+  element = doc.documentElement;
+  element[className] = element[className][replace](/\bno-js\b/, 'js');
 })(
   document,
-  'documentElement',
   'className',
   'replace',
   'script',
