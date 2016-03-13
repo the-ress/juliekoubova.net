@@ -96,7 +96,8 @@ function build(options) {
     m.use(express());
     m.use(watch({
       paths: {
-        '**/*': '**/*',
+        '${source}/**/*': '**/*',
+        'layouts/**/*': '**/*'
       },
       livereload: true
     }));
