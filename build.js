@@ -20,10 +20,7 @@ const watch = require('metalsmith-watch');
 function mythImports() {
   var mm = require('myth');
   return myth({
-    features: _(mm.features)
-      .map(f => [f, f == 'import'])
-      .fromPairs()
-      .value()
+    features: _.fromPairs(mm.features.map(f => [f, f == 'import']))
   });
 }
 
@@ -98,7 +95,9 @@ function build(options) {
   if (options.live) {
     m.use(express());
     m.use(watch({
-      paths: { '${source}/**/*': true },
+      paths: {
+        '**/*': '**/*',
+      },
       livereload: true
     }));
   } else {
