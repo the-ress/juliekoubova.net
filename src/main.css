@@ -1,59 +1,11 @@
+@charset 'utf-8';
 
 @import '../node_modules/normalize.css/normalize.css';
-
-@keyframes zoom-out {
-  0% { transform: scale(0.95);}
-  100% { transform: scale(1);}
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(-200%);
-    opacity: 0.2;
-  }
-  5% {
-    transform: translateY(-100%);
-    opacity: 0.2;
-  }
-  15% {
-    transform: translateY(0);
-  }
-  30% {
-    transform: translateY(-50%);
-  }
-  40% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(-30%);
-  }
-  70% {
-    transform: translateY(0%);
-  }
-  80% {
-    transform: translateY(-15%);
-  }
-  90% {
-    transform: translateY(0%);
-  }
-  95% {
-    transform: translateY(-7%);
-  }
-  97% {
-    transform: translateY(0%);
-  }
-  99% {
-    transform: translateY(-3%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+@import '../node_modules/animate.css/animate.css';
 
 body {
   font-family: proxima-nova, sans-serif;
-  transform-style: preserve-3d;
+  /*transform-style: preserve-3d;*/
   background: #fff;
   max-width: 30em;
   margin: 1em auto;
@@ -79,17 +31,14 @@ body {
   opacity: 0;
 }
 
-.js.typekit .typekit-animation {
-  opacity: 1;  
+.index .typekit-animation {
+  /*delay to interfer less with the bounce animation*/
+  transition-delay: 400ms;
 }
 
 .index ul {
   list-style: none;
   padding: 0;
-}
-
-.contacts {
-  animation: bounce 1200ms ease-out;
 }
 
 .contacts li {
@@ -147,7 +96,6 @@ body {
   overflow: hidden;
   border-radius: 50%;
   display: inline-block;
-  animation: zoom-out 125ms ease-in;
 }
 
 .portrait img {

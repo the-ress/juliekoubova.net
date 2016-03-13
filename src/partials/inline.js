@@ -2,7 +2,7 @@
   src, appendChild, tkConfig, gaElement, tkElement, element) {
 
   function triggerTypekitAnimation(delay) {
-    element[className] = element[className][replace](/\bno-typekit\b/, 'typekit');
+    element[className] = element[className][replace](/\bno-typekit\b/, '');
   }
   
   setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');

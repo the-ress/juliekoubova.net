@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.5.1",
     "handlebars": "^4.0.5",
     "lodash": "^4.6.1",
     "metalsmith": "^2.1.0",
