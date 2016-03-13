@@ -20,7 +20,10 @@ const watch = require('metalsmith-watch');
 function mythImports() {
   var mm = require('myth');
   return myth({
-    features: _(mm.features).without('import').keyBy(() => false).value()
+    features: _(mm.features)
+      .map(f => [f, f == 'import'])
+      .fromPairs()
+      .value()
   });
 }
 
@@ -71,13 +74,15 @@ function build(options) {
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
-    removeOriginal: false
+    removeOriginal: false,
+    uncss: { ignore: ['.js'] }
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
-    output: 'main.css'
+    output: 'main.css',
+    uncss: { ignore: ['.js'] }
   }));
 
   // compress uncss output
