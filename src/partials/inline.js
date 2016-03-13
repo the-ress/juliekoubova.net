@@ -3,7 +3,7 @@
 
   GoogleAnalyticsObject = 'ga';
   ga = {
-    l: +Date(),
+    l: +new Date,
     q: [
       ['create', '{{googleAnalyticsProperty}}', 'auto'],
       ['send', 'pageview']
