@@ -1,11 +1,11 @@
 (function(doc, className, replace, script, gaUrl, tkUrl, createElement, async, 
   src, appendChild, tkConfig, gaElement, tkElement, element) {
 
-  function showTypekitFonts() {
-    element[className] = element[className][replace](/\bno-typekit\b/, '');    
+  function triggerTypekitAnimation(delay) {
+    element[className] = element[className][replace](/\bno-typekit\b/, 'typekit');
   }
   
-  setTimeout(showTypekitFonts, '{{typekitTimeout}}');
+  setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
 
   GoogleAnalyticsObject = 'ga';
   ga = {
@@ -24,10 +24,10 @@
 
   gaElement[async] = tkElement[async] = tkConfig[async] = 1;
 
-  tkElement.onload = tkElement.onreadystatechange = function(ers) {
+  tkElement.onload = tkElement.onreadystatechange = function() {
     try {
-      tkConfig.active = showTypekitFonts;
-      /^(c|l.*d$)/.test(ers.readyState || 'c') && Typekit.load(tkConfig);
+      tkConfig.active = triggerTypekitAnimation;
+      /^(c|l.*d$)/.test(tkElement.readyState || 'c') && Typekit.load(tkConfig);
     } catch (e) { }
   };
 

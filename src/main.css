@@ -1,11 +1,6 @@
 
 @import '../node_modules/normalize.css/normalize.css';
 
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 @keyframes zoom-out {
   0% { transform: scale(0.95);}
   100% { transform: scale(1);}
@@ -73,14 +68,19 @@ body {
   font-size: 3em;
   font-weight: 400;
   color: #555;
-  animation: fade-in 800ms ease-out;
 }
 
-.js.no-typekit .index h1,
-.js.no-typekit .index .tags,
-.js.no-typekit .index footer {
+.typekit-animation {
+  transition: opacity 800ms ease-out;
+  opacity: 1;
+}
+
+.js.no-typekit .typekit-animation {
   opacity: 0;
-  animation-play-state: paused;
+}
+
+.js.typekit .typekit-animation {
+  opacity: 1;  
 }
 
 .index ul {
@@ -129,7 +129,6 @@ body {
   margin-top: 2em;
   font-weight: 100;
   line-height: 1.5;
-  animation: fade-in 800ms ease-out;
 }
 
 .tags li {
@@ -162,7 +161,6 @@ body {
   font-weight: 200;
   color: #ccc;
   margin: 4em 0;
-  animation: fade-in 2500ms ease-out;
 }
 
 ::selection {
