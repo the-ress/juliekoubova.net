@@ -26,8 +26,13 @@ html {
   top: 4px;
   left: 4px;
 }
+
 #toggle-vertical-rhythm:hover, #toggle-vertical-rhythm:focus {
   opacity: 1;
+}
+
+@media print {
+  #toggle-vertical-rhythm { display: none; }
 }
 
 body {
