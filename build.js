@@ -17,6 +17,11 @@ const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
+const DynamicSelectors = [
+  '.js',
+  '.hinge-bottom-left'
+];
+
 function mythImports() {
   var mm = require('myth');
   return myth({
@@ -36,6 +41,7 @@ function build(options) {
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
+    production: options.production,
     title: 'Julie Koubová',
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
@@ -72,16 +78,14 @@ function build(options) {
     html: ['index.html'],
     output: 'index.css',
     removeOriginal: false,
-    uncss: { ignore: ['.js', '.hinge-bottom-left'] }
+    uncss: { ignore: DynamicSelectors }
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
     output: 'main.css',
-    uncss: { 
-      ignore: ['.js', '.hinge-bottom-left'] 
-    }
+    uncss: { ignore: DynamicSelectors }
   }));
 
   // compress uncss output

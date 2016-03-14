@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js no-typekit">
+<html class="no-js no-typekit {{#unless production}}vertical-rhythm{{/unless}}">
 
 <head>
   <meta charset="utf-8">
@@ -12,6 +12,10 @@
 </head>
 
 <body class="{{body}}">
+  {{#unless production}}
+    {{> vertical-rhythm.html }}
+  {{/unless}}
+  
   {{{ contents }}}  
 </body>
 </html>

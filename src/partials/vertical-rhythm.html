@@ -1,0 +1,16 @@
+<label id="toggle-vertical-rhythm">
+  <input type="checkbox" checked> Vertical Rhythm
+</label>
+<script>
+  (function (doc) {
+    function toggleVerticalRhythm() {
+      doc.documentElement.classList[this.checked ? 'add' : 'remove'](
+        'vertical-rhythm'
+      );
+    }
+    doc.addEventListener('DOMContentLoaded', function () {
+      var checkbox = doc.querySelector('#toggle-vertical-rhythm input');
+      checkbox.onchange = toggleVerticalRhythm;
+    });
+  })(document);
+</script>

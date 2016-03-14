@@ -1,10 +1,10 @@
-(function(doc, className, replace, script, gaUrl, tkUrl, createElement, async, 
-  src, appendChild, tkConfig, gaElement, tkElement, element) {
+(function(doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async,
+  src, appendChild, style, width, tkConfig, gaElement, tkElement, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
   }
-  
+
   setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
 
   GoogleAnalyticsObject = 'ga';
@@ -18,7 +18,7 @@
 
   gaElement = doc[createElement](script);
   gaElement[src] = gaUrl;
-  
+
   tkElement = doc[createElement](script);
   tkElement[src] = tkUrl;
 
@@ -34,11 +34,28 @@
   element = doc.head;
   element[appendChild](gaElement);
   element[appendChild](tkElement);
-  
+
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
+
+  doc[addEventListener] && doc[addEventListener](
+    'DOMContentLoaded',
+    function(el) {
+      el = doc.querySelector('.cookie-law s');
+      el[style][width] = el.offsetWidth + 'px';
+      el[addEventListener]('animationend', function() {
+        el[addEventListener]('transitionend', function() {
+          el.remove();
+        });
+        el[style][width] = 0;
+      });
+      el[className] = 'animated hinge-bottom-left';
+    }
+  );
+
 })(
   document,
+  'addEventListener',
   'className',
   'replace',
   'script',
@@ -48,6 +65,8 @@
   'async',
   'src',
   'appendChild',
+  'style',
+  'width',
   {}
 );
 
