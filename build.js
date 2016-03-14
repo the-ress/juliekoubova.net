@@ -72,14 +72,16 @@ function build(options) {
     html: ['index.html'],
     output: 'index.css',
     removeOriginal: false,
-    uncss: { ignore: ['.js'] }
+    uncss: { ignore: ['.js', '.hinge-bottom-left'] }
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
     output: 'main.css',
-    uncss: { ignore: ['.js'] }
+    uncss: { 
+      ignore: ['.js', '.hinge-bottom-left'] 
+    }
   }));
 
   // compress uncss output

@@ -115,8 +115,20 @@ body {
 }
 
 footer {
-  font-size: 0.75em;
+  font-size: 0.7em;
+  line-height: 2;
   margin: 4em 0;
+}
+
+.cookie-law span, .cookie-law s {
+  display: inline-block;
+}
+
+.cookie-law s {
+  animation-delay: 5s;
+  animation-duration: 3s;
+  transition: width 400ms ease-in;
+  transform-origin: bottom left;
 }
 
 .geek {
@@ -135,13 +147,42 @@ footer {
   text-shadow: var(--light-red) 0 0 10px;
 }
 
+@keyframes hinge-bottom-left {
+  0% {
+    transform-origin: bottom left;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    transform-origin: bottom left;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    transform-origin: bottom left;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+
+.hinge-bottom-left {
+  animation-name: hinge-bottom-left;
+}
+
 ::selection {
   background: var(--dark-red);
   color: #fff;
 }
 
 @media screen and (max-height: 440px) and (min-width: 480px) {
-  body { max-width: 32em; }
+  body { max-width: 35em; }
   header { overflow: auto; }
   .index h1 { margin-top: 0.333em; }
   .portrait { 
@@ -160,6 +201,8 @@ footer {
 
 @media screen and (min-width: 480px) {
   .contacts li { margin: 0 0.4em; }
+  .cookie-law { margin: 0 -2em; }
+  .cookie-law > div { display: inline; }
 }
 
 @media screen and (min-height: 560px) {
@@ -191,13 +234,14 @@ footer {
     -ms-filter: none !important; 
     opacity: 1 !important;
   }
-  .print-only { display: initial; }
   a[href] {
     text-decoration: none;
   }
   a[href]:after {
-    text-decoration: underline; 
-    content: " " attr(href); 
+    text-decoration: underline;
+    /*display: inline-block;
+    padding-left: 1em; */
+    content: attr(href); 
   }
   abbr[title]:after { content: " (" attr(title) ")"; }
   /* Don't show links for images, or javascript/internal links */
@@ -232,7 +276,7 @@ footer {
     font-size: 16pt;
     font-weight: 200;
   }
-  .homepage-link {
+  .contacts li.homepage-link {
     display: block;
     font-weight: 400;
   }
