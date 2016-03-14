@@ -8,8 +8,9 @@ const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+const htmlMinifier = require('metalsmith-html-minifier');
+const hyphenate = require('metalsmith-hyphenate')
 const gzip = require('metalsmith-gzip');
-const htmlMinifier = require("metalsmith-html-minifier");
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const myth = require('metalsmith-myth');
@@ -41,6 +42,7 @@ function build(options) {
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
+    lang: 'cs',
     live: options.live,
     title: 'Julie Koubová',
     typekitId: 'qai6bjn',
@@ -69,6 +71,14 @@ function build(options) {
     pattern: '**/*.html'
   }));
 
+  m.use(hyphenate({
+    useLangAttribute: true,
+    ignore: [
+      'google*.html',
+      'pinterest-*.html'
+    ]
+  }));
+  
   m.use(mythImports());
 
   // uncss main.css based on index.html into index.css
