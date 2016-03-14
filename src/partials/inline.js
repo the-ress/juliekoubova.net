@@ -38,7 +38,7 @@
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
 
-  doc[addEventListener] && doc[addEventListener](
+  !_phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
     function(el) {
       el = doc.querySelector('.cookie-law s');

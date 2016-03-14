@@ -41,7 +41,7 @@ function build(options) {
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
-    production: options.production,
+    live: options.live,
     title: 'Julie Koubová',
     typekitId: 'qai6bjn',
     typekitTimeout: 1250

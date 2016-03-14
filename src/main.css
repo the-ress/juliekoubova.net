@@ -20,11 +20,15 @@ html {
 }
 
 #toggle-vertical-rhythm {
+  font-family: sans-serif;
+  opacity: 0.5;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 4px;
+  left: 4px;
 }
-
+#toggle-vertical-rhythm:hover, #toggle-vertical-rhythm:focus {
+  opacity: 1;
+}
 body {
   min-width: 316px;
   max-width: 30em;
