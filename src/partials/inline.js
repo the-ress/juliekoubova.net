@@ -38,7 +38,7 @@
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
 
-  !_phantom && doc[addEventListener] && doc[addEventListener](
+  !this._phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
     function(el) {
       el = doc.querySelector('.cookie-law s');
@@ -49,7 +49,7 @@
         });
         el[style][width] = 0;
       });
-      el[className] = 'animated hinge-bottom-left';
+      el[className] = 'animated falling-eurocrat';
     }
   );
 

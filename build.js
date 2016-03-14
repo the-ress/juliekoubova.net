@@ -19,7 +19,7 @@ const watch = require('metalsmith-watch');
 
 const DynamicSelectors = [
   '.js',
-  '.hinge-bottom-left'
+  '.falling-eurocrat'
 ];
 
 function mythImports() {

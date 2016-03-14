@@ -3,18 +3,21 @@
 </label>
 <script>
   (function (doc, key) {
-    function toggleVerticalRhythm() {
-      sessionStorage.setItem(key, this.checked)
-      doc.documentElement.classList[this.checked ? 'add' : 'remove'](
-        'vertical-rhythm'
-      );
-    }
-    
-    !_phantom && doc.addEventListener('DOMContentLoaded', function () {
+    !this._phantom && doc.addEventListener('DOMContentLoaded', function () {
+      
       var checkbox = doc.querySelector('#toggle-vertical-rhythm input');
+      
+      function toggleVerticalRhythm() {
+        sessionStorage.setItem(key, checkbox.checked)
+        doc.documentElement.classList[checkbox.checked ? 'add' : 'remove'](
+          'vertical-rhythm'
+        );
+      }
+      
       checkbox.onchange = toggleVerticalRhythm;
       checkbox.checked = sessionStorage.getItem(key) === "true";
       toggleVerticalRhythm();
+      
     });
   })(document, 'verticalRhythmDebug');
 </script>
