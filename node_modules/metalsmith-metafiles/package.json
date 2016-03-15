@@ -1,0 +1,93 @@
+{
+  "_args": [
+    [
+      "metalsmith-metafiles",
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "metalsmith-metafiles@latest",
+  "_id": "metalsmith-metafiles@2.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-metafiles",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "email": "andrewm.bpi@gmail.com",
+    "name": "ajedi32"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "metalsmith-metafiles",
+    "raw": "metalsmith-metafiles",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/metalsmith-metafiles/-/metalsmith-metafiles-2.0.0.tgz",
+  "_shasum": "9f05c6914d2ceb7e77a8d71cc5e4932c5e9f7526",
+  "_shrinkwrap": null,
+  "_spec": "metalsmith-metafiles",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "Andrew Meyer"
+  },
+  "bugs": {
+    "url": "https://github.com/Ajedi32/metalsmith-metafiles/issues"
+  },
+  "dependencies": {
+    "codependency": "^0.1.4",
+    "object-assign": "^4.0.1"
+  },
+  "description": "A Metalsmith plugin to read file metadata from separate files (as an alternative to frontmatter)",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-mocha-test": "^0.12.7",
+    "js-yaml": ">=1.0 <4.0.0",
+    "metalsmith": "^2.0.1",
+    "mocha": "^2.3.3",
+    "toml": "^2.3.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "9f05c6914d2ceb7e77a8d71cc5e4932c5e9f7526",
+    "tarball": "http://registry.npmjs.org/metalsmith-metafiles/-/metalsmith-metafiles-2.0.0.tgz"
+  },
+  "gitHead": "9c22c1094cb105597330a03087417d0095993e49",
+  "homepage": "https://github.com/Ajedi32/metalsmith-metafiles#readme",
+  "keywords": [
+    "metalsmith"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "ajedi32",
+      "email": "andrewm.bpi@gmail.com"
+    }
+  ],
+  "name": "metalsmith-metafiles",
+  "optionalDependencies": {},
+  "optionalPeerDependencies": {
+    "coffee-script": "^1.10.0",
+    "js-yaml": ">=1.0 <4.0.0",
+    "toml": "^2.3.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ajedi32/metalsmith-metafiles.git"
+  },
+  "scripts": {
+    "lint": "grunt jshint",
+    "test": "grunt test"
+  },
+  "version": "2.0.0"
+}

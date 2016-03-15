@@ -1,0 +1,7 @@
+{
+  "resize": [
+    { "name": "1x", "width": 192 },
+    { "name": "2x", "width": 384 },
+    { "name": "500px", "width": 500 }
+  ] 
+}

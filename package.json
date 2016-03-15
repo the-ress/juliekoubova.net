@@ -7,12 +7,14 @@
     "test": "node build.js",
     "live": "node build.js --live",
     "build": "node build.js --production",
+    "images": "node build.js --images",
     "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^3.5.1",
+    "gm": "^1.21.1",
     "handlebars": "^4.0.5",
     "hyphenation.cs": "^0.2.1",
     "hyphenation.en-us": "^0.2.1",
@@ -24,15 +26,20 @@
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-html-minifier": "^2.0.0",
     "metalsmith-hyphenate": "juliekoubova/metalsmith-hyphenate",
+    "metalsmith-imagemin": "^1.2.0",
     "metalsmith-in-place": "^1.4.3",
     "metalsmith-layouts": "^1.6.4",
+    "metalsmith-metafiles": "^2.0.0",
     "metalsmith-myth": "0.0.0",
     "metalsmith-partial": "^0.1.0",
     "metalsmith-paths": "^2.1.1",
     "metalsmith-uglify": "^1.2.1",
     "metalsmith-uncss": "juliekoubova/metalsmith-uncss",
     "metalsmith-watch": "^1.0.1",
+    "multimatch": "^2.1.0",
     "normalize.css": "^3.0.3",
+    "parse5": "^2.1.5",
+    "path": "^0.12.7",
     "q": "^1.4.1"
   }
 }

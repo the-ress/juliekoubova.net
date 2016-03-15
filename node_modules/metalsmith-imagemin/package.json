@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      "metalsmith-imagemin",
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "metalsmith-imagemin@latest",
+  "_id": "metalsmith-imagemin@1.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-imagemin",
+  "_nodeVersion": "5.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/metalsmith-imagemin-1.2.0.tgz_1456333907094_0.5986906376201659"
+  },
+  "_npmUser": {
+    "email": "ahmad@ahmadnassri.com",
+    "name": "ahmadnassri"
+  },
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "metalsmith-imagemin",
+    "raw": "metalsmith-imagemin",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/metalsmith-imagemin/-/metalsmith-imagemin-1.2.0.tgz",
+  "_shasum": "7b9ccc979364e7b852de49991f05ce77c67a48d3",
+  "_shrinkwrap": null,
+  "_spec": "metalsmith-imagemin",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "email": "ahmad@ahmadnassri.com",
+    "name": "Ahmad Nassri",
+    "url": "https://www.ahmadnassri.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadnassri/metalsmith-imagemin/issues"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "debug-log": "^1.0.0",
+    "imagemin": "^3.2.0"
+  },
+  "description": "Metalsmith plugin to minify images.",
+  "devDependencies": {
+    "codeclimate-test-reporter": "0.1.1",
+    "echint": "^1.5.0",
+    "istanbul": "^0.3.18",
+    "mocha": "^2.2.5",
+    "standard": "^5.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "7b9ccc979364e7b852de49991f05ce77c67a48d3",
+    "tarball": "http://registry.npmjs.org/metalsmith-imagemin/-/metalsmith-imagemin-1.2.0.tgz"
+  },
+  "echint": {
+    "ignore": [
+      "coverage/**",
+      "test/**/*[.jpg,.png,.gif,.ico]"
+    ]
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "files": [
+    "lib"
+  ],
+  "gitHead": "8af0c03d61928afda89012ccf9eda00871861aa0",
+  "homepage": "https://github.com/ahmadnassri/metalsmith-imagemin",
+  "keywords": [
+    "compress",
+    "gif",
+    "imagemin",
+    "images",
+    "jpeg",
+    "jpg",
+    "metalsmith",
+    "png"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "ahmadnassri",
+      "email": "ahmad@codeinchaos.com"
+    }
+  ],
+  "name": "metalsmith-imagemin",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadnassri/metalsmith-imagemin.git"
+  },
+  "scripts": {
+    "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
+    "coverage": "istanbul cover --dir coverage _mocha -- -R dot",
+    "posttest": "npm run coverage",
+    "pretest": "standard && echint",
+    "test": "mocha"
+  },
+  "version": "1.2.0"
+}

@@ -12,10 +12,14 @@ const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
 const hyphenate = require('metalsmith-hyphenate')
 const gzip = require('metalsmith-gzip');
+const imagemin = require('metalsmith-imagemin')
+const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
+const metafiles = require('metalsmith-metafiles');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
+const srcset = require('./lib/metalsmith-srcset');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
@@ -32,6 +36,19 @@ function mythImports() {
   });
 }
 
+function buildImages() {
+  let m = new Metalsmith(__dirname);
+
+  m.source('img');
+  m.destination('src/img');
+  
+  m.use(metafiles());
+  m.use(imageResize());  
+  m.use(imagemin());
+  
+  return Q.nfcall(_.bind(m.build, m));  
+}
+
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -39,14 +56,15 @@ function build(options) {
   m.destination('build');
 
   m.use(define({
-    baseUrl: 'https://juliekoubova.net/',
+    baseUrl: 'https://juliekoubova.net',
     css: '/main.css',
     date: new Date(),
     description:
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
+    fbImageSize: '500px',
     googleAnalyticsProperty: 'UA-58690305-1',
-    image: '2015-04.jpg',
+    image: '/img/2015-04@1x.jpeg',
     lang: 'cs',
     live: options.live,
     title: 'Julie Koubová',
@@ -89,6 +107,8 @@ function build(options) {
       'pinterest-*.html'
     ]
   }));
+  
+  m.use(srcset());
   
   m.use(mythImports());
 
@@ -143,8 +163,16 @@ function hasSwitch(arg) {
   return _.includes(process.argv, `--${arg}`);
 }
 
-build({
-  live: hasSwitch('live'),
-  gzip: hasSwitch('production')
-})
-  .done();
+var promise;
+
+if (hasSwitch('images')) {
+  promise = buildImages();
+}
+else {  
+  promise = build({
+    live: hasSwitch('live'),
+    gzip: hasSwitch('production')
+  });
+}
+
+promise.done();
