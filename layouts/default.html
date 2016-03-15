@@ -11,8 +11,12 @@
   <meta property="og:image" content="{{ baseUrl }}{{ fb_image image }}">
   <meta property="og:updated_time" content="{{ unixtime_sec date }}">
   <meta property="og:title" content="{{ title }}">
-  <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_url path.href }}">
+  <meta property="og:type" content="{{ fbType }}">
+  {{#if post}}
+  <meta property="article:author" content="{{ fbAuthor }}">
+  <meta property="article:published_time" content="{{ iso8601 post.published }}">
+  {{/if}}
   <link rel="stylesheet" href="{{ css }}">
   <script>{{> inline.min.js }}</script>
 </head>

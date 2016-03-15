@@ -62,7 +62,9 @@ function build(options) {
     description:
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
+    fbAuthor: 'https://www.facebook.com/julie.e.harshaw',
     fbImageSize: '500px',
+    fbType: 'website',
     googleAnalyticsProperty: 'UA-58690305-1',
     image: '/img/2015-04@1x.jpeg',
     lang: 'cs',
