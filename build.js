@@ -7,6 +7,7 @@ const Metalsmith = require('metalsmith');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
+const handlebarsHelpers = require('metalsmith-discover-helpers');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
 const hyphenate = require('metalsmith-hyphenate')
@@ -14,6 +15,7 @@ const gzip = require('metalsmith-gzip');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const myth = require('metalsmith-myth');
+const paths = require('metalsmith-paths');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
@@ -37,11 +39,14 @@ function build(options) {
   m.destination('build');
 
   m.use(define({
+    baseUrl: 'https://juliekoubova.net/',
     css: '/main.css',
+    date: new Date(),
     description:
     'Market anarchist. Sex-positive feminist. Software gardeness. ' +
     'Enjoys photography, singing, theatre, and shooting guns.',
     googleAnalyticsProperty: 'UA-58690305-1',
+    image: '2015-04.jpg',
     lang: 'cs',
     live: options.live,
     title: 'Julie Koubová',
@@ -57,6 +62,12 @@ function build(options) {
     removeOriginal: true
   }));
 
+  m.use(paths());
+
+  m.use(handlebarsHelpers({
+    directory: 'helpers'
+  }));
+  
   m.use(handlebarsPartials({
     root: 'partials'
   }));

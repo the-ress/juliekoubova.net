@@ -7,6 +7,12 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ baseUrl }}{{ image }}">
+  <meta property="og:updated_time" content="{{ unixtime_sec date }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonical_url path.href }}">
   <link rel="stylesheet" href="{{ css }}">
   <script>{{> inline.min.js }}</script>
 </head>
