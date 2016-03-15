@@ -54,6 +54,8 @@ function build(options) {
     typekitTimeout: 1250
   }));
 
+  m.use(paths());
+  
   m.use(uglify({
     output: {
       beautify: options.live,
@@ -61,8 +63,6 @@ function build(options) {
     },
     removeOriginal: true
   }));
-
-  m.use(paths());
 
   m.use(handlebarsHelpers({
     directory: 'helpers'
