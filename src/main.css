@@ -77,7 +77,14 @@ p {
   opacity: 1;
 }
 
-.js.no-typekit .typekit-animation {
+.js.no-typekit .typekit-animation,
+.js.no-typekit p, 
+.js.no-typekit h1,
+.js.no-typekit h2,
+.js.no-typekit h3,
+.js.no-typekit h4,
+.js.no-typekit h5,
+.js.no-typekit h6 {
   opacity: 0;
 }
 
