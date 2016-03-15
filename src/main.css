@@ -13,6 +13,10 @@ html {
   font-family: proxima-nova, sans-serif;
   color: var(--gray);  
   background: #fff;
+  
+  /* makes the switch to non-GPU text rendering when transitions
+     and animations finish less harsh in Safari */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .vertical-rhythm {
