@@ -38,10 +38,15 @@
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
 
+  // test text-shadow
+  if (doc[createElement](createElement).style.textShadow === "") {
+    element[className] += " textshadow";
+  }
+
   !this._phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
     function(el) {
-      el = doc.querySelector('.cookie-law s');
+      if (!(el = doc.querySelector('.cookie-law s'))) return;
       el[style][width] = el.offsetWidth + 'px';
       el[addEventListener]('animationend', function() {
         el[addEventListener]('transitionend', function() {

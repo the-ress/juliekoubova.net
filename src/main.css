@@ -52,22 +52,37 @@ h1, h2, h3, h4 {
 }
 
 h1 {  
-  font-size: 3.0000em; /* 48px */
+  font-size: 3em; /* 48px */
   line-height: 1.1667em; /* 56px */
   margin-top: 0.5833em;
-  margin-bottom: 0.0000em;
+  margin-bottom: 0;
 }
 
 h2 {
-  font-size: 2.0000em; /* 32px */
-  line-height: 1.7500em; /* 56px */
-  margin-top: 0.8750em;  margin-bottom: 0.0000em;
+  font-size: 2em; /* 32px */
+  line-height: 1.75em; /* 56px */
+  margin-top: 0.875em;
+  margin-bottom: 0;
+}
+
+a:visited {
+  color: var(--light-red);
+}
+
+a:link, a:active, a:hover, a:focus {
+  color: var(--dark-red);
+}
+
+.textshadow a:hover, .textshadow a:active, .textshadow a:focus {
+  outline: none;
+  text-shadow: var(--light-red) 0 0 0.5em;
+  transition: text-shadow 400ms linear;
 }
 
 p {
   font-size: 1em; /* 16px */
-  line-height: 1.7500em; /* 28px */
-  margin: 0 0 1.7500em 0;
+  line-height: 1.75em; /* 28px */
+  margin: 0 0 1.75em 0;
   text-align: justify;
 }
 
@@ -145,9 +160,9 @@ p {
 }
 
 .tags {
-  font-weight: 100;
-  line-height: 1.7500em; /* 28px */
-  margin: 1.7500em 0 0 0;
+  font-weight: 300;
+  line-height: 1.75em; /* 28px */
+  margin: 1.75em 0 0 0;
   transition: margin-top 400ms ease-in-out;
 }
 
@@ -177,9 +192,10 @@ p {
 }
 
 footer {
-  font-size: 0.7500em; /* 12px */
+  font-size: 0.75em; /* 12px */
   line-height: 2.3333em; /* 28px */
-  margin-top: 2.3333em;  margin-bottom: 0.0000em;
+  margin-top: 2.3333em;
+  margin-bottom: 0;
 }
 
 .cookie-law span, .cookie-law s {
@@ -191,26 +207,15 @@ footer {
   animation-duration: 3s;
   transition: width 400ms ease-in;
   transform-origin: bottom left;
+  z-index: -100;
 }
 
 .copy {
   transition: margin-top 400ms ease-in-out;
 }
 
-.copy a:link {
-  opacity: 0.15;
-  color: var(--dark-red);
+.copy a {
   text-decoration: none;
-}
-
-.copy a:visited, .copy a:focus, .copy a:active, .copy a:hover {
-  opacity: 1;
-  outline: none;
-  transition: opacity 400ms ease-out;
-}
-
-.copy a:focus, .copy a:active {
-  text-shadow: var(--light-red) 0 0 10px;
 }
 
 @keyframes falling-eurocrat {
@@ -249,10 +254,10 @@ footer {
   body { max-width: 35em; }
   header { overflow: auto; }
   .index h1 {
-    font-size: 3.0000em; /* 48px */
+    font-size: 3em; /* 48px */
     line-height: 1.1667em; /* 56px */
     margin-top: 0.29165em;
-    margin-bottom: 0.29165em  ;
+    margin-bottom: 0.29165em;
   }
   .portrait { 
     float: left;
@@ -337,7 +342,7 @@ footer {
   .contacts li {
     display: block;
     font-size: 16pt;
-    font-weight: 200;
+    font-weight: 300;
   }
   .contacts li.homepage-link {
     display: block;
