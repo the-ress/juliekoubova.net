@@ -2,9 +2,11 @@
 
 <article>
   
+  {{#if post}}
   <time datetime="{{ iso8601 post.published }}">
     {{ moment post.published 'D MMMM YYYY' }}
   </time>
+  {{/if}}
 
   <h2>{{ title }}</h2>
 

@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = (date) => date.toISOString();
+module.exports = (date) => date ? date.toISOString() : '';

@@ -7,11 +7,12 @@ const Metalsmith = require('metalsmith');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
+const extractPosts = require('./lib/metalsmith-extract-posts');
+const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
 const hyphenate = require('metalsmith-hyphenate')
-const gzip = require('metalsmith-gzip');
 const imagemin = require('metalsmith-imagemin')
 const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
@@ -83,6 +84,8 @@ function build(options) {
     typekitTimeout: 1250
   }));
 
+  m.use(extractPosts());
+
   m.use(paths());
   
   m.use(uglify({
@@ -110,7 +113,7 @@ function build(options) {
     engine: 'handlebars',
     pattern: 'posts/**/*.html'
   }));
-
+  
   m.use(layouts({
     default: 'default.html',
     engine: 'handlebars',
