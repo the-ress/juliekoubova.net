@@ -3,7 +3,7 @@
 module.exports = (title, ctx) => {
   
   var siteTitle = ctx.data.root.siteTitle;
-  title = title.trim();
+  title = (title || '').trim();
   
   if (title && siteTitle) {
     return siteTitle + ': ' + title;
@@ -13,5 +13,5 @@ module.exports = (title, ctx) => {
     return title;
   }
   
-  return siteTite;
+  return siteTitle;
 } 

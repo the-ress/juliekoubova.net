@@ -29,20 +29,27 @@ body {
 }
 
 h1 {
+  font-family: proxima-nova-soft, sans-serif;
   font-weight: 300;
-  text-transform: uppercase;  
-}
-
-h1, h2 {
+  text-transform: uppercase;
   font-size: 2em; /* 32px */
   line-height: 1.75em; /* 56px */
   margin-top: 0.875em;
   margin-bottom: 0;
 }
 
-.index h1, h2, h3, h4 {
-  font-family: proxima-nova-soft, sans-serif;
-  font-weight: 400;
+h2 {
+  font-size: 1.5000em; /* 24px */
+  line-height: 1.1667em; /* 28px */
+  margin-top: 1.1667em;
+  margin-bottom: 0em;
+}
+
+h2 time {
+  float: right;
+  font-weight: 300;
+  font-size: 0.571em;
+  font-variant-caps: 
 }
 
 .index h1 {  

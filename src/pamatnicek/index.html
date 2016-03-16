@@ -11,7 +11,13 @@ description: >-
 
 {{> header.html }}
 
-<h2>Památníček</h2>
+
+<h2>
+  Památníček
+  <time datetime="{{ iso8601 post.published }}">
+    {{ moment post.published 'YYYY-M-D' }}
+  </time>
+</h2>
 
 <p>
   Hello world! Před pár měsíci jsem dostala od paní Fifkové za úkol
