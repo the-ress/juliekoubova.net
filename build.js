@@ -29,6 +29,11 @@ const DynamicSelectors = [
   '.falling-eurocrat'
 ];
 
+const SiteTitle = 'Julie Koubová';
+const SiteDescription = 
+  'Market anarchist. Sex-positive feminist. Software gardeness. ' +
+  'Enjoys photography, singing, theatre, and shooting guns.';
+
 function mythImports() {
   var mm = require('myth');
   return myth({
@@ -42,6 +47,9 @@ function buildImages() {
   m.source('img');
   m.destination('src/img');
   
+  m.use(define({
+    screenDensity: [ 1, 2 ]
+  }));
   m.use(metafiles());
   m.use(imageResize());  
   m.use(imagemin());
@@ -59,17 +67,18 @@ function build(options) {
     baseUrl: 'https://juliekoubova.net',
     css: '/main.css',
     date: new Date(),
-    description:
-    'Market anarchist. Sex-positive feminist. Software gardeness. ' +
-    'Enjoys photography, singing, theatre, and shooting guns.',
-    fbAuthor: 'https://www.facebook.com/julie.e.harshaw',
-    fbImageSize: '500px',
+    description: SiteDescription,
+    fbAuthor: 'https://facebook.com/julie.e.harshaw',
     fbType: 'website',
     googleAnalyticsProperty: 'UA-58690305-1',
-    image: '/img/2015-04@1x.jpeg',
     lang: 'cs',
     live: options.live,
-    title: 'Julie Koubová',
+    portrait: {
+     index: '/img/2015-04-192px@1x.jpeg',
+     default: '/img/2015-04-32px@1x.jpeg' 
+    },
+    image: '/img/2015-04.jpeg',
+    siteTitle: SiteTitle,
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
   }));

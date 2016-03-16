@@ -4,36 +4,34 @@ body: index
 ---
 <header>
 
-  <div class="portrait">
-    <img src="{{ image }}" width="168" height="168" alt="" />
-  </div>
+  {{> portrait.html src=portrait.index size=168 }}
 
-  <h1 class="typekit-animation">Julie Koubová</h1>
+  <h1>{{ siteTitle }}</h1>
 
   <p lang="en-us" class="print-only">{{ description }}</p>
-
+  
   <ul class="contacts animated fadeInDown">
     <li class="homepage-link">
-      <a href="https://juliekoubova.net/">
+      <a href="{{ baseUrl }}">
         {{> home.svg }}
       </a>
     </li>
-    <li>
+    <li class="facebook-link">
       <a title="Facebook" href="https://facebook.com/julie.e.harshaw">
         {{> facebook.svg }}
       </a>
     </li>
-    <li>
+    <li class="twitter-link">
       <a title="Twitter" href="https://twitter.com/julieeharshaw">
         {{> twitter.svg }}
       </a>
     </li>
-    <li>
+    <li class="github-link">
       <a title="GitHub" href="https://github.com/juliekoubova">
         {{> github.svg }}
       </a>
     </li>
-    <li>
+    <li class="email-link">
       <a title="Email" href="mailto:juliekoubova@icloud.com">
         {{> email.svg }}
       </a>
@@ -51,18 +49,4 @@ body: index
   <li>firearms</li>
 </ul>
 
-<footer class="typekit-animation">
-  <div class="cookie-law">
-    <div>Tato stránka možná rozdává sušenky.&nbsp;</div>
-    <div>
-      <span>Řekněte svému </span>
-      <s title="lol, postdemokracie">komisaři</s>
-      <span> prohlížeči, pokud vám nechutnají.</span>
-    </div>
-  </div>
-  <div lang="en-us" class="copy">
-    <a href="https://github.com/juliekoubova/juliekoubova.net">
-      &copy; 2016. Made with &#x2661; in Prague.
-    </a>
-  </div<
-</footer>
+{{> footer.html cookieLaw=true }}

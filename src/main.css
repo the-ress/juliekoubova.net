@@ -9,6 +9,8 @@
   --dark-red: #D10045;
 }
 
+@import 'css/vertical-rhythm.css';
+
 html {
   font-family: proxima-nova, sans-serif;
   color: var(--gray);  
@@ -19,26 +21,6 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.vertical-rhythm {
-  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAcCAYAAABLam7PAAAAF0lEQVQIW2NkgALGkcMoLy//39nZyQgAItIEHTMomsIAAAAASUVORK5CYII=);
-}
-
-#toggle-vertical-rhythm {
-  font-family: sans-serif;
-  opacity: 0.5;
-  position: fixed;
-  top: 4px;
-  left: 4px;
-}
-
-#toggle-vertical-rhythm:hover, #toggle-vertical-rhythm:focus {
-  opacity: 1;
-}
-
-@media print {
-  #toggle-vertical-rhythm { display: none; }
-}
-
 body {
   min-width: 316px;
   max-width: 30em;
@@ -46,22 +28,27 @@ body {
   padding: 0 0.4em;
 }
 
-h1, h2, h3, h4 {
+h1 {
+  font-weight: 300;
+  text-transform: uppercase;  
+}
+
+h1, h2 {
+  font-size: 2em; /* 32px */
+  line-height: 1.75em; /* 56px */
+  margin-top: 0.875em;
+  margin-bottom: 0;
+}
+
+.index h1, h2, h3, h4 {
   font-family: proxima-nova-soft, sans-serif;
   font-weight: 400;
 }
 
-h1 {  
+.index h1 {  
   font-size: 3em; /* 48px */
   line-height: 1.1667em; /* 56px */
   margin-top: 0.5833em;
-  margin-bottom: 0;
-}
-
-h2 {
-  font-size: 2em; /* 32px */
-  line-height: 1.75em; /* 56px */
-  margin-top: 0.875em;
   margin-bottom: 0;
 }
 
@@ -112,7 +99,7 @@ p {
   transition-delay: 400ms;
 }
 
-.index ul {
+header ul, .tags {
   list-style: none;
   padding: 0;
 }
@@ -175,23 +162,41 @@ p {
   content: "#";
 }
 
+.portrait-wrapper {
+  float: left;
+  margin-right: 1em;  
+}
+
 .portrait {
-  width: 168px;
-  height: 168px;
+  border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border-radius: 50%;
   display: inline-block;
-  margin: 0; /*168 (%28px)*/
+
+  margin: 12px 0; /*32+2*12=56 (%28px) */
+  width: 32px;
+  height: 32px;
 }
 
 .portrait img {
-  display: inline;
   margin: 0 auto;
-  min-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.index .portrait-wrapper {
+  float: none;
+  margin-right: 0;
+}
+
+.index .portrait {
+  width: 168px;
+  height: 168px;
+  margin: 0; /*168 (%28px)*/
 }
 
 footer {
+  text-align: center; 
   font-size: 0.75em; /* 12px */
   line-height: 2.3333em; /* 28px */
   margin-top: 2.3333em;
@@ -252,14 +257,14 @@ footer {
 
 @media screen and (max-height: 440px) and (min-width: 520px) {
   body { max-width: 35em; }
-  header { overflow: auto; }
+  .index header { overflow: auto; }
   .index h1 {
     font-size: 3em; /* 48px */
     line-height: 1.1667em; /* 56px */
     margin-top: 0.29165em;
     margin-bottom: 0.29165em;
   }
-  .portrait { 
+  .index .portrait { 
     float: left;
   }
   .tags {
@@ -274,10 +279,8 @@ footer {
 }
 
 @media screen and (min-height: 560px) {
-  .portrait {
+  .index .portrait {
     margin: 2px 0; /*192 + 2*2 = 196 (%28px)*/
-  }
-  .portrait, .portrait img {
     width: 192px;
     height: 192px;
   }
