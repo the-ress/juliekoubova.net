@@ -1,0 +1,15 @@
+{{> header.html }}
+
+<article>
+  
+  <time datetime="{{ iso8601 post.published }}">
+    {{ moment post.published 'D MMMM YYYY' }}
+  </time>
+
+  <h2>{{ title }}</h2>
+
+  {{{ contents }}}
+
+</article>
+
+{{> footer.html }}

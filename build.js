@@ -106,11 +106,17 @@ function build(options) {
   }));
 
   m.use(layouts({
+    default: 'post.html',
+    engine: 'handlebars',
+    pattern: 'posts/**/*.html'
+  }));
+
+  m.use(layouts({
     default: 'default.html',
     engine: 'handlebars',
     pattern: '**/*.html'
   }));
-
+  
   m.use(hyphenate({
     useLangAttribute: true,
     ignore: [
