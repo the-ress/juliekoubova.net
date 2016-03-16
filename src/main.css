@@ -53,9 +53,6 @@ time, footer {
 }
 
 time {
-  display: block;
-  position: relative;
-  top: 2.333em;
   text-transform: uppercase;
   margin-left: 0.1em;
   color: var(--light-red);
@@ -63,9 +60,9 @@ time {
 
 .index h1 {  
   font-weight: 300;
-  font-size: 3em; /* 48px */
-  line-height: 1.1667em; /* 56px */
-  margin-top: 0.5833em;
+  font-size: 2.375em; /* 38px */
+  line-height: 1.4737em; /* 56px */
+  margin-top: 0.7368em;
   margin-bottom: 0;
 }
 
@@ -73,7 +70,7 @@ h2 {
   font-weight: 300;
   font-size: 1.75em; /* 28px */
   line-height: 1em; /* 28px */
-  margin-top: 1em;
+  margin-top: 0;
   margin-bottom: 1em;
 }
 
@@ -307,6 +304,7 @@ footer {
 }
 
 @media screen and (min-height: 560px) {
+  .contacts { margin-top: 2.375em; }
   .index .portrait {
     margin: 2px 0; /*192 + 2*2 = 196 (%28px)*/
     width: 192px;
@@ -316,7 +314,6 @@ footer {
 
 @media screen and (min-height: 670px) {  
   .index { margin-top: 3.5em; }
-  .contacts { margin-top: 2.375em; }
   .tags { margin-top: 1.75em; }
   .copy { margin-top: 2.333em; }
 }
