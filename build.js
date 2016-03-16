@@ -83,10 +83,6 @@ function build(options) {
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
   }));
-
-  m.use(extractPosts());
-
-  m.use(paths());
   
   m.use(uglify({
     output: {
@@ -96,6 +92,10 @@ function build(options) {
     removeOriginal: true
   }));
 
+  //
+  // initialize Handlebars
+  //
+   
   m.use(handlebarsHelpers({
     directory: 'helpers'
   }));
@@ -104,16 +104,20 @@ function build(options) {
     root: 'partials'
   }));
 
+  m.use(layouts({
+    engine: 'handlebars',
+    pattern: 'posts/**/*.html',
+    default: 'post.html'
+  }));
+  
+  m.use(extractPosts());
+
+  m.use(paths());
+
   m.use(inPlace({
     engine: 'handlebars'
   }));
 
-  m.use(layouts({
-    default: 'post.html',
-    engine: 'handlebars',
-    pattern: 'posts/**/*.html'
-  }));
-  
   m.use(layouts({
     default: 'default.html',
     engine: 'handlebars',

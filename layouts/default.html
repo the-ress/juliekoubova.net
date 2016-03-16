@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js no-typekit {{#if live}}vertical-rhythm{{/if}}" lang="{{ lang }}">
+<html class="no-js no-typekit" lang="{{ lang }}">
 
 <head>
   <meta charset="utf-8">
@@ -16,10 +16,10 @@
   <meta property="og:url"          content="{{ canonical_url path.href }}">
   <meta property="og:type"         content="{{ fbType }}">
   
-  {{#if post}}
+  {{#equal fbType 'article' }}
   <meta property="article:author"         content="{{ fbAuthor }}">
-  <meta property="article:published_time" content="{{ iso8601 post.published }}">
-  {{/if}}
+  <meta property="article:published_time" content="{{ iso8601 published }}">
+  {{/equal}}
   
   <link rel="stylesheet" href="{{ css }}">
   <script>{{> inline.min.js }}</script>

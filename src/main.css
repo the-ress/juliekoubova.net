@@ -9,8 +9,6 @@
   --dark-red: #D10045;
 }
 
-@import 'css/vertical-rhythm.css';
-
 html {
   font-family: proxima-nova, sans-serif;
   color: var(--gray);  
