@@ -251,6 +251,10 @@ footer {
   text-decoration: none;
 }
 
+.hero {
+  margin-bottom: 28px;
+}
+
 article img, .hero img {
   max-width: 100%;
   display: block;
