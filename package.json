@@ -16,6 +16,7 @@
     "animate.css": "^3.5.1",
     "gm": "^1.21.1",
     "handlebars": "^4.0.5",
+    "html5shiv": "^3.7.3",
     "hyphenation.cs": "^0.2.1",
     "hyphenation.en-us": "^0.2.1",
     "lodash": "^4.6.1",
