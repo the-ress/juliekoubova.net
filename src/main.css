@@ -337,7 +337,7 @@ article img, .hero img {
 
 @media print {
   * {
-    background: transparent !important; 
+    background: transparent !important;
     /* Black prints faster: h5bp.com/s */
     color: black !important; 
     text-shadow: none !important; 
@@ -345,14 +345,9 @@ article img, .hero img {
     -ms-filter: none !important; 
     opacity: 1 !important;
   }
-  a[href] {
-    text-decoration: none;
-  }
   a[href]:after {
     text-decoration: underline;
-    /*display: inline-block;
-    padding-left: 1em; */
-    content: attr(href); 
+    content: " (" attr(href) ")"; 
   }
   abbr[title]:after { content: " (" attr(title) ")"; }
   /* Don't show links for images, or javascript/internal links */
@@ -366,8 +361,12 @@ article img, .hero img {
   h2, h3 { page-break-after: avoid; }
   body {max-width: none;}
   
-  .portrait { display: none;}
+  .index .portrait { display: none;}
   .tags { display: none; }
+  
+  h1 a[href]:after {
+    content: '';
+  }
   
   .index {
     text-align: left;
@@ -387,13 +386,19 @@ article img, .hero img {
     font-size: 16pt;
     font-weight: 300;
   }
+  
   .contacts li.homepage-link {
     display: block;
     font-weight: 400;
   }
+  
   .contacts a[href], 
   .contacts a[href]:after {
     text-decoration: none;
+  }
+  
+  .contacts a[href]:after, .copy a[href]:after {
+    content: attr(href);
   }
   .contacts svg {
     max-height: 1.25em;
