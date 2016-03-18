@@ -16,6 +16,7 @@ const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const markdownit = require('metalsmith-markdownit');
+const markdownAbbr = require('markdown-it-abbr');
 const markdownFigures = require('markdown-it-implicit-figures');
 const metafiles = require('metalsmith-metafiles');
 const moveUp = require('metalsmith-move-up');
@@ -50,6 +51,8 @@ function markdown() {
     typographer: true,
     html: true
   });
+  
+  md.use(markdownAbbr);
   
   md.use(markdownFigures, {
     figcaption: true
