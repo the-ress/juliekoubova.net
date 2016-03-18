@@ -1,52 +1,32 @@
-!this._phantom && (function(win, doc, addEventListener, px, heroes, anchor, els, i) {
-  doc[addEventListener] && doc[addEventListener]('DOMContentLoaded', function() {
-    heroes = doc.querySelectorAll('.hero');
-    anchor = doc.querySelector('.hero-anchor');
-
-    if (!heroes || !anchor) return;
+!this._phantom && (function(
+  win, doc, addEventListener, querySelectorAll, clientHeight, LineHeight,
+  heroes, i, img
+) {
+  doc[addEventListener] &&
+  doc[querySelectorAll] &&
+  doc[addEventListener]('DOMContentLoaded', function() {
+    heroes = doc[querySelectorAll]('.hero img');
+    
+    if (!heroes) return;
 
     function onResize() {      
       i = heroes.length;
       while(i--) {
-        els = heroes[i].style;        
-        els.marginLeft = els.marginRight = '-' + anchor.offsetLeft + px;;        
-        els.width = doc.documentElement.clientWidth + px;  
+        img = heroes[i];
+        img.parentElement.style.paddingBottom = 
+          LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) - 
+          img[clientHeight] + 'px';
       }
     }
 
     win[addEventListener]('resize', onResize);
-
-    function easeOut(t, c, d) {
-      t /= d;
-      return -c * t*(t-2);
-    }
-
-    var scrollDuration = 1000;
-    var scrollHeight, start;
-    
-    requestAnimationFrame(step);
-
-    function step(timestamp) {
-      if (!scrollHeight) { 
-        onResize();
-        scrollHeight = heroes[0].offsetHeight * .8;
-      }
-      
-      if (pageYOffset >= scrollHeight) {
-        return;
-      }
-      
-      start = start || timestamp;
-      var y, current = timestamp - start;
-      
-      if (current >= scrollDuration) {
-        y = scrollHeight
-      } else {
-        y = easeOut(current, scrollHeight, scrollDuration);
-        requestAnimationFrame(step);
-      } 
-      
-      scrollTo(0, y);
-    }
+    setTimeout(onResize, 50);
   });
-})(this, document, 'addEventListener', 'px');
+})(
+  this,
+  document,
+  'addEventListener', 
+  'querySelectorAll',
+  'clientHeight',
+  28
+);

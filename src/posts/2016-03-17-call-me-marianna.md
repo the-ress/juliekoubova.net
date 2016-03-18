@@ -3,7 +3,7 @@ title: Call Me Marianna
 image: /img/2016-03-17-call-me-marianna.jpeg
 imageAlt: Fotka z filmu Call Me Marianna
 ---
-Minulý týden jsem na festivalu [Jeden svět](http://www.oneworld.cz/2016/) viděla polský film [Call Me Marianna](http://www.callmemarianna.com/). Bylo to hrozně smutný, zima, tma, Polsko tam působilo jako lotyšský vtip... Ale je fajn, že od doby zachycené ve filmu se situace v Polsku trochu zlepšila a trans lidé již nejsou nuceni žalovat své rodiče jako přepoklad legálního uznání svého rodu.
+Minulý týden jsem na festivalu [Jeden svět](http://www.oneworld.cz/2016/) viděla polský film [Call Me Marianna](http://www.callmemarianna.com/). Bylo to hrozně smutný, zima, tma, Polsko tam působilo jako lotyšský vtip... Ale je fajn, že od doby zachycené ve filmu se situace v Polsku trochu zlepšila a trans lidé již nejsou nuceni zežalovat své rodiče pro legální uznání svého rodu.
 
 Marianna ve filmu režíruje divadelní hru o svém příběhu. Trochu mě zarazilo, jak ve své hře nemá problém roli svého minulého já obsadit mužem, a mluvit o své minulosti v mužském rodě. Já bych to nesnesla.
 

@@ -24,7 +24,7 @@ html {
 
 body {
   min-width: 316px;
-  max-width: 30em;
+  max-width: 480px;
   margin: 0 auto;
   padding: 0 0.4em;
 }
@@ -55,6 +55,7 @@ time, footer {
 
 time {
   text-transform: uppercase;
+  font-weight: 600;
   margin-left: 0.1em;
   color: var(--light-red);
 }
@@ -99,7 +100,7 @@ p {
   font-size: 1em; /* 16px */
   line-height: 1.75em; /* 28px */
   margin: 0 0 1.75em 0;
-  /*text-align: justify;*/
+  text-align: justify;
 }
 
 .index {
@@ -252,6 +253,7 @@ footer {
 
 article img, .hero img {
   max-width: 100%;
+  display: block;
 }
 
 @keyframes falling-eurocrat {
@@ -287,7 +289,7 @@ article img, .hero img {
 }
 
 @media screen and (max-height: 440px) and (min-width: 520px) {
-  body { max-width: 35em; }
+  body { max-width: 520px; }
   .index header { overflow: auto; }
   .index h1 {
     font-size: 3em; /* 48px */
@@ -307,6 +309,13 @@ article img, .hero img {
   .contacts li { margin: 0 0.6em; }
   .cookie-law { margin: 0 -2em; }
   .cookie-law > div { display: inline; }
+}
+
+@media screen and (min-width: 660px) {
+  .hero { 
+    margin-left: -90px;
+    margin-right: -90px;
+  }
 }
 
 @media screen and (min-height: 560px) {
