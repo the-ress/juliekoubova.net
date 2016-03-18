@@ -7,7 +7,6 @@ const Metalsmith = require('metalsmith');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
-const extractPosts = require('./lib/metalsmith-extract-posts');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
@@ -17,9 +16,12 @@ const imagemin = require('metalsmith-imagemin')
 const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
+const markdown = require('metalsmith-markdownit');
 const metafiles = require('metalsmith-metafiles');
+const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
+const postMetadata = require('./lib/metalsmith-post-metadata');
 const srcset = require('./lib/metalsmith-srcset');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
@@ -27,7 +29,8 @@ const watch = require('metalsmith-watch');
 
 const DynamicSelectors = [
   '.js',
-  '.falling-eurocrat'
+  '.falling-eurocrat',
+  '.bg-hero'
 ];
 
 const SiteTitle = 'Julie Koubová';
@@ -78,7 +81,7 @@ function build(options) {
      index: '/img/2015-04-192px@1x.jpeg',
      default: '/img/2015-04-32px@1x.jpeg' 
     },
-    image: '/img/2015-04.jpeg',
+    defaultImage: '/img/2015-04.jpeg',
     siteTitle: SiteTitle,
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
@@ -89,7 +92,12 @@ function build(options) {
       beautify: options.live,
       inline_script: true
     },
-    removeOriginal: true
+    removeOriginal: !options.live
+  }));
+
+  m.use(markdown({
+    typographer: true,
+    html: true
   }));
 
   //
@@ -104,14 +112,16 @@ function build(options) {
     root: 'partials'
   }));
 
+  m.use(postMetadata());
+  
   m.use(layouts({
     engine: 'handlebars',
     pattern: 'posts/**/*.html',
     default: 'post.html'
   }));
   
-  m.use(extractPosts());
-
+  m.use(moveUp('posts/**'));
+  
   m.use(paths());
 
   m.use(inPlace({
@@ -121,16 +131,22 @@ function build(options) {
   m.use(layouts({
     default: 'default.html',
     engine: 'handlebars',
-    pattern: '**/*.html'
-  }));
-  
-  m.use(hyphenate({
-    useLangAttribute: true,
-    ignore: [
-      'google*.html',
-      'pinterest-*.html'
+    pattern: [
+      '**/*.html',
+      '!google*.html',
+      '!pinterest-*.html'
     ]
   }));
+
+  // Safari breaks under the hyphens :(
+    
+  // m.use(hyphenate({
+  //   useLangAttribute: true,
+  //   ignore: [
+  //     'google*.html',
+  //     'pinterest-*.html'
+  //   ]
+  // }));
   
   m.use(srcset());
   

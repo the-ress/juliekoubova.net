@@ -7,6 +7,9 @@
   --gray: #555;
   --light-red: #FF7AA6;
   --dark-red: #D10045;
+  
+  --z-background: -1000;
+  --z-below-text: -100;
 }
 
 html {
@@ -22,7 +25,7 @@ html {
 body {
   min-width: 316px;
   max-width: 30em;
-  margin: 1.75em auto;
+  margin: 0 auto;
   padding: 0 0.4em;
 }
 
@@ -73,9 +76,9 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5em; /* 24px */
-  line-height: 1.1667em; /* 28px */
-  margin-top: 1.1667em;
+  font-size: 1.25em; /* 20px */
+  line-height: 1.4em; /* 28px */
+  margin-top: 1.4em;
   margin-bottom: 0;
 }
 
@@ -96,12 +99,13 @@ p {
   font-size: 1em; /* 16px */
   line-height: 1.75em; /* 28px */
   margin: 0 0 1.75em 0;
-  text-align: justify;
+  /*text-align: justify;*/
 }
 
 .index {
   text-align: center;
-  transition: margin-top 400ms ease-in-out;
+  padding-top: 1.75em;
+  transition: padding-top 400ms ease-in-out;
 }
 
 .typekit-animation, p, h1, h2, h3, h4, h5, h6 {
@@ -235,7 +239,7 @@ footer {
   animation-duration: 3s;
   transition: width 400ms ease-in;
   transform-origin: bottom left;
-  z-index: -100;
+  z-index: var(--z-below-text);
 }
 
 .copy {
@@ -244,6 +248,10 @@ footer {
 
 .copy a {
   text-decoration: none;
+}
+
+article img, .hero img {
+  max-width: 100%;
 }
 
 @keyframes falling-eurocrat {
@@ -311,7 +319,7 @@ footer {
 }
 
 @media screen and (min-height: 670px) {  
-  .index { margin-top: 3.5em; }
+  .index { padding-top: 3.5em; }
   .tags { margin-top: 1.75em; }
   .copy { margin-top: 2.333em; }
 }

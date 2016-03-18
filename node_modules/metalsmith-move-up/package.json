@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      "metalsmith-move-up",
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "metalsmith-move-up@latest",
+  "_id": "metalsmith-move-up@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-move-up",
+  "_npmUser": {
+    "email": "mcdonnelldean@outlook.com",
+    "name": "mcdonnelldean"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "metalsmith-move-up",
+    "raw": "metalsmith-move-up",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/metalsmith-move-up/-/metalsmith-move-up-1.0.0.tgz",
+  "_shasum": "b67cc98bcd670fd8a8e4c4e0de0bb50e100ed9f6",
+  "_shrinkwrap": null,
+  "_spec": "metalsmith-move-up",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "email": "mcdonnelldean@outlook.com",
+    "name": "Dean McDonnell"
+  },
+  "bugs": {
+    "url": "https://github.com/mcdonnelldean/metalsmith-move-up/issues"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "lodash": "^3.8.0",
+    "multimatch": "^2.0.0"
+  },
+  "description": "a MetalSmith plugin for moving the full contents of a directory up one or more levels",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "pre-commit": "^1.0.7",
+    "standard": "^3.7.1",
+    "tape": "^4.0.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "b67cc98bcd670fd8a8e4c4e0de0bb50e100ed9f6",
+    "tarball": "http://registry.npmjs.org/metalsmith-move-up/-/metalsmith-move-up-1.0.0.tgz"
+  },
+  "gitHead": "32457e76fe8736318e6edda2172fa7721068d827",
+  "homepage": "https://github.com/mcdonnelldean/metalsmith-move-up",
+  "keywords": [
+    "directory",
+    "metalsmith",
+    "plugin"
+  ],
+  "license": "MIT",
+  "main": "lib/plugin.js",
+  "maintainers": [
+    {
+      "name": "mcdonnelldean",
+      "email": "mcdonnelldean@outlook.com"
+    }
+  ],
+  "name": "metalsmith-move-up",
+  "optionalDependencies": {},
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mcdonnelldean/metalsmith-move-up.git"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "tape test/*.js | faucet"
+  },
+  "version": "1.0.0"
+}

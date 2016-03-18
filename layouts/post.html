@@ -1,17 +1,31 @@
+<div class="hero-anchor"></div>
+
+{{#if image}}
+<div class="hero">
+  <img src="{{ image }}" alt="{{ imageAlt }}">
+</div>
+{{/if}}
+
 {{> header.html }}
 
 <article>
   
-  {{#if published}}
   <time datetime="{{ iso8601 published }}">
     {{ moment published 'D MMMM YYYY' }}
   </time>
+  {{#if published}}
   {{/if}}
 
   <h2>{{ title }}</h2>
 
   {{{ contents }}}
-
+  
 </article>
 
 {{> footer.html }}
+
+{{#if image}}
+<script>
+{{> hero.min.js }}
+</script>
+{{/if}}

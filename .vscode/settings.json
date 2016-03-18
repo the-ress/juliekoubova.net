@@ -2,5 +2,6 @@
  "files.exclude": {
    "build/": true,
    "typings/": true
- }
+ },
+ "editor.wrappingColumn": 80
 }
