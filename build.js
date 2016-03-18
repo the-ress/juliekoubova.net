@@ -52,7 +52,8 @@ function buildImages() {
   m.destination('src/img');
   
   m.use(define({
-    screenDensity: [ 1, 2 ]
+    screenDensity: [ 1, 2 ],
+    imageSizes: [ 660 ]
   }));
   m.use(metafiles());
   m.use(imageResize());  
