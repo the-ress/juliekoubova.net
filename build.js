@@ -6,6 +6,7 @@ const Q = require('q');
 const Metalsmith = require('metalsmith');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
+const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
@@ -104,6 +105,10 @@ function build(options) {
     typekitTimeout: 1250
   }));
   
+  if (!options.live) {
+    m.use(drafts());
+  }
+  
   m.use(uglify({
     output: {
       beautify: options.live,
@@ -193,7 +198,7 @@ function build(options) {
       },
       livereload: true
     }));
-  } else {
+  } else {    
     m.use(htmlMinifier());
 
     if (options.gzip) {
