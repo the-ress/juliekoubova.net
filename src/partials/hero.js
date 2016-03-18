@@ -5,7 +5,7 @@
   doc[addEventListener] &&
   doc[querySelectorAll] &&
   doc[addEventListener]('DOMContentLoaded', function() {
-    heroes = doc[querySelectorAll]('.hero img');
+    heroes = doc[querySelectorAll]('.hero img, figure img');
     
     if (!heroes) return;
 

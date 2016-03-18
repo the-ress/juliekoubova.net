@@ -11,12 +11,12 @@ const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
-const hyphenate = require('metalsmith-hyphenate')
 const imagemin = require('metalsmith-imagemin')
 const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
-const markdown = require('metalsmith-markdownit');
+const markdownit = require('metalsmith-markdownit');
+const markdownFigures = require('markdown-it-implicit-figures');
 const metafiles = require('metalsmith-metafiles');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
@@ -43,6 +43,19 @@ function mythImports() {
   return myth({
     features: _.fromPairs(mm.features.map(f => [f, f == 'import']))
   });
+}
+
+function markdown() {
+   let md = markdownit({
+    typographer: true,
+    html: true
+  });
+  
+  md.use(markdownFigures, {
+    figcaption: true
+  });
+  
+  return md; 
 }
 
 function buildImages() {
@@ -96,10 +109,8 @@ function build(options) {
     removeOriginal: !options.live
   }));
 
-  m.use(markdown({
-    typographer: true,
-    html: true
-  }));
+
+  m.use(markdown());
 
   //
   // initialize Handlebars
@@ -138,16 +149,6 @@ function build(options) {
       '!pinterest-*.html'
     ]
   }));
-
-  // Safari breaks under the hyphens :(
-    
-  // m.use(hyphenate({
-  //   useLangAttribute: true,
-  //   ignore: [
-  //     'google*.html',
-  //     'pinterest-*.html'
-  //   ]
-  // }));
   
   m.use(srcset());
   
