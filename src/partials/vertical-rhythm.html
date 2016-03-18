@@ -3,7 +3,9 @@
 </label>
 <script>
   (function (doc, key) {
-    !this._phantom && doc.addEventListener('DOMContentLoaded', function () {
+    !this._phantom && 
+    doc.addEventListener && 
+    doc.addEventListener('DOMContentLoaded', function () {
       
       var checkbox = doc.querySelector('#toggle-vertical-rhythm input');
       

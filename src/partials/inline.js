@@ -31,7 +31,8 @@
     } catch (e) { }
   };
 
-  element = doc.head;
+  // no head in IE <9
+  element = doc.getElementsByTagName('head')[0];
   element[appendChild](gaElement);
   element[appendChild](tkElement);
 
@@ -39,7 +40,7 @@
   element[className] = element[className][replace](/\bno-js\b/, 'js');
 
   // test text-shadow
-  if (doc[createElement](createElement).style.textShadow === "") {
+  if (doc[createElement](createElement)[style].textShadow === "") {
     element[className] += " textshadow";
   }
 
