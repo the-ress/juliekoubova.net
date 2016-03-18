@@ -23,6 +23,6 @@ Po debatě jsme šly na panáka do vedlejšího baru a já si plnými doušky u�
 
 Vždycky se mi líbilo nechat se vést, zejména v zásadních otázkách typu kam půjdeme a co budeme pít, ale to je u chlapečků hrozně neatraktivní. Je neskutečně osvobozující nebýt nucena projevovat se rozhodně, pokud nechci, a vědět, že to na moji atraktivitu nebude mít negativní dopad; spíš naopak. 
 
-A pochopitelně nejde ani tolik o výběr tequily, ale hlavně o romantické vztahy a jejich navazování. Je mi daleko příjemnější představa pasivně se soustředit na to, abych byla maximálně okouzlující (a co nejlíp kontrolovala svůj vztek a deprese když NRE fáze pomine), než někoho aktivně balit. Pokud mě chtějí, fajn, můžu je chtít taky. Pokud ne, není to nic, co bych mohla svým konáním změnit.
+A pochopitelně nejde ani tolik o výběr tequily, ale hlavně o romantické vztahy. Je mi daleko příjemnější představa pasivně se soustředit na to, abych byla maximálně okouzlující (a co nejlíp kontrolovala svůj vztek a deprese když NRE fáze pomine), než někoho aktivně balit. Pokud mě chtějí, fajn, můžu je chtít taky. Pokud ne, není to nic, co bych mohla svým konáním změnit.
 
 *[NRE]: New Relationship Energy
