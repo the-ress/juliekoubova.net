@@ -84,6 +84,18 @@ h2 {
   margin-bottom: 1em;
 }
 
+h2 a {
+  text-decoration: none;
+}
+
+h2 a:link,
+h2 a:active,
+h2 a:focus,
+h2 a:hover,
+h2 a:visited  {
+  color: var(--gray);
+}
+
 h3 {
   font-size: 1.25em; /* 20px */
   line-height: 1.4em; /* 28px */
@@ -269,6 +281,11 @@ figcaption {
   margin: 0;
   text-align: right;
   color: var(--light-red);
+}
+
+iframe {
+  display: block;
+  margin: 0;
 }
 
 @keyframes falling-eurocrat {
