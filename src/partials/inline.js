@@ -31,7 +31,7 @@
     } catch (e) { }
   };
 
-  // no head in IE <9
+  // no document.head in IE <9
   element = doc.getElementsByTagName('head')[0];
   element[appendChild](gaElement);
   element[appendChild](tkElement);
@@ -43,7 +43,7 @@
   if (doc[createElement](createElement)[style].textShadow === "") {
     element[className] += " textshadow";
   }
-
+  
   !this._phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
     function(el) {
