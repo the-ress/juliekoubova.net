@@ -128,7 +128,7 @@ p {
   transition: padding-top 400ms ease-in-out;
 }
 
-.typekit-animation, p, h1, h2, h3, h4, h5, h6 {
+.typekit-animation, p, h1, h2, h3, h4, h5, h6, time, footer, figcaption {
   transition: opacity 800ms ease-out;
   opacity: 1;
 }
