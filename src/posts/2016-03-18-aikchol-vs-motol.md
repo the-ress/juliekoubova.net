@@ -35,7 +35,7 @@ Nedávno internety proběhla [3D animace ilustrující penilní inverzi](https:/
 
 ### Thajské techniky (Dr. Suporn, Dr. Chettawut)
 
-To nejlepší nakonec. Budu psát hlavně o Supornově technice, Chettawutova se může v některých ohledech lišit. Slyšela jsem, že oba před lety trénovali u toho samého chirurga, ale nevím zda je to pravda. Dávalo by to smysl. O ostatních lékařích, kteří se v Thajsku specializují na západní klientelu, nic nevím.
+To nejlepší nakonec. Budu psát hlavně o Supornově technice, Chettawutova se může v některých ohledech lišit. O ostatních lékařích, kteří se v Thajsku specializují na západní klientelu, nic nevím.
 
 Vaginu vytvoří ze scrota, kromě úplného dna, na které použije lubrikující tkáň urethry. Pokud šourek nestačí, použije kožní štěp z třísel. Hloubka kundičky je limitovaná prostorem v břišní dutině, velikost továrního vybavení je zcela nepodstatná. Dr. Suporn garantuje minimálně 14 centimetrů.
 
