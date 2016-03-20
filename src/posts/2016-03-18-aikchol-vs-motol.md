@@ -10,7 +10,7 @@ Připadám si absurdně jenom píšíc tento titulek, ale nedávno jsem četla [
 
 Tady bych ráda zesumarizovala faktory, které byly při výběru důležité pro mne. Existuje několik zásadně odlišných technik:
 
-### Sigmod Colon Vaginoplasty
+### Sigmoid Colon Vaginoplasty
 
 Vaginální stěna je vytvořena ze spodní části tlustého střeva. Výsledná neovagina má hloubku až 20 cm (kundičky AFAB <span title="cis jsou lidé, kteří nejsou trans">cis</span> <span title="dyadičtí jsou lidé, kteří nejsou intersex">dyadických</span> lidí mají typicky ~14 cm, ale nelze to úplně srovnávat, protože jsou flexibilnější).
 
