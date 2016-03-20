@@ -1,6 +1,9 @@
 {{#if image}}
 <div class="hero">
   <img src="{{ image }}" alt="{{ imageAlt }}">
+  {{#if imageAlt}}
+  <figcaption>{{ imageAlt }}</figcaption>
+  {{/if}}
 </div>
 {{/if}}
 

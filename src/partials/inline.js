@@ -1,4 +1,5 @@
-(function(doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async,
+(function(
+  doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async,
   src, appendChild, style, width, tkConfig, gaElement, tkElement, element) {
 
   function triggerTypekitAnimation(delay) {

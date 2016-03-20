@@ -99,8 +99,9 @@ h2 a:visited  {
 h3 {
   font-size: 1.25em; /* 20px */
   line-height: 1.4em; /* 28px */
-  margin-top: 1.4em;
-  margin-bottom: 0;
+  margin-top: 2.8em;
+  margin-bottom: 1.4em;
+  font-weight: 400;
 }
 
 a:visited {
@@ -122,13 +123,20 @@ p {
   margin: 0 0 1.75em 0;
 }
 
+abbr[title], span[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
 .index {
   text-align: center;
   padding-top: 1.75em;
   transition: padding-top 400ms ease-in-out;
 }
 
-.typekit-animation, p, h1, h2, h3, h4, h5, h6, time, footer, figcaption {
+.typekit-animation, p, 
+h1, h2, h3, h4, h5, h6, 
+time, footer, figcaption, blockquote {
   transition: opacity 800ms ease-out;
   opacity: 1;
 }
@@ -143,7 +151,8 @@ p {
 .js.no-typekit h6,
 .js.no-typekit time,
 .js.no-typekit footer,
-.js.no-typekit figcaption {
+.js.no-typekit figcaption,
+.js.no-typekit blockquote {
   opacity: 0;
 }
 
@@ -288,6 +297,23 @@ iframe {
   margin: 0;
 }
 
+blockquote {
+  margin: 0 0 0 0.5em;
+  padding-left: 1.5em;
+  font-style: italic;
+  border-left: 3px solid var(--light-red);
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: var(--light-red);
+}
+
+blockquote cite:before {
+  content: "\2014 ";
+}
+
 @keyframes falling-eurocrat {
   0% {
     animation-timing-function: ease-in-out;
@@ -338,6 +364,7 @@ iframe {
 }
 
 @media screen and (min-width: 480px) {
+  p { text-align: justify; }
   .contacts li { margin: 0 0.6em; }
   .cookie-law { margin: 0 -2em; }
   .cookie-law > div { display: inline; }
@@ -382,7 +409,7 @@ iframe {
     text-decoration: underline;
     content: " (" attr(href) ")"; 
   }
-  abbr[title]:after { content: " (" attr(title) ")"; }
+  abbr[title]:after, span[title]:after { content: " (" attr(title) ")"; }
   /* Don't show links for images, or javascript/internal links */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
