@@ -1,0 +1,10 @@
+<ul>
+{{#each collections.posts}}
+  <li>
+    <a href="{{ this.path.href }}">
+      <img src="{{ this.image }}">
+      <h2>{{ this.title }}</h2>
+    </a>
+  </li>
+{{/each}}
+</ul>

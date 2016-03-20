@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node build.js",
-    "live": "node build.js --live",
+    "start": "node build.js --live",
     "build": "node build.js --production",
-    "server": "node build.js --server",
+    "test": "node build.js --server",
     "images": "node images.js",
     "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
@@ -24,6 +23,7 @@
     "markdown-it-abbr": "^1.0.3",
     "markdown-it-implicit-figures": "^0.2.3",
     "metalsmith": "^2.1.0",
+    "metalsmith-collections": "^0.7.0",
     "metalsmith-define": "^1.0.0",
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-drafts": "0.0.1",

@@ -4,6 +4,7 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
+const collections = require('metalsmith-collections');
 const define = require('metalsmith-define');
 const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
@@ -109,13 +110,21 @@ function build(options) {
     pattern: 'posts/**/*.html', 
     metadata: {
       fbType: 'article',
-      layout: 'post.html'      
+      layout: 'post.html',
+      collection: 'posts'      
     } 
   } ]))
   
   m.use(moveUp('posts/**'));
   
   m.use(paths());
+  
+  m.use(collections({
+    posts: {
+      sortBy: 'published',
+      reverse: true
+    }
+  }));
   
   // ===========================================================================
   // NO METADATA CHANGES, ONLY TEMPLATING BEYOND THIS POINT
