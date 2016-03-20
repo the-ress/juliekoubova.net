@@ -12,14 +12,11 @@ const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
-const imagemin = require('metalsmith-imagemin')
-const imageResize = require('./lib/metalsmith-image-resize');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const markdownit = require('metalsmith-markdownit');
 const markdownAbbr = require('markdown-it-abbr');
 const markdownFigures = require('markdown-it-implicit-figures');
-const metafiles = require('metalsmith-metafiles');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
@@ -62,23 +59,6 @@ function markdown() {
   return md; 
 }
 
-function buildImages() {
-  let m = new Metalsmith(__dirname);
-
-  m.source('img');
-  m.destination('src/img');
-  
-  m.use(define({
-    screenDensity: [ 1, 2 ],
-    imageSizes: [ 660 ]
-  }));
-  m.use(metafiles());
-  m.use(imageResize());  
-  m.use(imagemin());
-  
-  return Q.nfcall(_.bind(m.build, m));  
-}
-
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -116,7 +96,6 @@ function build(options) {
     },
     removeOriginal: !options.live
   }));
-
 
   m.use(markdown());
 
@@ -213,16 +192,9 @@ function hasSwitch(arg) {
   return _.includes(process.argv, `--${arg}`);
 }
 
-var promise;
+var options = {
+  live: hasSwitch('live'),
+  gzip: hasSwitch('production')
+};
 
-if (hasSwitch('images')) {
-  promise = buildImages();
-}
-else {  
-  promise = build({
-    live: hasSwitch('live'),
-    gzip: hasSwitch('production')
-  });
-}
-
-promise.done();
+build(options).done();
