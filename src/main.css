@@ -307,7 +307,6 @@ blockquote {
 blockquote cite {
   display: block;
   text-align: right;
-  color: var(--light-red);
 }
 
 blockquote cite:before {
