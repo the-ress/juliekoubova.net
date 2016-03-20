@@ -4,13 +4,12 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
-const cssInliner = require('./lib/metalsmith-css-inliner');
 const define = require('metalsmith-define');
 const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
+const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
-const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const htmlMinifier = require('metalsmith-html-minifier');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
@@ -20,11 +19,14 @@ const markdownFigures = require('markdown-it-implicit-figures');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
-const postMetadata = require('./lib/metalsmith-post-metadata');
-const srcset = require('./lib/metalsmith-srcset');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
+
+const cssInliner = require('./lib/metalsmith-css-inliner');
+const extractPublished = require('./lib/metalsmith-extract-published');
+const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+const srcset = require('./lib/metalsmith-srcset');
 
 const DynamicSelectors = [
   '.js',
@@ -99,36 +101,52 @@ function build(options) {
 
   m.use(markdown());
 
-  //
-  // initialize Handlebars
-  //
-   
-  m.use(handlebarsHelpers({
-    directory: 'helpers'
-  }));
+  // apply dates and turn posts into directories with an index.html
+  m.use(extractPublished());
   
-  m.use(handlebarsPartials({
-    root: 'partials'
-  }));
-
-  m.use(postMetadata());
-  
-  m.use(layouts({
-    engine: 'handlebars',
-    pattern: 'posts/**/*.html',
-    default: 'post.html'
-  }));
+  // apply additional post metadata
+  m.use(fileMetadata([ { 
+    pattern: 'posts/**/*.html', 
+    metadata: {
+      fbType: 'article',
+      layout: 'post.html'      
+    } 
+  } ]))
   
   m.use(moveUp('posts/**'));
   
   m.use(paths());
+  
+  // ===========================================================================
+  // NO METADATA CHANGES, ONLY TEMPLATING BEYOND THIS POINT
+  // ===========================================================================
 
+  // initialize Handlebars
+  m.use(handlebarsHelpers({ directory: 'helpers' }));  
+  m.use(handlebarsPartials({ root: 'partials' }));
+  
   m.use(inPlace({
-    engine: 'handlebars'
+    engine: 'handlebars',
+    pattern: '**/*.hbs',
+    rename: true
   }));
 
+  // apply per-page layouts
   m.use(layouts({
-    default: 'default.html',
+    engine: 'handlebars',
+    pattern: '**/*.html',
+  }));
+  
+  // change all pages to use default layout 
+  m.use(fileMetadata([ {
+    pattern: '**/*.html',
+    metadata: {
+      layout: 'default.html'
+    }
+  } ]));
+
+  // apply default layout set in previous step
+  m.use(layouts({
     engine: 'handlebars',
     pattern: [
       '**/*.html',
@@ -167,9 +185,16 @@ function build(options) {
     css: 'index.css',
     html: 'index.html'
   }));
+  
+  if (!options.live) {
+    m.use(htmlMinifier());
+  }  
 
-  if (options.live) {
+  if (options.live || options.server) {
     m.use(express());
+  }
+  
+  if (options.live) {
     m.use(watch({
       paths: {
         '${source}/**/*': '**/*',
@@ -177,12 +202,10 @@ function build(options) {
       },
       livereload: true
     }));
-  } else {    
-    m.use(htmlMinifier());
-
-    if (options.gzip) {
-      m.use(gzip({ gzip: { level: 9 } }));
-    }
+  } else if (options.gzip) {
+    m.use(gzip({ 
+      gzip: { level: 9 } 
+    }));
   }
 
   return Q.nfcall(_.bind(m.build, m));
@@ -193,8 +216,9 @@ function hasSwitch(arg) {
 }
 
 var options = {
+  gzip: hasSwitch('production'),
   live: hasSwitch('live'),
-  gzip: hasSwitch('production')
+  server: hasSwitch('server')
 };
 
 build(options).done();

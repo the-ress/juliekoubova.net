@@ -7,6 +7,7 @@
     "test": "node build.js",
     "live": "node build.js --live",
     "build": "node build.js --production",
+    "server": "node build.js --server",
     "images": "node images.js",
     "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
@@ -27,6 +28,7 @@
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-express": "^0.1.0",
+    "metalsmith-filemetadata": "^1.0.0",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-html-minifier": "^2.0.0",
     "metalsmith-imagemin": "^1.2.0",
