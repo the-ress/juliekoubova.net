@@ -1,6 +1,7 @@
 ---
 title: Aikchol vs. Motol
 image: index.jpeg
+bannerStyle: 'top: -12px;'
 imageAlt: Pohled z mého pokoje v Aikchol Hospital
 description: Každá máme jen jeden dobrý pokus a musíme s důsledky své volby žít po zbytek života.
 lang: cs

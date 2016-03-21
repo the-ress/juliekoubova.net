@@ -1,15 +1,31 @@
-<section class="post-container">
+{{> header.html }}
+
+<section class="banner-container">
+  
 {{#each collections.posts}}
-  {{#unless this.draft}}
-  <a class="post" href="{{ this.path.href }}">
-    {{#if this.image}}
-      <div class="image">
-        <img src="{{ this.path.href }}{{ this.image }}" width="200" style="bottom: -14px;">
-      </div>
+
+  <a class="banner" href="{{ this.path.href }}">
+ 
+    <div class="banner-image">
+      {{#if this.image}}
+        <img src="{{ this.path.href }}{{ this.image }}" 
+             width="200" 
+             style="{{ or this.bannerStyle 'top: 0;' }}"
+             alt="">
       {{/if}}
-      <h2>{{ or this.titleShort this.title }}</h2>
+    </div>
+      
+    <time datetime="{{ iso8601 published }}">
+      {{ moment published 'D. M. YYYY' }}
+    </time>
+    
+    <h2>{{ or this.bannerTitle (or this.title this.path.href) }}</h2>
+    
     <p>{{ this.description }}</p>
   </a>
-  {{/unless}}
+
 {{/each}}
-</ul>
+
+</section>
+
+{{> footer.html }}
