@@ -45,12 +45,12 @@ h1 a, h1 a:visited, h1 a:hover, h1 a:active, h1:focus {
   text-decoration: none;
 }
 
-article time, footer, figcaption {
+article time, footer, figcaption, .cookie-law {
   font-size: 0.75em; /* 12px */
   line-height: 2.3334em; /* 28px */
 }
 
-article time, footer {
+article time, footer, .cookie-law {
   margin-top: 2.3333em;
   margin-bottom: 0;
   font-weight: 300;
@@ -317,7 +317,8 @@ blockquote cite:before {
 }
 
 .banner-container {
-  margin-top: 1.75em;
+  text-align: left;
+  margin-top: 3.5em;
   margin-left: auto;
   margin-right: auto;
   max-width: 316px;
@@ -450,7 +451,10 @@ blockquote cite:before {
 @media screen and (min-width: 480px) {
   p { text-align: justify; }
   .contacts li { margin: 0 0.6em; }
-  .cookie-law { margin: 0 -2em; }
+  .cookie-law { 
+    margin-left: -2em; 
+    margin-right: -2em; 
+  }
   .cookie-law > div { display: inline; }
 }
 
