@@ -1,5 +1,6 @@
 ---
-title: Pojďte na Queer Eye 2016
+title: Pojďte na festival Queer Eye 2016
+titleShort: Pojďte na Queer Eye!
 image: index.png
 imageAlt: Festival Queer Eye 2016
 description: 'Tentokrát nebudu mluvit sama, ale budeme na trans* bloku festivalu Queer Eye s Terezou obě. Přijďte nás podpořit a položit nám nějaké záludné otázky!'

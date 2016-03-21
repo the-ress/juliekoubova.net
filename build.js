@@ -32,12 +32,6 @@ const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const srcset = require('./lib/metalsmith-srcset');
 
-const DynamicSelectors = [
-  '.js',
-  '.falling-eurocrat',
-  '.bg-hero'
-];
-
 const SiteTitle = 'Julie Koubová';
 const SiteDescription = 
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
@@ -188,15 +182,13 @@ function build(options) {
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
-    removeOriginal: false,
-    uncss: { ignore: DynamicSelectors }
+    removeOriginal: false
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
-    output: 'main.css',
-    uncss: { ignore: DynamicSelectors }
+    output: 'main.css'
   }));
 
   // compress uncss output

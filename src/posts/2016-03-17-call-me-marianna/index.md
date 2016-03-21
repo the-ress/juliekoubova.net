@@ -1,7 +1,7 @@
 ---
 title: Call Me Marianna
 image: index.jpeg
-imageAlt: Fotka z filmu Call Me Marianna
+imageAlt: Snímek z filmu Call Me Marianna
 description: Festival Jeden svět mi umožnil exhibovat po promítání filmu Call Me Marianna.
 lang: cs
 ---

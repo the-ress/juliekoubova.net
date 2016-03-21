@@ -1,6 +1,6 @@
 (function(
-  doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async,
-  src, appendChild, style, width, tkConfig, gaElement, tkElement, element) {
+  doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async, src, appendChild, style, width, display, no,
+  tkConfig, gaElement, tkElement, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -44,6 +44,17 @@
   if (doc[createElement](createElement)[style].textShadow === "") {
     element[className] += " textshadow";
   }
+
+  // test flexbox
+  var c = " ", f = "flex", fw = "-webkit-"+f, e = doc[createElement]('b');
+  try { 
+    e[style][display] = fw; 
+    e[style][display] = f; 
+    c += (e[style][display] == f || e[style][display] == fw) ? f : no+f; 
+  } catch(e) { 
+    c += no+f; 
+  }
+  element[className] += c;
   
   !this._phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
@@ -74,6 +85,8 @@
   'appendChild',
   'style',
   'width',
+  'display',
+  'no-',
   {}
 );
 

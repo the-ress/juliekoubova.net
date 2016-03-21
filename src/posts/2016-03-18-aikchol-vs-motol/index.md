@@ -1,7 +1,7 @@
 ---
 title: Aikchol vs. Motol
 image: index.jpeg
-imageAlt: Pohled z pokoje v Aikchol Hospital
+imageAlt: Pohled z mého pokoje v Aikchol Hospital
 description: Každá máme jen jeden dobrý pokus a musíme s důsledky své volby žít po zbytek života.
 lang: cs
 ---
@@ -14,7 +14,7 @@ Tady bych ráda zesumarizovala faktory, které byly při výběru důležité pr
 
 Vaginální stěna je vytvořena ze spodní části tlustého střeva. Výsledná neovagina má hloubku až 20 cm (kundičky AFAB <span title="cis jsou lidé, kteří nejsou trans">cis</span> <span title="dyadičtí jsou lidé, kteří nejsou intersex">dyadických</span> lidí mají typicky ~14 cm, ale nelze to úplně srovnávat, protože jsou flexibilnější).
 
-Sliznice střeva poskytuje neustálou lubrikaci, což může být užitečné pro sex, ale dost nepraktické všechnu ostatní dobu, když zrovna nešukáte. Není třeba se bát žádného zápachu, ten způsobují bakterie v zažívacím traktu, a ty jsou pochopitelně před použitím odstraněny.
+Sliznice střeva poskytuje neustálou lubrikaci, což může být užitečné pro sex, ale dost nepraktické všechnu ostatní dobu, když zrovna nešukáte. Není třeba se bát žádného zápachu, ten způsobují bakterie, které jsou pochopitelně před použitím odstraněny.
 
 Každopádně tato technika nebývá první volbou, riskujete při ní nejen genitálie, ale i zažívací trakt, je potřeba otevřít břišní dutinu... A pokud se bavíme mimo kontext socialistického zdravotnictví, tak je logicky i dražší.
 

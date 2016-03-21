@@ -1,10 +1,15 @@
-<ul>
+<section class="post-container">
 {{#each collections.posts}}
-  <li>
-    <a href="{{ this.path.href }}">
-      <img src="{{ this.image }}">
-      <h2>{{ this.title }}</h2>
-    </a>
-  </li>
+  {{#unless this.draft}}
+  <a class="post" href="{{ this.path.href }}">
+    {{#if this.image}}
+      <div class="image">
+        <img src="{{ this.path.href }}{{ this.image }}" width="200" style="bottom: -14px;">
+      </div>
+      {{/if}}
+      <h2>{{ or this.titleShort this.title }}</h2>
+    <p>{{ this.description }}</p>
+  </a>
+  {{/unless}}
 {{/each}}
 </ul>
