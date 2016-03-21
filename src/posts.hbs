@@ -4,14 +4,14 @@
   
 {{#each collections.posts}}
 
-  <a class="banner" href="{{ this.path.href }}">
+  <a class="banner" href="{{ this.path.href }}" title="{{ this.description }}">
  
     <div class="banner-image">
       {{#if this.image}}
         <img src="{{ this.path.href }}{{ this.image }}" 
-             width="200" 
-             style="{{ or this.bannerStyle 'top: 0;' }}"
-             alt="">
+             width="200" alt=""
+             {{#if this.bannerStyle}} style="{{ this.bannerStyle  }}" {{/if}}
+             >
       {{/if}}
     </div>
       

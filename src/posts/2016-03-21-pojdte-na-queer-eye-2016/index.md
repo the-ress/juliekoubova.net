@@ -1,7 +1,6 @@
 ---
 title: Pojďte na festival Queer Eye 2016
 bannerTitle: Pojďte na Queer Eye!
-bannerStyle: 'top: -2px;'
 image: index.png
 imageAlt: Festival Queer Eye 2016
 description: 'Tentokrát nebudu mluvit sama, ale budeme na trans* bloku festivalu Queer Eye s Terezou obě. Přijďte nás podpořit a položit nám nějaké záludné otázky!'
