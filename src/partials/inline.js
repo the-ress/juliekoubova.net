@@ -46,15 +46,15 @@
   }
 
   // test flexbox
-  var c = " ", f = "flex", fw = "-webkit-"+f, e = doc[createElement]('b');
-  try { 
-    e[style][display] = fw; 
-    e[style][display] = f; 
-    c += (e[style][display] == f || e[style][display] == fw) ? f : no+f; 
-  } catch(e) { 
-    c += no+f; 
-  }
-  element[className] += c;
+  // var c = " ", f = "flex", fw = "-webkit-"+f, e = doc[createElement]('b');
+  // try { 
+  //   e[style][display] = fw; 
+  //   e[style][display] = f; 
+  //   c += (e[style][display] == f || e[style][display] == fw) ? f : no+f; 
+  // } catch(e) { 
+  //   c += no+f; 
+  // }
+  // element[className] += c;
   
   !this._phantom && doc[addEventListener] && doc[addEventListener](
     'DOMContentLoaded',
