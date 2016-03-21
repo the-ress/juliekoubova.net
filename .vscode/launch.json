@@ -5,7 +5,7 @@
 			"name": "Images",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}/build.js",
+			"program": "${workspaceRoot}/images.js",
 			"stopOnEntry": false,
 			"args": ["--images"],
 			"cwd": "${workspaceRoot}",

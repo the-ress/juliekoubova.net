@@ -1,6 +1,6 @@
 ---
 title: Call Me Marianna
-image: /img/2016-03-17-call-me-marianna-660px@1x.jpeg
+image: index.jpeg
 imageAlt: Fotka z filmu Call Me Marianna
 description: Festival Jeden svět mi umožnil exhibovat po promítání filmu Call Me Marianna.
 lang: cs
@@ -13,7 +13,7 @@ A to nebylo veškeré misgenderování. Marianna nám představí svého kamará
 
 Organizátoři byli tak odvážní, že mě pozvali jako hosta do debaty po filmu. A já jsem samozřejmě nemohla oslyšet příležitost exhibovat před stovkou lidí a vykládat, o kolik je život snažší, když vás vlastní rodina nezavrhne jako Mariannu ve filmu, jen protože si dovolíte být sami sebou.
 
-![Ondřej Plešmíd a Julie, &copy; Tereza Havlínková](/img/2016-03-17-debata-660px@1x.jpeg)
+![Ondřej Plešmíd a Julie, &copy; Tereza Havlínková](debata-660px.jpeg)
 
 Ze začátku jsem byla trochu nervozní---čekala jsem něco velikosti malého sálu v Světozoru, a ono je [Ponrepo](http://nfa.cz/cz/kino-ponrepo/) dvakrát větší---a úvodní hejt proti povinné sterilizaci se mi nepovedlo podat s potřebnou razancí. Pak jsem si zvykla, a když došlo na otázky o sexu, tak jsem se reakcemi publika už jenom bavila.
 

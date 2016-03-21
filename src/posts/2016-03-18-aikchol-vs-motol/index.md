@@ -1,6 +1,6 @@
 ---
 title: Aikchol vs. Motol
-image: /img/2016-03-18-aikchol-vs-motol-660px@1x.jpeg
+image: index.jpeg
 imageAlt: Pohled z pokoje v Aikchol Hospital
 description: Každá máme jen jeden dobrý pokus a musíme s důsledky své volby žít po zbytek života.
 lang: cs
@@ -30,7 +30,7 @@ Hloubka takto vytvořené kundičky může být od zcela nepoužitelných 2 cm a
 
 Nedávno internety proběhla [3D animace ilustrující penilní inverzi](https://gfycat.com/LightShinyBufeo). NSFW, jako bych to musela psát...
 
-![Animace penilní inverze](/img/2016-03-18-penile-inversion-660px@1x.jpeg)
+![Animace penilní inverze](penile-inversion-660px.jpeg)
 
 
 ### Thajské techniky (Dr. Suporn, Dr. Chettawut)
@@ -45,7 +45,7 @@ Dr. Suporn rozděluje žalud na dvě části, z menší vytvoří klitoris, ze z
 
 Negativem je, že tato operace trvá déle, je pro tělo větší zásah, vyžaduje delší rekonvalscenci a dilatační režim po operaci je náročnější. V mém případě trvalo sedm týdnů, než jsem se začala cítit normálně zdravá.
 
-![Supornova klinika](/img/2016-03-18-suporn-clinic-660px@1x.jpeg)
+![Supornova klinika](suporn-clinic-660px.jpeg)
 
 ### Obligátní hejt na Motol
 

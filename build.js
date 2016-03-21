@@ -12,11 +12,13 @@ const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const htmlMinifier = require('metalsmith-html-minifier');
+const ignore = require('metalsmith-ignore');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const markdownit = require('metalsmith-markdownit');
 const markdownAbbr = require('markdown-it-abbr');
 const markdownFigures = require('markdown-it-implicit-figures');
+const metadata = require('metalsmith-metadata');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
@@ -26,6 +28,7 @@ const watch = require('metalsmith-watch');
 
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const extractPublished = require('./lib/metalsmith-extract-published');
+const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const srcset = require('./lib/metalsmith-srcset');
 
@@ -79,19 +82,29 @@ function build(options) {
     lang: 'cs',
     live: options.live,
     portrait: {
-     index: '/img/2015-04-192px@1x.jpeg',
-     default: '/img/2015-04-32px@1x.jpeg' 
+     index: '/2015-04-192px.jpeg',
+     default: '/2015-04-32px.jpeg' 
     },
-    defaultImage: '/img/2015-04.jpeg',
+    defaultImage: '/2015-04.jpeg',
     siteTitle: SiteTitle,
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
+  }));
+  
+  m.use(metadata({
+    imageMap: 'img/map.json'
   }));
   
   if (!options.live) {
     m.use(drafts());
   }
   
+  // publish only the processed images from /img
+  m.use(ignore([
+    '**/*.+(jpg|jpeg|png|gif)',
+    '!img/**'
+  ]));
+    
   m.use(uglify({
     output: {
       beautify: options.live,
@@ -116,6 +129,7 @@ function build(options) {
   } ]))
   
   m.use(moveUp('posts/**'));
+  m.use(fixUpImageMap()); 
   
   m.use(paths());
   
