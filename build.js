@@ -72,6 +72,7 @@ function build(options) {
     css: '/main.css',
     date: new Date(),
     description: SiteDescription,
+    fbAppId: '1714468662102619',
     fbAuthor: 'https://facebook.com/julie.e.harshaw',
     fbType: 'website',
     googleAnalyticsProperty: 'UA-58690305-1',
