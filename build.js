@@ -26,12 +26,14 @@ const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
+const canonicalUrls = require('./lib/metalsmith-canonical-urls');
 const cssInliner = require('./lib/metalsmith-css-inliner');
 const extractPublished = require('./lib/metalsmith-extract-published');
 const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const srcset = require('./lib/metalsmith-srcset');
 
+const BaseUrl = 'https://juliekoubova.net';
 const SiteTitle = 'Julie Koubová';
 const SiteDescription = 
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
@@ -66,7 +68,7 @@ function build(options) {
   m.destination('build');
 
   m.use(define({
-    baseUrl: 'https://juliekoubova.net',
+    baseUrl: BaseUrl,
     css: '/main.css',
     date: new Date(),
     description: SiteDescription,
@@ -173,6 +175,10 @@ function build(options) {
   }));
   
   m.use(srcset());
+  
+  m.use(canonicalUrls({
+    baseUrl: BaseUrl
+  }));
   
   m.use(mythImports());
 
