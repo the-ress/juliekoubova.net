@@ -68,7 +68,7 @@ Další příšerný aspekt je, že ženy podstupující operaci v Motole zřejm
 >
 > <cite>Markéta Lisová, [12. března 2016](http://themarketka.blogspot.com/2016/03/srovnani-operace-v-motole-v-thajsku.html?showComment=1457805930147#c7935732957993901126)</cite>
 
-Markéta má "štěstí," že je asexuální, a její očekávaní byla realisticky nastavena na "nebude to penis" a "půjde čůrat." Což je naprosto v pořádku, ale trochu se bojím, že spousta trans žen od motolské operace čeká možnost penetrativního sexu, a pak jsou nemile překvapeny.
+Markéta má "štěstí," že je asexuální, a její očekávaní byla realisticky nastavena na **nebude to penis** a **půjde čůrat**. Což je naprosto v pořádku, ale trochu se bojím, že spousta trans žen od motolské operace čeká možnost penetrativního sexu, a pak jsou nemile překvapeny.
 
 ### Jak jsem vybírala já
 

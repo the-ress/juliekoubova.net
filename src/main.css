@@ -41,7 +41,6 @@ h1 {
 
 h1 a, h1 a:visited, h1 a:hover, h1 a:active, h1:focus {
   color: var(--gray);
-  text-shadow: transparent 0 0 0;
   text-decoration: none;
 }
 
@@ -111,12 +110,6 @@ a:visited {
 
 a:link, a:active, a:hover, a:focus {
   color: var(--dark-red);
-}
-
-/* uncss:ignore */
-.textshadow a:hover, .textshadow a:active, .textshadow a:focus {
-  outline: none;
-  text-shadow: var(--light-red) 0 0 0.5em;
 }
 
 p {
@@ -310,6 +303,7 @@ blockquote {
 blockquote cite {
   display: block;
   text-align: right;
+  font-style: normal;
 }
 
 blockquote cite:before {
@@ -330,7 +324,6 @@ blockquote cite:before {
   height: 224px;
   margin-bottom: 1.75em;
   text-decoration: none;
-  overflow: hidden;
 }
 
 .banner:link, .banner:visited {
@@ -368,7 +361,7 @@ blockquote cite:before {
   line-height: 2.3333em; /* 28px */
   text-align: left;
   min-height: 28px;
-  max-height: 112px;
+  max-height: 56px;
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
@@ -442,6 +435,8 @@ blockquote cite:before {
     float: left;
     margin: 0 5px 1.75em 5px;
   }
+  
+  .banner p { max-height: 84px; }
   
   .banner-image {
     height: 56px;
