@@ -50,9 +50,9 @@ Negativem je, že tato operace trvá déle, je pro tělo větší zásah, vyžad
 
 ### Obligátní hejt na Motol
 
-Zpátky do Prahy. Moje výhrada k motolským výsledkům neleží ani tak v té technice. Dobře udělaná inverze může mít přijatelné výsledky, alespoň co se hloubky týče, když už ne vzhledem a citlivostí. Problém je, že motolské výsledky jsou extrémně nekonzistentní.
+Zpátky do Prahy. Moje výhrada k motolským operacím neleží ani tak v té technice. Dobře udělaná inverze může mít přijatelné výsledky, alespoň co se hloubky týče, když už ne vzhledem a citlivostí. Problém je, že motolské výsledky jsou extrémně nekonzistentní.
 
-Viděla jsem jednu, která možná (z dálky, za šera) vypadala docela přijatelně. Viděla jsem dvě naprosto tragické. "Klitoris," zcela jasně identifikovatelný jako žalud penisu, volně visící v podivné díře nad ústím močové trubice. Vnější pysky s obrovskou, špatně zašitou separací, pořád připomínající spíš šourek. Vaginální vchod asi tři centimetry výše, než by měl být. Žádné vnitřní pysky, natož potom ze správné kůže. Hloubka 4 (čtyři!) centimetry.
+Viděla jsem jednu, která možná (z dálky, za šera) vypadala docela přijatelně. Viděla jsem dvě naprosto tragické, takové kubistické mixy částí mužských orgánů. "Klitoris," zcela jasně identifikovatelný jako žalud penisu, volně visící v podivné díře nad ústím močové trubice. Vnější pysky s obrovskou, špatně zašitou separací, pořád připomínající spíš šourek. Vaginální vchod asi tři centimetry výše, než by měl být. Žádné vnitřní pysky, natož potom ze správné kůže. Hloubka 4 (čtyři!) centimetry.
 
 Určitě takhle hrozně nedopadnou všechny, ale to fakt není ruleta, kterou by někdo chtěl hrát.
 
@@ -72,7 +72,7 @@ Markéta má "štěstí," že je asexuální, a její očekávaní byla realisti
 
 ### Jak jsem vybírala já
 
-Já jsem velmi sexuální bytost, rozhodně jsem nechtěla být omezená jen na orgasmy při análním sexu---které si navíc sama ani neumím udělat---a tak jsem se rozhodovala podle důrazu na maximální citlivost. A samozřejmě bych chtěla mít sex a vypadat hezky přirozeně.
+Já jsem chtěla minimalizovat riziko, že mi zůstanou jen orgasmy při análním sexu---které si sama ani neumím udělat---a tak jsem se rozhodovala podle důrazu na citlivost. A samozřejmě bych chtěla mít vaginální sex a vypadat hezky přirozeně.
 
 Tedy inverze, nejen ta motolská, byla ze hry hned na začátku, a vybírala jsem si víceméně jen mezi [Dr. Supornem](http://www.supornclinic.com) a [Dr. Chettawutem](http://chet-plasticsurgery.com).
 
