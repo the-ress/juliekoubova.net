@@ -1,6 +1,6 @@
 (function(
-  doc, addEventListener, className, replace, script, gaUrl, tkUrl, createElement, async, src, appendChild, style, width, display, no,
-  tkConfig, gaElement, tkElement, element) {
+  doc, addEventListener, className, replace, script, gaUrl, tkUrl, fbUrl, createElement, async, src, appendChild, style, width, display, no,
+  tkConfig, gaElement, tkElement, fbElement, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -17,13 +17,17 @@
     ]
   };
 
+  fbElement = doc[createElement](script);
+  fbElement[src] = fbUrl;
+  fbElement.id = 'facebook-jssdk';
+  
   gaElement = doc[createElement](script);
   gaElement[src] = gaUrl;
 
   tkElement = doc[createElement](script);
   tkElement[src] = tkUrl;
 
-  gaElement[async] = tkElement[async] = tkConfig[async] = 1;
+  gaElement[async] = tkElement[async] = fbElement[async] = tkConfig[async] = 1;
 
   tkElement.onload = tkElement.onreadystatechange = function() {
     try {
@@ -36,14 +40,15 @@
   element = doc.getElementsByTagName('head')[0];
   element[appendChild](gaElement);
   element[appendChild](tkElement);
+  element[appendChild](fbElement);
 
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
 
   // test text-shadow
-  if (doc[createElement](createElement)[style].textShadow === "") {
-    element[className] += " textshadow";
-  }
+  // if (doc[createElement](createElement)[style].textShadow === "") {
+  //   element[className] += " textshadow";
+  // }
 
   // test flexbox
   // var c = " ", f = "flex", fw = "-webkit-"+f, e = doc[createElement]('b');
@@ -79,6 +84,7 @@
   'script',
   '//google-analytics.com/analytics.js',
   'https://use.typekit.net/{{ typekitId }}.js',
+  '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
   'createElement',
   'async',
   'src',
@@ -89,4 +95,3 @@
   'no-',
   {}
 );
-
