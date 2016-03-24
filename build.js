@@ -242,7 +242,13 @@ function build(options) {
   }));
 
   if (!options.live) {
-    m.use(htmlMinifier());
+    m.use(htmlMinifier("*.html", {
+      minifyJS: {
+        output: {
+          beautify: options.live
+        }
+      }
+    }));
   }
 
   if (options.live || options.server) {
