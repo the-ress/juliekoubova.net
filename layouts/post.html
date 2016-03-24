@@ -25,14 +25,21 @@
   
 </article>
 
+<div class="fb-like" 
+		data-href="{{ baseUrl }}{{ path.href }}" 
+		data-layout="standard" 
+		data-action="like" 
+		data-show-faces="false">
+</div>
+
 {{> banner-container.html }}
+
+{{> footer.html }}
 
 <div class="fb-comments" 
      data-href="{{ baseUrl }}{{ path.href }}"
      data-numposts="5">
 </div>
-
-{{> footer.html }}
 
 <script>
 {{> hero.min.js }}

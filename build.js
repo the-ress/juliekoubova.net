@@ -217,7 +217,7 @@ function build(options) {
   
   if (!options.live) {
     m.use(htmlMinifier());
-  }  
+  }
 
   if (options.live || options.server) {
     m.use(express());
