@@ -30,6 +30,7 @@
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-express": "^0.1.0",
+    "metalsmith-feed": "^0.2.0",
     "metalsmith-filemetadata": "^1.0.0",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-html-minifier": "^2.0.0",

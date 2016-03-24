@@ -8,6 +8,7 @@ const collections = require('metalsmith-collections');
 const define = require('metalsmith-define');
 const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
+const feed = require('metalsmith-feed');
 const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
@@ -63,6 +64,17 @@ function markdown() {
   return md;
 }
 
+function generateCanonicalUrls() {
+  return (files, metalsmith, done) => {
+    Object.keys(files).forEach(name => {
+      if (files[name].path && files[name].path.href) {
+        files[name].url = BaseUrl + files[name].path.href;
+      }
+    });
+    done();
+  }
+}
+
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -86,6 +98,11 @@ function build(options) {
       default: '/2015-04-32px.jpeg'
     },
     defaultImage: '/2015-04.jpeg',
+    site: {
+      title: SiteTitle,
+      url: BaseUrl,
+      author: SiteTitle
+    },
     siteTitle: SiteTitle,
     title: SiteTitle,
     typekitId: 'qai6bjn',
@@ -131,6 +148,15 @@ function build(options) {
       sortBy: 'published',
       reverse: true
     }
+  }));
+  
+  // required for feed
+  m.use(generateCanonicalUrls());
+  
+  m.use(feed({
+    collection: 'posts',
+    limit: false,
+    postDescription: post => post.description
   }));
 
   m.use(postBanners({
