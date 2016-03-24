@@ -1,0 +1,9 @@
+<section class="banner-container">
+  
+{{#each banners}}
+  {{#unless this.noBanner}}
+    {{> banner.html }}
+  {{/unless}}
+{{/each}}
+
+</section>

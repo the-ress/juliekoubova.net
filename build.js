@@ -31,6 +31,7 @@ const cssInliner = require('./lib/metalsmith-css-inliner');
 const extractPublished = require('./lib/metalsmith-extract-published');
 const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+const postBanners = require('./lib/metalsmith-post-banners');
 const srcset = require('./lib/metalsmith-srcset');
 
 const BaseUrl = 'https://juliekoubova.net';
@@ -68,6 +69,7 @@ function build(options) {
   m.destination('build');
 
   m.use(define({
+    bannerCount: 300,
     baseUrl: BaseUrl,
     css: '/main.css',
     date: new Date(),
@@ -136,6 +138,10 @@ function build(options) {
       sortBy: 'published',
       reverse: true
     }
+  }));
+  
+  m.use(postBanners({
+    collection: 'posts'
   }));
   
   // ===========================================================================
