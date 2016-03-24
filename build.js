@@ -27,11 +27,12 @@ const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
-const cssInliner = require('./lib/metalsmith-css-inliner');
 const extractPublished = require('./lib/metalsmith-extract-published');
 const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
+const inliner = require('./lib/metalsmith-inliner');
 const postBanners = require('./lib/metalsmith-post-banners');
+const rename = require('./lib/metalsmith-rename'); 
 const srcset = require('./lib/metalsmith-srcset');
 
 const BaseUrl = 'https://juliekoubova.net';
@@ -105,14 +106,6 @@ function build(options) {
     '!img/**'
   ]));
     
-  m.use(uglify({
-    output: {
-      beautify: options.live,
-      inline_script: true
-    },
-    removeOriginal: !options.live
-  }));
-
   m.use(markdown());
 
   // apply dates and turn posts into directories with an index.html
@@ -154,8 +147,12 @@ function build(options) {
   
   m.use(inPlace({
     engine: 'handlebars',
+    pattern: '**/*.hbs'
+  }));
+  
+  m.use(rename({
     pattern: '**/*.hbs',
-    rename: true
+    rename: n => n.replace(/\.hbs$/, '')
   }));
 
   // apply per-page layouts
@@ -210,9 +207,30 @@ function build(options) {
     compress: !options.live
   }));
 
-  m.use(cssInliner({
+  // uglify javascripts -> .min.js
+  m.use(uglify({
+    output: {
+      beautify: options.live,
+      inline_script: true
+    },
+    removeOriginal: !options.live
+  }));
+
+  // ===========================================================================
+  // INLINE CSS AND JS
+  // ===========================================================================
+  
+  m.use(inliner({
     css: 'index.css',
     html: 'index.html'
+  }));
+  
+  m.use(inliner({
+    js: [ 
+      'js/inline.min.js',
+      'js/hero.min.js'
+    ],
+    html: '**/*.html'
   }));
   
   if (!options.live) {
