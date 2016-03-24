@@ -1,7 +1,7 @@
 <section class="banner-container">
   
 {{#each collections.posts}}
-
+  {{#unless this.noBanner}}
   <a class="banner" href="{{ this.path.href }}" title="{{ this.description }}">
  
     <div class="banner-image">
@@ -21,7 +21,7 @@
     
     <p>{{ this.description }}</p>
   </a>
-
+  {{/unless}}
 {{/each}}
 
 </section>
