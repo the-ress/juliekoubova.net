@@ -32,12 +32,12 @@ const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const inliner = require('./lib/metalsmith-inliner');
 const postBanners = require('./lib/metalsmith-post-banners');
-const rename = require('./lib/metalsmith-rename'); 
+const rename = require('./lib/metalsmith-rename');
 const srcset = require('./lib/metalsmith-srcset');
 
 const BaseUrl = 'https://juliekoubova.net';
 const SiteTitle = 'Julie Koubová';
-const SiteDescription = 
+const SiteDescription =
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
   'Enjoys photography, singing, theatre, and shooting guns.';
 
@@ -49,18 +49,18 @@ function mythImports() {
 }
 
 function markdown() {
-   let md = markdownit({
+  let md = markdownit({
     typographer: true,
     html: true
   });
-  
+
   md.use(markdownAbbr);
-  
+
   md.use(markdownFigures, {
     figcaption: true
   });
-  
-  return md; 
+
+  return md;
 }
 
 function build(options) {
@@ -82,8 +82,8 @@ function build(options) {
     lang: 'cs',
     live: options.live,
     portrait: {
-     index: '/2015-04-192px.jpeg',
-     default: '/2015-04-32px.jpeg' 
+      index: '/2015-04-192px.jpeg',
+      default: '/2015-04-32px.jpeg'
     },
     defaultImage: '/2015-04.jpeg',
     siteTitle: SiteTitle,
@@ -91,65 +91,65 @@ function build(options) {
     typekitId: 'qai6bjn',
     typekitTimeout: 1250
   }));
-  
+
   m.use(metadata({
     imageMap: 'img/map.json'
   }));
-  
+
   if (!options.live) {
     m.use(drafts());
   }
-  
+
   // publish only the processed images from /img
   m.use(ignore([
     '**/*.+(jpg|jpeg|png|gif)',
     '!img/**'
   ]));
-    
+
   m.use(markdown());
 
   // apply dates and turn posts into directories with an index.html
   m.use(extractPublished());
-  
+
   // apply additional post metadata
-  m.use(fileMetadata([ { 
-    pattern: 'posts/**/*.html', 
+  m.use(fileMetadata([ {
+    pattern: 'posts/**/*.html',
     metadata: {
       fbType: 'article',
       layout: 'post.html',
-      collection: 'posts'      
-    } 
+      collection: 'posts'
+    }
   } ]))
-  
+
   m.use(moveUp('posts/**'));
-  m.use(fixUpImageMap()); 
-  
+  m.use(fixUpImageMap());
+
   m.use(paths());
-  
+
   m.use(collections({
     posts: {
       sortBy: 'published',
       reverse: true
     }
   }));
-  
+
   m.use(postBanners({
     collection: 'posts'
   }));
-  
+
   // ===========================================================================
   // NO METADATA CHANGES, ONLY TEMPLATING BEYOND THIS POINT
   // ===========================================================================
 
   // initialize Handlebars
-  m.use(handlebarsHelpers({ directory: 'helpers' }));  
+  m.use(handlebarsHelpers({ directory: 'helpers' }));
   m.use(handlebarsPartials({ root: 'partials' }));
-  
+
   m.use(inPlace({
     engine: 'handlebars',
     pattern: '**/*.hbs'
   }));
-  
+
   m.use(rename({
     pattern: '**/*.hbs',
     rename: n => n.replace(/\.hbs$/, '')
@@ -160,7 +160,7 @@ function build(options) {
     engine: 'handlebars',
     pattern: '**/*.html',
   }));
-  
+
   // change all pages to use default layout 
   m.use(fileMetadata([ {
     pattern: '**/*.html',
@@ -178,13 +178,13 @@ function build(options) {
       '!pinterest-*.html'
     ]
   }));
-  
+
   m.use(srcset());
-  
+
   m.use(canonicalUrls({
     baseUrl: BaseUrl
   }));
-  
+
   m.use(mythImports());
 
   // uncss main.css based on index.html into index.css
@@ -207,32 +207,30 @@ function build(options) {
     compress: !options.live
   }));
 
+  // ===========================================================================
+  // INLINE CSS AND JS
+  // ===========================================================================
+
+  m.use(inliner({
+    delete: true,
+    css: 'index.css',
+    html: 'index.html'
+  }));
+
+  m.use(inliner({
+    js: 'js/inline.js',
+    html: '**/*.html',
+    delete: true
+  }));
+
   // uglify javascripts -> .min.js
   m.use(uglify({
     output: {
-      beautify: options.live,
-      inline_script: true
+      beautify: options.live
     },
     removeOriginal: !options.live
   }));
 
-  // ===========================================================================
-  // INLINE CSS AND JS
-  // ===========================================================================
-  
-  m.use(inliner({
-    css: 'index.css',
-    html: 'index.html'
-  }));
-  
-  m.use(inliner({
-    js: [ 
-      'js/inline.min.js',
-      'js/hero.min.js'
-    ],
-    html: '**/*.html'
-  }));
-  
   if (!options.live) {
     m.use(htmlMinifier());
   }
@@ -240,7 +238,7 @@ function build(options) {
   if (options.live || options.server) {
     m.use(express());
   }
-  
+
   if (options.live) {
     m.use(watch({
       paths: {
@@ -250,8 +248,8 @@ function build(options) {
       livereload: true
     }));
   } else if (options.gzip) {
-    m.use(gzip({ 
-      gzip: { level: 9 } 
+    m.use(gzip({
+      gzip: { level: 9 }
     }));
   }
 

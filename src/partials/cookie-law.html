@@ -6,3 +6,22 @@
     <span> prohlížeči, pokud vám nechutnají.</span>
   </div>
 </div>
+<script>
+(function(doc, addEventListener, style, width) {
+  doc[addEventListener] &&
+  doc[addEventListener](
+    'DOMContentLoaded',
+    function(el) {
+      if (!(el = doc.querySelector('.cookie-law s'))) return;
+      el[style][width] = el.offsetWidth + 'px';
+      el[addEventListener]('animationend', function() {
+        el[addEventListener]('transitionend', function() {
+          el.remove();
+        });
+        el[style][width] = 0;
+      });
+      el.className = 'animated falling-eurocrat';
+    }
+  );
+})(document, 'addEventListener', 'style', 'width');
+</script>

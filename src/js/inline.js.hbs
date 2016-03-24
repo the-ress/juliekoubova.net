@@ -1,6 +1,6 @@
 (function(
-  doc, addEventListener, className, replace, script, gaUrl, tkUrl, fbUrl, createElement, async, src, appendChild, style, width, display, no,
-  tkConfig, gaElement, tkElement, fbElement, element) {
+  win, doc, addEventListener, className, replace, script, createElement, async, src, appendChild, clientHeight, LineHeight, tkConfig,
+  gaElement, tkElement, fbElement, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -18,14 +18,14 @@
   };
 
   fbElement = doc[createElement](script);
-  fbElement[src] = fbUrl;
+  fbElement[src] = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}';
   fbElement.id = 'facebook-jssdk';
   
   gaElement = doc[createElement](script);
-  gaElement[src] = gaUrl;
+  gaElement[src] = '//google-analytics.com/analytics.js';
 
   tkElement = doc[createElement](script);
-  tkElement[src] = tkUrl;
+  tkElement[src] = 'https://use.typekit.net/{{ typekitId }}.js';
 
   gaElement[async] = tkElement[async] = fbElement[async] = tkConfig[async] = 1;
 
@@ -44,54 +44,37 @@
 
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
-
-  // test text-shadow
-  // if (doc[createElement](createElement)[style].textShadow === "") {
-  //   element[className] += " textshadow";
-  // }
-
-  // test flexbox
-  // var c = " ", f = "flex", fw = "-webkit-"+f, e = doc[createElement]('b');
-  // try { 
-  //   e[style][display] = fw; 
-  //   e[style][display] = f; 
-  //   c += (e[style][display] == f || e[style][display] == fw) ? f : no+f; 
-  // } catch(e) { 
-  //   c += no+f; 
-  // }
-  // element[className] += c;
   
-  !this._phantom && doc[addEventListener] && doc[addEventListener](
-    'DOMContentLoaded',
-    function(el) {
-      if (!(el = doc.querySelector('.cookie-law s'))) return;
-      el[style][width] = el.offsetWidth + 'px';
-      el[addEventListener]('animationend', function() {
-        el[addEventListener]('transitionend', function() {
-          el.remove();
-        });
-        el[style][width] = 0;
-      });
-      el[className] = 'animated falling-eurocrat';
+  if (win._phantom || !doc[addEventListener]) 
+    return;
+  
+  function onWindowResize() {
+    var figures = doc.querySelectorAll('.hero img, figure img'),
+        i = figures.length,
+        img;
+    
+    while(i--) {
+      img = figures[i];
+      img.parentElement.style.paddingBottom = 
+        LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) - 
+        img[clientHeight] + 'px';
     }
-  );
-
+  }
+  
+  win[addEventListener]('resize', onWindowResize);
+  setTimeout(onWindowResize, 50);
 })(
+  this,
   document,
   'addEventListener',
   'className',
   'replace',
   'script',
-  '//google-analytics.com/analytics.js',
-  'https://use.typekit.net/{{ typekitId }}.js',
-  '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
   'createElement',
   'async',
   'src',
   'appendChild',
-  'style',
-  'width',
-  'display',
-  'no-',
+  'clientHeight',
+  28,
   {}
 );
