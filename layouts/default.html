@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{{ site_title title }}</title>
+  <title>{{ prefixSiteTitle title }}</title>
   
-  <meta name="description" content="{{ description }}">
+  <meta name="description" content="{{ trim description }}">
   <meta name="viewport"    content="width=device-width, initial-scale=1">
   
-  <meta property="og:description"  content="{{ description }}">
+  <meta property="og:description"  content="{{ trim description }}">
   <meta property="og:image"        content="{{ or image defaultImage }}">
-  <meta property="og:updated_time" content="{{ unixtime_sec date }}">
-  <meta property="og:title"        content="{{ title }}">
+  <meta property="og:updated_time" content="{{ unixtimeSec date }}">
+  <meta property="og:title"        content="{{ trim title }}">
   <meta property="og:url"          content="{{ path.href }}">
   <meta property="og:type"         content="{{ fbType }}">
   <meta property="fb:app_id"       content="{{ fbAppId }}">
