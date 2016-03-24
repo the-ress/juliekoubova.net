@@ -30,7 +30,6 @@
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-express": "^0.1.0",
-    "metalsmith-feed": "^0.2.0",
     "metalsmith-filemetadata": "^1.0.0",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-html-minifier": "^2.0.0",
@@ -52,6 +51,8 @@
     "multimatch": "^2.1.0",
     "normalize.css": "^3.0.3",
     "path": "^0.12.7",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "rss": "^1.2.1",
+    "url": "^0.11.0"
   }
 }

@@ -8,7 +8,6 @@ const collections = require('metalsmith-collections');
 const define = require('metalsmith-define');
 const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
-const feed = require('metalsmith-feed');
 const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
@@ -29,6 +28,7 @@ const watch = require('metalsmith-watch');
 
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
 const extractPublished = require('./lib/metalsmith-extract-published');
+const feed = require('./lib/metalsmith-feed');
 const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const inliner = require('./lib/metalsmith-inliner');
@@ -64,17 +64,6 @@ function markdown() {
   return md;
 }
 
-function generateCanonicalUrls() {
-  return (files, metalsmith, done) => {
-    Object.keys(files).forEach(name => {
-      if (files[name].path && files[name].path.href) {
-        files[name].url = BaseUrl + files[name].path.href;
-      }
-    });
-    done();
-  }
-}
-
 function build(options) {
   let m = new Metalsmith(__dirname);
 
@@ -98,11 +87,6 @@ function build(options) {
       default: '/2015-04-32px.jpeg'
     },
     defaultImage: '/2015-04.jpeg',
-    site: {
-      title: SiteTitle,
-      url: BaseUrl,
-      author: SiteTitle
-    },
     siteTitle: SiteTitle,
     title: SiteTitle,
     typekitId: 'qai6bjn',
@@ -129,14 +113,14 @@ function build(options) {
   m.use(extractPublished());
 
   // apply additional post metadata
-  m.use(fileMetadata([ {
+  m.use(fileMetadata([{
     pattern: 'posts/**/*.html',
     metadata: {
       fbType: 'article',
       layout: 'post.html',
       collection: 'posts'
     }
-  } ]))
+  }]))
 
   m.use(moveUp('posts/**'));
   m.use(fixUpImageMap());
@@ -149,14 +133,14 @@ function build(options) {
       reverse: true
     }
   }));
-  
-  // required for feed
-  m.use(generateCanonicalUrls());
-  
+
   m.use(feed({
     collection: 'posts',
     limit: false,
-    postDescription: post => post.description
+    siteUrl: BaseUrl,
+    siteTitle: SiteTitle,
+    siteDescription: SiteDescription,
+    generator: BaseUrl 
   }));
 
   m.use(postBanners({
@@ -188,12 +172,12 @@ function build(options) {
   }));
 
   // change all pages to use default layout 
-  m.use(fileMetadata([ {
+  m.use(fileMetadata([{
     pattern: '**/*.html',
     metadata: {
       layout: 'default.html'
     }
-  } ]));
+  }]));
 
   // apply default layout set in previous step
   m.use(layouts({
