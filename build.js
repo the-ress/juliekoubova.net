@@ -29,9 +29,9 @@ const watch = require('metalsmith-watch');
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
 const extractPublished = require('./lib/metalsmith-extract-published');
 const feed = require('./lib/metalsmith-feed');
-const fixUpImageMap = require('./lib/metalsmith-fix-up-image-map');
 const handlebarsPartials = require('./lib/metalsmith-handlebars-partials');
 const inliner = require('./lib/metalsmith-inliner');
+const moveUpImageMap = require('./lib/metalsmith-move-up-image-map');
 const postBanners = require('./lib/metalsmith-post-banners');
 const rename = require('./lib/metalsmith-rename');
 const srcset = require('./lib/metalsmith-srcset');
@@ -110,10 +110,7 @@ function build(options) {
 
   m.use(markdown());
 
-  // apply dates and turn posts into directories with an index.html
-  m.use(extractPublished());
-
-  // apply additional post metadata
+  // apply post metadata
   m.use(fileMetadata([{
     pattern: 'posts/**/*.html',
     metadata: {
@@ -123,8 +120,12 @@ function build(options) {
     }
   }]))
 
+  // extract dates, turn posts into directories with an index.html, 
+  m.use(extractPublished());
+
+  // and move them to root
   m.use(moveUp('posts/**'));
-  m.use(fixUpImageMap());
+  m.use(moveUpImageMap('posts/**'));
 
   m.use(paths());
 
@@ -135,6 +136,12 @@ function build(options) {
     }
   }));
 
+  // generate per-post banners
+  m.use(postBanners({
+    collection: 'posts'
+  }));
+
+  // RSS 
   m.use(feed({
     collection: 'posts',
     limit: false,
@@ -142,10 +149,6 @@ function build(options) {
     siteTitle: SiteTitle,
     siteDescription: SiteDescription,
     generator: BaseUrl 
-  }));
-
-  m.use(postBanners({
-    collection: 'posts'
   }));
 
   // ===========================================================================
@@ -161,6 +164,8 @@ function build(options) {
     pattern: '**/*.hbs'
   }));
 
+  // strip the .hbs extension. inPlace({rename}) always renames to .html but
+  // we use Handlebars to template javascripts, too
   m.use(rename({
     pattern: '**/*.hbs',
     rename: n => n.replace(/\.hbs$/, '')

@@ -30,7 +30,7 @@ Ale tím vaše trable nekončí. Chcete si změnit jméno. Akorát že ženská 
 
 Takže si jdete změnit jméno na dočasné. Nový rodný list, občanku, pas, řidičák, zbroják, registraci auta, povinné ručení, zdravotní daň, sociální daň, účty v bance, nájemní smlouvu, všchno dočasné. A nemůžete mít jméno které chcete, musíte si vybrat ze seznamu asi 50 bezpohlavních jmen. Nebo hledat důkazy o obourodnosti svého zvoleného jména a znalce ochotného vydat posudek.
 
-![Není jednou málo, Antone Pavloviči? Změna dokladů je velká zábava!](admin.jpeg)
+![Není jednou málo, Antone Pavloviči? Změna dokladů je velká zábava!](admin-660px.jpeg)
 
 ### Nucené sterilizace
 
