@@ -102,8 +102,14 @@ function build(options) {
     m.use(drafts());
   }
 
-  // publish only the processed images from /img
   m.use(ignore([
+    // ignore hidden files
+    '**/.*',
+    
+    // ignore image etc. metadata
+    '**/*.meta.json',
+    
+    // publish only the processed images from /img
     '**/*.+(jpg|jpeg|png|gif)',
     '!img/**'
   ]));
