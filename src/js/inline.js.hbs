@@ -1,4 +1,4 @@
-(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, tkConfig, element, undefined) {
+(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, element, undefined) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -6,7 +6,7 @@
 
   function createScript(src, id, onLoad) {
     var result = doc.createElement('script');
-    result.id = id;
+    if (id) result.id = id;
     result.src = 'https://' + src;
     result.async = 1;
     result.onload = result.onreadystatechange = onLoad;
@@ -39,8 +39,10 @@
     undefined,
     function() {
       try {
-        tkConfig.active = triggerTypekitAnimation;
-        /^(c|l.*d$)/.test(this.readyState || 'c') && Typekit.load(tkConfig);
+        /^(c|l.*d$)/.test(this.readyState || 'c') && Typekit.load({ 
+          async: 1,
+          active: triggerTypekitAnimation 
+        });
       } catch (e) { }
     }
   );
@@ -73,6 +75,5 @@
   'className',
   'replace',
   'clientHeight',
-  28,
-  { async: 1 }
+  28
 );
