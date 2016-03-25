@@ -1,4 +1,4 @@
-(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, element, undefined) {
+(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -36,7 +36,7 @@
 
   createScript(
     'use.typekit.net/{{ typekitId }}.js',
-    undefined,
+    0,
     function() {
       try {
         /^(c|l.*d$)/.test(this.readyState || 'c') && Typekit.load({ 
