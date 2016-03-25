@@ -157,7 +157,8 @@ function build(options) {
 
   // initialize Handlebars
   m.use(handlebarsHelpers({ directory: 'helpers' }));
-  m.use(handlebarsPartials({ root: 'partials' }));
+  m.use(handlebarsPartials({ directory: 'partials' }));
+  m.use(handlebarsPartials({ directory: 'svg', delete: false }));
 
   m.use(inPlace({
     engine: 'handlebars',
@@ -255,12 +256,24 @@ function build(options) {
     delete: true
   }));
 
+  m.use(uglify({
+    filter: [
+      'js/headroom.js',
+      'js/post.js'
+    ],
+    concat: 'js/post-combined.js',
+    output: {
+      beautify: options.live
+    },
+    removeOriginal: true
+  }));
+  
   // uglify javascripts -> .min.js
   m.use(uglify({
     output: {
       beautify: options.live
     },
-    removeOriginal: !options.live
+    removeOriginal: true
   }));
 
   if (!options.live) {

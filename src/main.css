@@ -400,8 +400,8 @@ blockquote cite:before {
 }
 
 .headroom h1 {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .headroom--pinned.headroom--not-top {
@@ -412,6 +412,7 @@ blockquote cite:before {
 .headroom--unpinned, .headroom--top {
   transform: translateY(-100%);
   transition: transform 200ms linear;
+  visibility: hidden;
 }
 
 @keyframes falling-eurocrat {

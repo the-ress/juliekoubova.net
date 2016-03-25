@@ -1,4 +1,4 @@
-(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, element) {
+(function(win, doc, addEventListener, className, replace, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -49,31 +49,10 @@
 
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
-
-  if (win._phantom || !doc[addEventListener])
-    return;
-
-  function onWindowResize() {
-    var figures = doc.querySelectorAll('.hero img, figure img'),
-      i = figures.length,
-      img;
-
-    while (i--) {
-      img = figures[i];
-      img.parentElement.style.paddingBottom =
-        LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) -
-        img[clientHeight] + 'px';
-    }
-  }
-
-  win[addEventListener]('resize', onWindowResize);
-  setTimeout(onWindowResize, 50);
 })(
   this,
   document,
   'addEventListener',
   'className',
-  'replace',
-  'clientHeight',
-  28
+  'replace'
 );

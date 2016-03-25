@@ -44,37 +44,4 @@
      data-width="100%">
 </div>
 
-<script src="/js/headroom.min.js"></script>
-<script>
-  (function(win, doc, addEventListener, appendChild, offset) {
-    !this._phantom &&
-    doc[addEventListener] &&
-    doc[addEventListener](
-      'DOMContentLoaded',
-      function () {
-        var original = doc.querySelector('header');
-        var container = doc.createElement('div');
-        
-        container[appendChild](original.cloneNode(true));        
-        doc.body[appendChild](container); 
-        
-        var headroom = new Headroom(container, {
-          tolerance: {
-            up: 30,
-            down: 5
-          } 
-        });
-        
-        function setOffset() {
-          headroom[offset] = 
-            original[offset + 'Top'] + original[offset + 'Height'];          
-        }
-        
-        win[addEventListener]('resize',  setOffset);
-        
-        setOffset();
-        headroom.init();
-      }
-    );
-  })(this, document, 'addEventListener', 'appendChild', 'offset');
-</script>
+<script src="/js/post-combined.min.js"></script>
