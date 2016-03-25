@@ -55,10 +55,17 @@ article time, footer, .cookie-law {
   font-weight: 300;
 }
 
+article time {
+  font-weight: 400;
+  margin-left: 0.1em;  
+}
+
+article time .d, article time .m {
+  font-weight: 600;
+}
+
 time {
   text-transform: uppercase;
-  font-weight: 600;
-  margin-left: 0.1em;
   color: var(--light-red);
 }
 
