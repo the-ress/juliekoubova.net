@@ -164,7 +164,6 @@ function build(options) {
   // initialize Handlebars
   m.use(handlebarsHelpers({ directory: 'helpers' }));
   m.use(handlebarsPartials({ directory: 'partials' }));
-  m.use(handlebarsPartials({ directory: 'svg', delete: false }));
 
   m.use(inPlace({
     engine: 'handlebars',
