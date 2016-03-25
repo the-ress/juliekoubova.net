@@ -1,9 +1,16 @@
-(function(
-  win, doc, addEventListener, className, replace, script, createElement, async, src, appendChild, clientHeight, LineHeight, tkConfig,
-  gaElement, tkElement, fbElement, element) {
+(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, tkConfig, element) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
+  }
+
+  function createScript(src, id, onLoad) {
+    var result = doc.createElement('script');
+    result.id = id;
+    result.src = src;
+    result.async = 1;
+    result.onload = result.onreadystatechange = onLoad;
+    element.appendChild(result);
   }
 
   setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
@@ -17,50 +24,46 @@
     ]
   };
 
-  fbElement = doc[createElement](script);
-  fbElement[src] = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}';
-  fbElement.id = 'facebook-jssdk';
-  
-  gaElement = doc[createElement](script);
-  gaElement[src] = '//google-analytics.com/analytics.js';
-
-  tkElement = doc[createElement](script);
-  tkElement[src] = 'https://use.typekit.net/{{ typekitId }}.js';
-
-  gaElement[async] = tkElement[async] = fbElement[async] = tkConfig[async] = 1;
-
-  tkElement.onload = tkElement.onreadystatechange = function() {
-    try {
-      tkConfig.active = triggerTypekitAnimation;
-      /^(c|l.*d$)/.test(tkElement.readyState || 'c') && Typekit.load(tkConfig);
-    } catch (e) { }
-  };
-
   // no document.head in IE <9
   element = doc.getElementsByTagName('head')[0];
-  element[appendChild](gaElement);
-  element[appendChild](tkElement);
-  element[appendChild](fbElement);
+
+  createScript('//google-analytics.com/analytics.js');
+
+  createScript(
+    '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
+    'facebook-jssdk'
+  );
+
+  createScript(
+    'https://use.typekit.net/{{ typekitId }}.js',
+    undefined,
+    function() {
+      try {
+        tkConfig.active = triggerTypekitAnimation;
+        /^(c|l.*d$)/.test(this.readyState || 'c') && Typekit.load(tkConfig);
+      } catch (e) { }
+    }
+  );
 
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
-  
-  if (win._phantom || !doc[addEventListener]) 
+
+  if (win._phantom || !doc[addEventListener])
     return;
-  
+
   function onWindowResize() {
     var figures = doc.querySelectorAll('.hero img, figure img'),
-        i = figures.length,
-        img;
-    
-    while(i--) {
+      i = figures.length,
+      img;
+
+    while (i--) {
       img = figures[i];
-      img.parentElement.style.paddingBottom = 
-        LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) - 
+      img.parentElement.style.paddingBottom =
+        LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) -
         img[clientHeight] + 'px';
     }
   }
-  
+
   win[addEventListener]('resize', onWindowResize);
   setTimeout(onWindowResize, 50);
 })(
@@ -69,12 +72,7 @@
   'addEventListener',
   'className',
   'replace',
-  'script',
-  'createElement',
-  'async',
-  'src',
-  'appendChild',
   'clientHeight',
   28,
-  {}
+  { async: 1 }
 );
