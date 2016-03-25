@@ -209,13 +209,29 @@ function build(options) {
     css: ['main.css'],
     html: ['index.html'],
     output: 'index.css',
-    removeOriginal: false
+    removeOriginal: false,
+    uncss: {
+      ignore: [
+        '.falling-eurocrat'
+      ]
+    }
   }));
 
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
-    output: 'main.css'
+    output: 'main.css',
+    uncss: {
+      ignore: [
+        '.headroom',
+        '.headroom h1',
+        '.headroom header',
+        '.headroom--pinned',
+        '.headroom--pinned.headroom--not-top',
+        '.headroom--unpinned',
+        '.headroom--top'
+      ]
+    }
   }));
 
   // compress uncss output

@@ -23,7 +23,6 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* uncss:ignore */
 body, .headroom header {
   min-width: 314px;
   max-width: 480px;
@@ -386,7 +385,6 @@ blockquote cite:before {
   font-weight: 400;
 }
 
-/* uncss:ignore */
 .headroom {
   will-change: transform;
 
@@ -401,21 +399,18 @@ blockquote cite:before {
   transform: translateY(-100%);
 }
 
-/* uncss:ignore */
 .headroom h1 {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-/* uncss:ignore */
-.headroom--pinned.headroom--top {
+.headroom--pinned.headroom--not-top {
+  transform: translateY(0%);
   transition: transform 200ms linear;
-  transform: translateY(-100%);
 }
 
-/* uncss:ignore */
-.headroom--pinned {
-  transform: translateY(0%);
+.headroom--unpinned, .headroom--top {
+  transform: translateY(-100%);
   transition: transform 200ms linear;
 }
 
@@ -441,7 +436,6 @@ blockquote cite:before {
   }
 }
 
-/* uncss:ignore */
 .falling-eurocrat {
   animation-name: falling-eurocrat;
   transform-origin: center left;
@@ -463,7 +457,6 @@ blockquote cite:before {
 }
 
 @media screen and (max-height: 440px) and (min-width: 520px) {
-  /* uncss:ignore */
   body, .headroom header {
     max-width: 520px; 
   }
@@ -510,7 +503,6 @@ blockquote cite:before {
 }
 
 @media screen and (min-width: 660px) {
-  /* uncss:ignore */
   body, .headroom header { 
     max-width: 580px;
   }
