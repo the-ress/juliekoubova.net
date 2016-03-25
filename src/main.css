@@ -10,6 +10,7 @@
   
   --z-background: -1000;
   --z-below-text: -100;
+  --z-headroom:    1000;
 }
 
 html {
@@ -22,7 +23,8 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-body {
+/* uncss:ignore */
+body, .headroom header {
   min-width: 314px;
   max-width: 480px;
   margin: 0 auto;
@@ -164,7 +166,7 @@ time, footer, figcaption, blockquote {
   transition-delay: 400ms;
 }
 
-header ul, .tags {
+.contacts, .tags {
   list-style: none;
   padding: 0;
 }
@@ -384,6 +386,39 @@ blockquote cite:before {
   font-weight: 400;
 }
 
+/* uncss:ignore */
+.headroom {
+  will-change: transform;
+
+  background: #fff;
+  
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+  z-index: var(--z-headroom);
+  transform: translateY(-100%);
+}
+
+/* uncss:ignore */
+.headroom h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* uncss:ignore */
+.headroom--pinned.headroom--top {
+  transition: transform 200ms linear;
+  transform: translateY(-100%);
+}
+
+/* uncss:ignore */
+.headroom--pinned {
+  transform: translateY(0%);
+  transition: transform 200ms linear;
+}
+
 @keyframes falling-eurocrat {
   0% {
     animation-timing-function: ease-in-out;
@@ -418,14 +453,23 @@ blockquote cite:before {
   padding: 4px 0;
 }
 
+.fb-like, .fb-comments {
+  overflow-x: hidden;
+}
+
 ::selection {
   background: var(--dark-red);
   color: #fff;
 }
 
 @media screen and (max-height: 440px) and (min-width: 520px) {
-  body { max-width: 520px; }
+  /* uncss:ignore */
+  body, .headroom header {
+    max-width: 520px; 
+  }
+  
   .index header { overflow: auto; }
+  
   .index h1 {
     font-size: 3em; /* 48px */
     line-height: 1.1667em; /* 56px */
@@ -466,7 +510,10 @@ blockquote cite:before {
 }
 
 @media screen and (min-width: 660px) {
-  body { max-width: 580px; }
+  /* uncss:ignore */
+  body, .headroom header { 
+    max-width: 580px;
+  }
   .banner { width: 180px; }
   figure, .hero { 
     margin-left: -40px;
