@@ -315,7 +315,10 @@ blockquote cite:before {
   margin-top: 3.5em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 316px;
+}
+
+article .banner-container {
+  margin-top: 1.75em;
 }
 
 .banner {
@@ -405,7 +408,7 @@ blockquote cite:before {
 .fb-like {
   display: block !important;
   clear: both;
-  margin-bottom: 1.75em;
+  padding: 4px 0;
 }
 
 ::selection {
@@ -431,10 +434,6 @@ blockquote cite:before {
 }
 
 @media screen and (min-width: 326px) {
-  .banner-container {
-    max-width: 474px;
-  }
-  
   .banner { 
     width: 148px;
     height: 196px;
@@ -462,9 +461,6 @@ blockquote cite:before {
 @media screen and (min-width: 660px) {
   body { max-width: 580px; }
   .banner { width: 180px; }
-  .banner-container {
-    max-width: 570px;
-  }
   figure, .hero { 
     margin-left: -40px;
     margin-right: -40px;
