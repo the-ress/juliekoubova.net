@@ -1,4 +1,4 @@
-(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, tkConfig, element) {
+(function(win, doc, addEventListener, className, replace, clientHeight, LineHeight, tkConfig, element, undefined) {
 
   function triggerTypekitAnimation(delay) {
     element[className] = element[className][replace](/\bno-typekit\b/, '');
@@ -7,7 +7,7 @@
   function createScript(src, id, onLoad) {
     var result = doc.createElement('script');
     result.id = id;
-    result.src = src;
+    result.src = 'https://' + src;
     result.async = 1;
     result.onload = result.onreadystatechange = onLoad;
     element.appendChild(result);
@@ -27,15 +27,15 @@
   // no document.head in IE <9
   element = doc.getElementsByTagName('head')[0];
 
-  createScript('//google-analytics.com/analytics.js');
+  createScript('google-analytics.com/analytics.js');
 
   createScript(
-    '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
+    'connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
     'facebook-jssdk'
   );
 
   createScript(
-    'https://use.typekit.net/{{ typekitId }}.js',
+    'use.typekit.net/{{ typekitId }}.js',
     undefined,
     function() {
       try {
