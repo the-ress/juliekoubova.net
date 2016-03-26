@@ -19,9 +19,9 @@ Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, ot
 
 Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo samy sebe před operací tak moc nenáviděly? Možná nejsou s výsledky svojí [české inverze](/aikchol-vs-motol/) spokojeny, a když se mají blbě ony, tak ať trpí všichni.
 
-Snad jenom považují své překonání těch byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to někdo nemusel podstupovat. 
+Snad jenom považují své překonání těch byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
 
-Je smutné, jak je místní diskurs 20 let pozadu za Evropou a USA. Kdyby české trans transfobky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když oni přiznáním riskují, že je sexuolog vyhodí a budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
+Je smutné, jak je místní diskurs 20 let pozadu za Evropou a USA. Kdyby české trans transfobky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
 ### Proplácení operací
 
@@ -29,7 +29,7 @@ Jedním z oblíbených slaměných strašáků českých trans transfobek je, ž
 
 Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. jenom orchiektomii, která se dá dělat v lokálním umrtvení a je pochopitelně daleko levnější, než celý ten mnohahodinový cirkus s anesteziologem, hromadou sester, JIP, následnou několikadenní hospitalizací, etc.
 
-Operace jsou přerozdělovnami propláceny protože je to u lidí trpících dysforií ze svých primárních sexuálních znaků jediný efektivní způsob léčby. S prerekvizitami legální změny rodu to nemá zhola nic společného.
+Operace jsou přerozdělovnami propláceny protože je to u lidí trpících dysforií ze svých primárních sexuálních znaků jediný efektivní způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
 
 ### ICD-11
 
