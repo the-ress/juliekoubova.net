@@ -8,11 +8,19 @@
             >
     {{/if}}
   </div>
-    
-  <time datetime="{{ iso8601 published }}">
-    {{ moment published 'D. M. YYYY' }}
-  </time>
   
+  {{#if this.isPrevBanner}}
+    <div class="banner-prev">následující</div>
+  {{else}}
+    {{#if this.isNextBanner}}
+      <div class="banner-next">předchozí</div>
+    {{else}}
+      <time datetime="{{ iso8601 published }}">
+        {{ moment published 'D. M. YYYY' }}
+      </time>
+    {{/if}}
+  {{/if}}
+    
   <h2>{{ or this.bannerTitle (or this.title this.path.href) }}</h2>
   
   <p>{{ this.description }}</p>

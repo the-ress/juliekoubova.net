@@ -378,11 +378,13 @@ blockquote cite:before {
   margin: 0;
 }
 
-.banner time {
+.banner time, .banner-next, .banner-prev {
   font-size: .625em; /*10px*/
   margin-top: 1.6em;  /*16px*/
   display: block;
   font-weight: 400;
+  color: var(--light-red);
+  text-transform: uppercase;
 }
 
 .headroom {
