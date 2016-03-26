@@ -35,7 +35,7 @@ Operace jsou přerozdělovnami propláceny protože je to u lidí trpících dys
 
 Dalším projevem zaostalosti našeho rybníčku je fetišizace 23 let starého diagnostického manuálu ICD-10, plného dnes již naprosto nepřijatelné, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem *[F64.0](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0): Transsexualismus*, kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná *[F64.1](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1): Transvestitismus dvojí role*, nebo dokonce *[F65.1](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1): Fetišistický transvestitismus*". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
 
-Myslím že příští rok, až WHO snad konečně schválí [novou verzi ICD-11](http://apps.who.int/classifications/icd11/browse/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f90875286), můžeme čekat velké pozdvižení mezi českými trans ženami, které se budou cítit hluboce uraženy, že jejich diagnóza již není v sekci mezi poruchami osobnosti, gamblerstvím nebo kleptománií. Místo toho je gender incongruence zařazena mezi poruchy sexuálního zdraví, kam správně patří.
+Myslím, že příští rok, až WHO konečně schválí [novou verzi ICD-11](http://apps.who.int/classifications/icd11/browse/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f90875286), můžeme čekat velké pozdvižení mezi českými trans ženami, které se budou cítit hluboce uraženy, že jejich diagnóza již není v sekci mezi poruchami osobnosti, gamblerstvím nebo kleptománií. Místo toho je gender incongruence zařazena mezi poruchy sexuálního zdraví, kam správně patří.
 
 Stejně tak skončí patologizace crossdresserů a transgender lidí bez touhy po hormonálních či chirurgických změnách (tj. F64.1 a F65.1 jsou zrušeny bez náhrady).
 
@@ -45,7 +45,7 @@ Snad jediné, co lze nové verzi vytknout, že stále patologizuje rodovou nekon
 
 Úplně vespod žebříčku jsou crossdresseři. Z těch je většině trans žen na blití, jelikož se---pravda, celkem oprávněně---děsí, že jemné nuance mezi trans ženou a chlupatym týpkem v lesklejch silonkách jsou pro průměrného voliče hluboko pod rozlišovací schopností.
 
-Ale ani crossdresseři nepřijdou úplně zkrátka. Ti, kteří se jednou za čtvrt roku odváží dojet taxíkem do baru en femme, mohou směle pohrdat těmi, kteří se převlíkají jen doma.
+Ale ani crossdresseři nepřijdou úplně zkrátka. Ti, kteří se jednou za čtvrt roku odváží en femme dojet taxíkem do baru, mohou směle pohrdat těmi, kteří se převlíkají jen doma.
 
 ### Závěrem
 
