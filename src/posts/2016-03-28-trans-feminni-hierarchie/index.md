@@ -1,5 +1,6 @@
 ---
 title: Trans-feminní hierarchie
+image: index.jpeg
 description: Nahaté opice milují hierarchii. Neumíme bez ní žít. A trans-feminní lidé nejsou jiní.
 ---
 
@@ -7,13 +8,13 @@ Nahaté opice milují hierarchii. Svět nám nedává smysl, neumíme se v něm 
 
 ### Trans ženy
 
-Na vrcholu žebříčku stojí atraktivní, sebevědomé, heterosexuální ženy, které bez problému prochází za cis a jsou již hrdými majitelkami neokundičky. Třeba jako, ehm, já, že ano. Jaká náhodička. Ty mohou poučovat služebně mladší kolegyně a strašit je horrorovými příbehy o interakcích s lidově demokratickým zdravotnictvím.
+Na vrcholu žebříčku stojí atraktivní, sebevědomé, heterosexuální ženy, které bez problému prochází za cis a jsou již hrdými majitelkami neokundičky. *Třeba jako, ehm, já, že ano.* Ty mohou poučovat služebně mladší kolegyně a strašit je horrorovými příbehy o interakcích s lidově demokratickým zdravotnictvím.
 
 O příčku níže jsou ženy, které se na operaci teprve chystají, nebo které měly tu smůlu, že s proměnou začaly moc pozdě, případně jim příroda nadělila příliš mnoho jednoznačně mužských znaků a společnost jim cis privilegia upírá.
 
 Na dalším stupínku stojí ženy, které se do operace nijak zvlášť neženou. [Ty to mají blbý i jinak](/byt-trans-v-cr/), ale ještě navíc musí snášet ústrky tzv. "skutečných žen" o příčku výše, které se buďto---zblbnuty sexuology---domnívají, že tyto neexistují, a nebo, pokud jejich existenci berou na vědomí, je upřímně nenávidí.
 
-Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak přes kopírak, jako by je napsal nějaký lidovec nebo republikán. Jedna taková empatická dáma napsala, že nechce žít ve světě, kde ženy mohou mít penis. *Protože kdo má penis, může znásilnit.*
+Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak přes kopírák, jako by je napsal nějaký lidovec nebo republikán. Jedna taková empatická dáma napsala, že nechce žít ve světě, kde ženy mohou mít penis. *Protože kdo má penis, může znásilnit.*
 
 Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otvírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě," případně ultimátní "v prvouce nám souška učitelka říkala, že žena=XX a muž=XY"? 
 
