@@ -88,6 +88,7 @@ function build(options) {
     },
     defaultImage: '/2015-04.jpeg',
     siteTitle: SiteTitle,
+    siteTitlePrintSuffix: '.net',
     twitterSite: '@julieeharshaw',
     title: SiteTitle,
     typekitId: 'qai6bjn',

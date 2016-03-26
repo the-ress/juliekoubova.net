@@ -556,11 +556,17 @@ blockquote cite:before {
   img { max-width: 100% !important; }
   @page { margin: 1.5cm 2cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+  h2, h3 {
+    page-break-after: avoid;
+  }
   body {max-width: none;}
+  
+  .print-only { display: initial; }
   
   .index .portrait { display: none;}
   .tags { display: none; }
+  
+  .headroom { display: none; }
   
   h1 a[href]:after {
     content: '';
@@ -607,5 +613,12 @@ blockquote cite:before {
   .contacts circle {
     fill: var(--gray);
   }
-  .cookie-law { display: none; }
+  
+  .cookie-law, .fb-like {
+    display: none !important; /* fb-like overrides probably */
+  }
+  
+  footer {
+    page-break-after: always;
+  }
 }
