@@ -1,9 +1,9 @@
 ---
-title: Transfeminní hierarchie
-description: Nahaté opice milují hierarchie. Neumíme bez nich žít. A trans-feminní lidé nejsou jiní.
+title: Trans-feminní hierarchie
+description: Nahaté opice milují hierarchii. Neumíme bez ní žít. A trans-feminní lidé nejsou jiní.
 ---
 
-Nahaté opice milují hierarchie. Svět nám nedává smysl, neumíme se v něm orientovat, dokud nevíme, kdo je nad námi a kdo pod námi. A trans-feminní lidé nejsou jiní.
+Nahaté opice milují hierarchii. Svět nám nedává smysl, neumíme se v něm orientovat, dokud nevíme, kdo je nad námi a kdo pod námi. A trans-feminní lidé nejsou jiní.
 
 ### Trans ženy
 
