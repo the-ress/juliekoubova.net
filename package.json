@@ -43,7 +43,7 @@
     "metalsmith-myth": "0.0.0",
     "metalsmith-partial": "^0.1.0",
     "metalsmith-paths": "^2.1.1",
-    "metalsmith-publish": "^0.1.3",
+    "metalsmith-publish": "mikestopcontinues/metalsmith-publish",
     "metalsmith-uglify": "^1.2.1",
     "metalsmith-uncss": "juliekoubova/metalsmith-uncss",
     "metalsmith-watch": "^1.0.1",

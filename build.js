@@ -129,7 +129,7 @@ function build(options) {
       layout: 'post.html',
       collection: 'posts'
     }
-  }]))
+  }]));
 
   // extract dates, turn posts into directories with an index.html, 
   m.use(extractPublished());
@@ -138,13 +138,13 @@ function build(options) {
   m.use(moveUp('posts/**'));
   m.use(moveUpImageMap('posts/**'));
 
+  // no moving files beyond this point
   m.use(paths());
 
   // exclude drafts and scheduled posts unless live
   // needs to run before collections()
   m.use(publish({
-    drafts: options.live,
-    future: options.live,
+    future: true,
     futureMeta: 'published'
   }));
 
