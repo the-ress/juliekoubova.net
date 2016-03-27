@@ -34,7 +34,7 @@ Takže si jdete změnit jméno na dočasné. Nový rodný list, občanku, pas, �
 
 ### Nucené sterilizace
 
-Pokud operaci z jakéhokoliv důvodu nechcete: tovární konfigurace vám dysforii nepůsobí; bojíte se komplikací; chcete šanci v budoucnu splodit dítě; výsledky operací vám nepřijdou dost dobré; nechcete rok každodenní bolestivé dilatace; nebo cokoliv jiného, **máte smůlu**.
+Pokud operaci z jakéhokoliv důvodu nechcete: tovární konfigurace vám dysforii nepůsobí; bojíte se komplikací; chcete šanci v budoucnu zplodit dítě; výsledky operací vám nepřijdou dost dobré; nechcete rok každodenní bolestivé dilatace; nebo cokoliv jiného, **máte smůlu**.
 
 Dočasné jméno a špatné písmenko v kolonce "pohlaví" vám zůstane dokud se nenecháte sterilizovat. Musíte si dávat zatracený pozor, abyste neprovedly něco, za co hrozí odnětí svobody.
 
