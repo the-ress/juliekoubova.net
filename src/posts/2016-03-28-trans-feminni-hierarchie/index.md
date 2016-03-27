@@ -30,7 +30,7 @@ A nebo třeba jenom považují své překonání byrokratických překážek, š
   </figcaption>
 </figure>
 
-Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby české trans trans&shy;fo&shy;bič&shy;ky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
+Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby české trans trans&shy;fo&shy;bič&shy;ky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
 ### Proplácení operací
 
