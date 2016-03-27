@@ -24,7 +24,7 @@ Blbé je, když řeknete něco špatně a troll pod mostem vás za trans neuzná
 
 ### Změna dokladů
 
-Počítáte se mnou? Těch osm-devět-patáct měsíců nesmyslného čekání a zhoršující se dysforie uběhlo jako voda. Ale konečně v ruce máte vytouženou krabičku léků. Poprvé v životě se cítíte dobře a spokojeně. Najednou zjistíte že sama sebe dokonce můžete mít ráda.
+Počítáte se mnou? Těch osm-devět-patnáct měsíců nesmyslného čekání a zhoršující se dysforie uběhlo jako voda. Ale konečně v ruce máte vytouženou krabičku léků. Poprvé v životě se cítíte dobře a spokojeně. Najednou zjistíte že sama sebe dokonce můžete mít ráda.
 
 Ale tím vaše trable nekončí. Chcete si změnit jméno. Akorát že ženská jména jsou jen pro ženy, a vy pro tento stát stále ještě dost žena nejste.
 
