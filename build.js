@@ -7,7 +7,6 @@ const Metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const concat = require('metalsmith-concat');
 const define = require('metalsmith-define');
-const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
 const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
@@ -23,6 +22,7 @@ const metadata = require('metalsmith-metadata');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
+const publish = require('metalsmith-publish');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
@@ -106,11 +106,7 @@ function build(options) {
   m.use(metadata({
     imageMap: 'img/map.json'
   }));
-
-  if (!options.live) {
-    m.use(drafts());
-  }
-
+  
   m.use(ignore([
     // ignore hidden files
     '**/.*',
@@ -144,6 +140,14 @@ function build(options) {
 
   m.use(paths());
 
+  // exclude drafts and scheduled posts unless live
+  // needs to run before collections()
+  m.use(publish({
+    drafts: options.live,
+    future: options.live,
+    futureMeta: 'published'
+  }));
+
   m.use(collections({
     posts: {
       sortBy: 'published',
@@ -156,6 +160,10 @@ function build(options) {
     collection: 'posts'
   }));
 
+  // ===========================================================================
+  // NO METADATA CHANGES, ONLY TEMPLATING BEYOND THIS POINT
+  // ===========================================================================
+
   // RSS 
   m.use(feed({
     collection: 'posts',
@@ -165,10 +173,6 @@ function build(options) {
     siteDescription: SiteDescription,
     generator: BaseUrl 
   }));
-
-  // ===========================================================================
-  // NO METADATA CHANGES, ONLY TEMPLATING BEYOND THIS POINT
-  // ===========================================================================
 
   // initialize Handlebars
   m.use(handlebarsHelpers({ directory: 'helpers' }));
