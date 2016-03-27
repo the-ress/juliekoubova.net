@@ -30,7 +30,7 @@ A nebo třeba jenom považují své překonání byrokratických překážek, š
   </figcaption>
 </figure>
 
-Je smutné, jak je místní diskurs 20 let pozadu za Evropou a USA. Kdyby české trans transfobičky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
+Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby české trans trans&shy;fo&shy;bič&shy;ky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
 ### Proplácení operací
 
@@ -42,7 +42,7 @@ Operace jsou přerozdělovnami propláceny protože je to pro lidí trpících d
 
 ### ICD-11
 
-Dalším projevem zaostalosti našeho rybníčku je fetišizace 23 let starého diagnostického manuálu ICD-10, plného dnes již naprosto nepřijatelné, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem *[F64.0](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0): Transsexualismus*, kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná *[F64.1](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1): Transvestitismus dvojí role*, nebo dokonce *[F65.1](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1): Fetišistický transvestitismus*". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
+Dalším projevem zaostalosti našeho rybníčku je fetišizace 23 let starého diagnostického manuálu ICD-10, plného dnes již naprosto nepřijatelné, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem [F64.0: Transsexualismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0), kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná [F64.1: Transvestitismus dvojí role](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1), nebo dokonce [F65.1: Fetišistický transvestitismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1)". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
 
 Myslím, že příští rok, až WHO konečně schválí [novou verzi ICD-11](http://apps.who.int/classifications/icd11/browse/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f90875286), můžeme čekat velké pozdvižení mezi českými trans ženami, které se budou cítit hluboce uraženy, že jejich diagnóza již není v sekci mezi poruchami osobnosti, gamblerstvím nebo kleptománií. Místo toho je gender incongruence zařazena mezi poruchy sexuálního zdraví, kam správně patří.
 
