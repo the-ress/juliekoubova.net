@@ -16,19 +16,19 @@ Na dalším stupínku stojí ženy, které se do operace nijak zvlášť neženo
 
 Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak přes kopírák, jako by je napsal nějaký lidovec nebo republikán. Jedna taková empatická dáma napsala, že nechce žít ve světě, kde ženy mohou mít penis. *Protože kdo má penis, může znásilnit.*
 
+<figure>
+  <img src="terf-660px.jpeg" 
+       alt="Od té doby, co si lidé mohou měnit jména a dokumenty bez operací, je všechno jinak. Teď už nevíš, jaké genitálie mají ostatní v kalhotech. Cítím se tak utlačená.">
+  <figcaption>
+    &copy; <a href="http://assignedmale.com">Sophie Labelle</a>
+  </figcaption>
+</figure>
+
 Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otvírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "*nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě*," případně ultimátní "*souška učitelka nám v prvouce říkala, že žena=XX a muž=XY*"? 
 
 Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo se před operací tak moc nenáviděly? Chodily čůrat na pánské záchody, protože na dámských by mohly někoho omylem znásilnit? Možná jen nejsou spokojeny s výsledky svojí [české inverze](/aikchol-vs-motol/), a když se mají blbě ony, tak ať trpí všichni.
 
 A nebo třeba jenom považují své překonání byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
-
-<figure class="pull-right" lang="en">
-  <img src="assigned-male-300px.jpeg" 
-       alt="Distinguishing 'transgender' from 'transsexual' only reaffirms the medicalization of trans bodies. Enough with the false dichotomy. Don't categorize trans people by their genitals.">
-  <figcaption>
-    &copy; <a href="http://assignedmale.com">Sophie Labelle</a>
-  </figcaption>
-</figure>
 
 Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby české trans trans&shy;fo&shy;bič&shy;ky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
@@ -42,7 +42,15 @@ Operace jsou přerozdělovnami propláceny protože je to pro lidí trpících d
 
 ### ICD-11
 
-Dalším projevem zaostalosti našeho rybníčku je fetišizace 23 let starého diagnostického manuálu ICD-10, plného dnes již naprosto nepřijatelné, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem [F64.0: Transsexualismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0), kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná [F64.1: Transvestitismus dvojí role](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1), nebo dokonce [F65.1: Fetišistický transvestitismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1)". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
+<figure class="pull-right" lang="en">
+  <img src="assigned-male-300px.jpeg" 
+       alt="Distinguishing 'transgender' from 'transsexual' only reaffirms the medicalization of trans bodies. Enough with the false dichotomy. Don't categorize trans people by their genitals.">
+  <figcaption>
+    &copy; <a href="http://assignedmale.com">Sophie Labelle</a>
+  </figcaption>
+</figure>
+
+Dalším projevem zaostalosti našeho rybníčku je fe&shy;ti&shy;ši&shy;za&shy;ce 23 let starého di&shy;a&shy;gnos&shy;tic&shy;ké&shy;ho manuálu ICD-10, plného dnes již naprosto ne&shy;při&shy;ja&shy;tel&shy;né, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem [F64.0: Trans&shy;sexu&shy;alis&shy;mus](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0), kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná [F64.1: Trans&shy;ves&shy;ti&shy;tis&shy;mus dvojí role](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1), nebo dokonce [F65.1: Fe&shy;ti&shy;šis&shy;tic&shy;ký trans&shy;ves&shy;ti&shy;tis&shy;mus](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1)". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
 
 Myslím, že příští rok, až WHO konečně schválí [novou verzi ICD-11](http://apps.who.int/classifications/icd11/browse/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f90875286), můžeme čekat velké pozdvižení mezi českými trans ženami, které se budou cítit hluboce uraženy, že jejich diagnóza již není v sekci mezi poruchami osobnosti, gamblerstvím nebo kleptománií. Místo toho je gender incongruence zařazena mezi poruchy sexuálního zdraví, kam správně patří.
 
