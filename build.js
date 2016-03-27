@@ -27,6 +27,7 @@ const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
 
+const cacheBust = require('./lib/metalsmith-cachebust');
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
 const extractPublished = require('./lib/metalsmith-extract-published');
 const feed = require('./lib/metalsmith-feed');
@@ -302,6 +303,8 @@ function build(options) {
       }
     }));
   }
+  
+  m.use(cacheBust());
 
   if (options.live || options.server) {
     m.use(express());
