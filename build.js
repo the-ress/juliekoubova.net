@@ -235,6 +235,7 @@ function build(options) {
   // uncss main.css based on all html files
   m.use(uncss({
     css: ['main.css'],
+    html: [ '**/*.html', '!index.html' ],
     output: 'main.css',
     uncss: {
       ignore: [
