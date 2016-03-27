@@ -179,8 +179,8 @@ function build(options) {
     pattern: '**/*.hbs'
   }));
 
-  // strip the .hbs extension. inPlace({rename}) always renames to .html but
-  // we use Handlebars to template javascripts, too
+  // strip the .hbs extension. inPlace({rename:true}) always renames to .html
+  // but we use Handlebars to template javascripts, too
   m.use(rename({
     pattern: '**/*.hbs',
     rename: n => n.replace(/\.hbs$/, '')
