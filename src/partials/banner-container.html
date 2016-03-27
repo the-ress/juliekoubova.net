@@ -1,9 +1,5 @@
 <section class="banner-container{{#if className}} {{ className }}{{/if}}">
-  
 {{#each banners}}
-  {{#unless this.noBanner}}
-    {{> banner.html }}
-  {{/unless}}
+  {{> banner.html }}
 {{/each}}
-
 </section>
