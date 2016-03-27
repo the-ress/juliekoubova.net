@@ -43,18 +43,7 @@ const SiteDescription =
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
   'Enjoys photography, singing, theatre, and shooting guns.';
 
-function browserPrePost(baseName) {
-  return [
-    `js/${baseName}.browser-pre.js`,
-    `js/${baseName}.js`,
-    `js/${baseName}.browser-post.js`
-  ];
-}
-
 const ConcatConfig = {
-  'js/hypher.browser.js': browserPrePost('hypher'),
-  'js/hyphenation.browser.cs.js': browserPrePost('hyphenation.cs'),
-  'js/hyphenation.browser.en-us.js': browserPrePost('hyphenation.en-us'),
   'js/post-combined.js': [
     'js/headroom.js',
     'js/post.js'
