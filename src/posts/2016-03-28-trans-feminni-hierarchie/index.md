@@ -2,6 +2,7 @@
 title: Trans-feminní hierarchie
 image: index.jpeg
 description: Nahaté opice milují hierarchii. Neumíme bez ní žít. A trans-feminní lidé nejsou jiní.
+publish: unlisted
 ---
 
 Nahaté opice milují hierarchii. Svět nám nedává smysl, neumíme se v něm orientovat, dokud nevíme, kdo je nad námi a kdo pod námi. A trans-feminní lidé nejsou jiní.
@@ -24,7 +25,7 @@ Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak p�
   </figcaption>
 </figure>
 
-Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otvírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "*nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě*," případně ultimátní "*souška učitelka nám v prvouce říkala, že žena=XX a muž=XY*"? 
+Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otevírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "*nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě*," případně ultimátní "*souška učitelka nám v prvouce říkala, že žena=XX a muž=XY*"? 
 
 Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo se před operací tak moc nenáviděly? Chodily čůrat na pánské záchody, protože na dámských by mohly někoho omylem znásilnit? Možná jen nejsou spokojeny s výsledky svojí [české inverze](/aikchol-vs-motol/), a když se mají blbě ony, tak ať trpí všichni.
 
