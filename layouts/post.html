@@ -25,6 +25,7 @@
 
   {{{ contents }}}
   
+  {{#notEqual publish 'unlisted'}}
   <div class="fb-like" 
       data-href="{{ baseUrl }}{{ path.href }}" 
       data-layout="standard" 
@@ -32,17 +33,20 @@
       data-share="true"
       data-show-faces="false">
   </div>
-
+  {{/notEqual}}
+  
 </article>
   
 {{> banner-container.html className='banner-container-post' }}
 
 {{> footer.html }}
 
+{{#notEqual publish 'unlisted'}}
 <div class="fb-comments" 
      data-href="{{ baseUrl }}{{ path.href }}"
      data-numposts="5"
      data-width="100%">
 </div>
+{{/notEqual}}
 
 <script src="/js/post-combined.min.js"></script>
