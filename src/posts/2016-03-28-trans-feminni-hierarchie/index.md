@@ -16,11 +16,11 @@ Na dalším stupínku stojí ženy, které se do operace nijak zvlášť neženo
 
 Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak přes kopírák, jako by je napsal nějaký lidovec nebo republikán. Jedna taková empatická dáma napsala, že nechce žít ve světě, kde ženy mohou mít penis. *Protože kdo má penis, může znásilnit.*
 
-Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otvírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě," případně ultimátní "v prvouce nám souška učitelka říkala, že žena=XX a muž=XY"? 
+Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otvírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "*nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě*," případně ultimátní "*souška učitelka nám v prvouce říkala, že žena=XX a muž=XY*"? 
 
-Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo samy sebe před operací tak moc nenáviděly? Možná nejsou s výsledky svojí [české inverze](/aikchol-vs-motol/) spokojeny, a když se mají blbě ony, tak ať trpí všichni.
+Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo se před operací tak moc nenáviděly? Chodily čůrat na pánské záchody, protože na dámských by mohly někoho omylem znásilnit? Možná jen nejsou spokojeny s výsledky svojí [české inverze](/aikchol-vs-motol/), a když se mají blbě ony, tak ať trpí všichni.
 
-Snad jenom považují své překonání těch byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
+A nebo třeba jenom považují své překonání těch byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
 
 Je smutné, jak je místní diskurs 20 let pozadu za Evropou a USA. Kdyby české trans transfobičky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
@@ -30,7 +30,7 @@ Jedním z oblíbených slaměných strašáků českých trans transfobiček je,
 
 Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. jenom orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější, než celý ten mnohahodinový cirkus s anesteziologem, hromadou sester, JIP, následnou několikadenní hospitalizací, etc.
 
-Operace jsou přerozdělovnami propláceny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný efektivní způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
+Operace jsou přerozdělovnami propláceny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
 
 ### ICD-11
 
