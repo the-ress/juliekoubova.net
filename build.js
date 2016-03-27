@@ -5,6 +5,7 @@ const Q = require('q');
 
 const Metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
+const concat = require('metalsmith-concat');
 const define = require('metalsmith-define');
 const drafts = require('metalsmith-drafts');
 const express = require('metalsmith-express');
@@ -41,6 +42,24 @@ const SiteTitle = 'Julie Koubová';
 const SiteDescription =
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
   'Enjoys photography, singing, theatre, and shooting guns.';
+
+function browserPrePost(baseName) {
+  return [
+    `js/${baseName}.browser-pre.js`,
+    `js/${baseName}.js`,
+    `js/${baseName}.browser-post.js`
+  ];
+}
+
+const ConcatConfig = {
+  'js/hypher.browser.js': browserPrePost('hypher'),
+  'js/hyphenation.browser.cs.js': browserPrePost('hyphenation.cs'),
+  'js/hyphenation.browser.en-us.js': browserPrePost('hyphenation.en-us'),
+  'js/post-combined.js': [
+    'js/headroom.js',
+    'js/post.js'
+  ]
+};
 
 function mythImports() {
   var mm = require('myth');
@@ -247,7 +266,7 @@ function build(options) {
   }));
 
   // ===========================================================================
-  // INLINE CSS AND JS
+  // INLINE AND COMBINE CSS AND JS
   // ===========================================================================
 
   m.use(inliner({
@@ -262,20 +281,17 @@ function build(options) {
     delete: true
   }));
 
-  m.use(uglify({
-    filter: [
-      'js/headroom.js',
-      'js/post.js'
-    ],
-    concat: 'js/post-combined.js',
-    output: {
-      beautify: options.live
-    },
-    removeOriginal: true
-  }));
-  
+  Object.keys(ConcatConfig).forEach(output => {
+    m.use(concat({
+      output: output,
+      files: ConcatConfig[output],
+      keepConcatenated: false
+    }));
+  });
+
   // uglify javascripts -> .min.js
   m.use(uglify({
+    compress: options.live ? false : undefined,
     output: {
       beautify: options.live
     },
@@ -285,6 +301,7 @@ function build(options) {
   if (!options.live) {
     m.use(htmlMinifier("*.html", {
       minifyJS: {
+        compress: options.live ? false : undefined,
         output: {
           beautify: options.live
         }
