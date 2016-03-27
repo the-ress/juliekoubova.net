@@ -22,6 +22,14 @@ Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprv
 
 A nebo třeba jenom považují své překonání byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
 
+<figure class="pull-right" lang="en">
+  <img src="assigned-male-300px.jpeg" 
+       alt="Distinguishing 'transgender' from 'transsexual' only reaffirms the medicalization of trans bodies. Enough with the false dichotomy. Don't categorize trans people by their genitals.">
+  <figcaption>
+    &copy; <a href="http://assignedmale.com">Sophie Labelle</a>
+  </figcaption>
+</figure>
+
 Je smutné, jak je místní diskurs 20 let pozadu za Evropou a USA. Kdyby české trans transfobičky zkusily tyto svoje názory ventilovat na redditu, tak je tam umlátí čepicema. Řeči o tom, jak si pre-op ženy nezaslouží respektovat jako ženy, působí v civilizovaném světě podobně jako 80-letý rasista, odplivávající si nad smíšenou rodinou. Ale tady, podporovány sexuology, kteří nikdy žádného nebinárního člověka neviděli---překavapivě, když přiznáním riskují, že je sexuolog vyhodí a oni budou muset začít znovu a jinde---mohou svoji nenávist bez obav šířit. 
 
 ### Proplácení operací

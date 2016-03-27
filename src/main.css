@@ -296,6 +296,10 @@ figcaption {
   color: var(--light-red);
 }
 
+.pull-right figcaption, .pull-left figcaption {
+  text-align: left;
+}
+
 iframe {
   display: block;
   margin: 0;
@@ -503,6 +507,14 @@ blockquote cite:before {
     margin-right: -2em; 
   }
   .cookie-law > div { display: inline; }
+  .pull-right { 
+    float: right;
+    margin: 0 0 0 1.5em; 
+  }
+  .pull-left { 
+    float: left;
+    margin: 0 1.5em 0 0; 
+  }
 }
 
 @media screen and (min-width: 660px) {
@@ -513,7 +525,13 @@ blockquote cite:before {
   figure, .hero { 
     margin-left: -40px;
     margin-right: -40px;
-  }  
+  }
+  .pull-right {
+    margin-right: -40px; 
+  }
+  .pull-left {
+    margin-left: -40px; 
+  }
 }
 
 @media screen and (min-height: 560px) {

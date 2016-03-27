@@ -19,16 +19,26 @@ function buildImages() {
   
   m.use(ignore([
     '**/*',
+    '**/.*',
     '!**/*.+(jpg|jpeg|gif|png)',
     '!**/*.+(jpg|jpeg|gif|png).meta.json'
   ]));
   
   m.use(define({
     screenDensity: [ 1, 2 ],
-    imageSizes: [ 660, 200 ]
+    imageSizes: [ 660 ]
   }));
   
   m.use(metafiles());
+  
+  // create 200px wide images for banners
+  m.use((files, m, done) => {
+    Object.keys(files).filter(n => /\/index\.[^.]+$/.test(n)).forEach(n => {
+      files[n].sizes = [660, 200];
+    });
+    done();    
+  });
+  
   m.use(imageResize());  
   m.use(imagemin());
   m.use(imageMap());
