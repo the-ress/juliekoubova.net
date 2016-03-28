@@ -4,6 +4,7 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
+const cleanCss = require('metalsmith-clean-css');
 const collections = require('metalsmith-collections');
 const concat = require('metalsmith-concat');
 const define = require('metalsmith-define');
@@ -260,6 +261,8 @@ function build(options) {
     compress: !options.live
   }));
 
+  m.use(cleanCss());
+
   // ===========================================================================
   // INLINE AND COMBINE CSS AND JS
   // ===========================================================================
@@ -304,7 +307,12 @@ function build(options) {
     }));
   }
   
-  m.use(cacheBust());
+  m.use(cacheBust({
+    pattern: [
+      '**/*.+(css|js)',
+      '!js/html5shiv-printshiv.min.js'
+    ]
+  }));
 
   if (options.live || options.server) {
     m.use(express());

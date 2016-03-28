@@ -24,6 +24,7 @@
     "markdown-it-abbr": "^1.0.3",
     "markdown-it-implicit-figures": "^0.2.3",
     "metalsmith": "^2.1.0",
+    "metalsmith-clean-css": "^2.0.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-concat": "^3.0.3",
     "metalsmith-define": "^1.0.0",
