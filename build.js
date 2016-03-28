@@ -238,7 +238,7 @@ function build(options) {
     }
   }));
 
-  // uncss main.css based on all html files
+  // uncss main.css based on remaining html files
   m.use(uncss({
     css: ['main.css'],
     html: [ '**/*.html', '!index.html' ],
@@ -267,18 +267,6 @@ function build(options) {
   // INLINE AND COMBINE CSS AND JS
   // ===========================================================================
 
-  m.use(inliner({
-    delete: true,
-    css: 'index.css',
-    html: 'index.html'
-  }));
-
-  m.use(inliner({
-    js: 'js/inline.js',
-    html: '**/*.html',
-    delete: true
-  }));
-
   Object.keys(ConcatConfig).forEach(output => {
     m.use(concat({
       output: output,
@@ -294,6 +282,18 @@ function build(options) {
       beautify: options.live
     },
     removeOriginal: true
+  }));
+
+  m.use(inliner({
+    delete: true,
+    css: 'index.css',
+    html: 'index.html'
+  }));
+
+  m.use(inliner({
+    js: 'js/inline.min.js',
+    html: '**/*.html',
+    delete: true
   }));
 
   if (!options.live) {
