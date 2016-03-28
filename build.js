@@ -142,7 +142,9 @@ function build(options) {
   m.use(moveUpImageMap('posts/**'));
 
   // no moving files beyond this point
-  m.use(paths());
+  m.use(paths({
+    directoryIndex: 'index.html'
+  }));
 
   // exclude drafts and scheduled posts unless live
   // needs to run before collections()
