@@ -2,7 +2,6 @@
 title: Trans-feminní hierarchie
 image: index.jpeg
 description: Nahaté opice milují hierarchii. Neumíme bez ní žít. A trans-feminní lidé nejsou jiní.
-publish: unlisted
 ---
 
 Nahaté opice milují hierarchii. Svět nám nedává smysl, neumíme se v něm orientovat, dokud nevíme, kdo je nad námi a kdo pod námi. A trans-feminní lidé nejsou jiní.
@@ -35,9 +34,9 @@ Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby �
 
 ### Proplácení operací
 
-Jedním z oblíbených slaměných strašáků českých trans transfobiček je, že odstranění požadavku sterilizace pro legální uznání rodu povede k ukončení proplácení konfirmačních operací přerozdělovnami. Proto je třeba bojovat proti non-op lidem, kteří chtějí legální rozpoznání svého rodu. Chtějí nám sebrat Motol, svině slovenský!
+Jedním z oblíbených slaměných strašáků českých trans transfobiček je, že odstranění požadavku sterilizace pro legální uznání rodu povede ke konci konfirmačních operací "<span title="There ain't no such thing as a free surgery.">zadarmo</span>." Proto je třeba bojovat proti non-op lidem, kteří chtějí legální rozpoznání svého rodu. Chtějí nám sebrat Motol, svině slovenský!
 
-Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. jenom orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější, než celý ten mnohahodinový cirkus s anesteziologem, hromadou sester, JIP, následnou několikadenní hospitalizací, etc.
+Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. pouze orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější, než celý ten mnohahodinový cirkus s anesteziologem, asistenty, smečkou sester, JIP, následnou několikadenní hospitalizací, etc.
 
 Operace jsou přerozdělovnami hrazeny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
 
@@ -51,7 +50,7 @@ Operace jsou přerozdělovnami hrazeny protože je to pro lidí trpících dysfo
   </figcaption>
 </figure>
 
-Dalším projevem zaostalosti našeho rybníčku je fe&shy;ti&shy;ši&shy;za&shy;ce 23 let starého di&shy;a&shy;gnos&shy;tic&shy;ké&shy;ho manuálu ICD-10, plného dnes již naprosto ne&shy;při&shy;ja&shy;tel&shy;né, urážlivé terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem [F64.0: Trans&shy;sexu&shy;alis&shy;mus](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0), kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná [F64.1: Trans&shy;ves&shy;ti&shy;tis&shy;mus dvojí role](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1), nebo dokonce [F65.1: Fe&shy;ti&shy;šis&shy;tic&shy;ký trans&shy;ves&shy;ti&shy;tis&shy;mus](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1)". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
+Dalším projevem zaostalosti našeho rybníčku je fetišizace 23 let starého diagnostického manuálu ICD-10, plného naprosto nepřijatelné terminologie. České trans ženy se rády mlátí po hlavě F-kódy. "Já jsem [F64.0: Transsexualismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.0), kdo je víc!" nebo "No tak to nejsi F64.0, to jsi možná [F64.1: Transvestitismus dvojí role](http://apps.who.int/classifications/icd10/browse/2008/en#/F64.1), nebo dokonce [F65.1: Fetišistický transvestitismus](http://apps.who.int/classifications/icd10/browse/2008/en#/F65.1)". To poslední je asi nejhorší urážka, kterou si trans ženy mohou uštědřit. 
 
 Myslím, že příští rok, až WHO konečně schválí [novou verzi ICD-11](http://apps.who.int/classifications/icd11/browse/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f90875286), můžeme čekat velké pozdvižení mezi českými trans ženami, které se budou cítit hluboce uraženy, že jejich diagnóza již není v sekci mezi poruchami osobnosti, gamblerstvím nebo kleptománií. Místo toho je gender incongruence zařazena mezi poruchy sexuálního zdraví, kam správně patří.
 
