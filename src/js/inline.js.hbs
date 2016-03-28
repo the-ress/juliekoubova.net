@@ -42,6 +42,26 @@
 
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
+  
+  function getUserAgentVersion(name) {
+    var regExp = new RegExp(name + '\\/(\\d+)');
+    var match = regExp.exec(navigator.userAgent);
+    if (match) return parseInt(match[1], 10);
+  }
+  
+  if (
+    !(getUserAgentVersion('Chrome')) &&
+    (getUserAgentVersion('Safari') <= 601) &&
+    (getUserAgentVersion('AppleWebKit') <= 601)
+  ) {
+    // Safari/601.4.4 on OS X 10.11.3 and Safari/601.1.46 on iOS 9.3 have broken
+    // ligatures with soft hypens.
+    
+    // Safari/601.4.4 AppleWebKit/602.1.26+ (nightly build) on OS X seems to be
+    // okay
+    
+    element.style.webkitFontFeatureSettings = '"liga" 0, "clig" 0';
+  }  
 })(
   this,
   document,
