@@ -39,7 +39,7 @@ Jedním z oblíbených slaměných strašáků českých trans transfobiček je,
 
 Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. jenom orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější, než celý ten mnohahodinový cirkus s anesteziologem, hromadou sester, JIP, následnou několikadenní hospitalizací, etc.
 
-Operace jsou přerozdělovnami propláceny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
+Operace jsou přerozdělovnami hrazeny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
 
 ### ICD-11
 
