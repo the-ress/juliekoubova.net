@@ -24,6 +24,7 @@ const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
 const publish = require('metalsmith-publish');
+const staticAssets = require('metalsmith-static');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
@@ -106,7 +107,7 @@ function build(options) {
   }));
 
   m.use(metadata({
-    imageMap: 'img/map.json'
+    imageMap: 'img-map.json'
   }));
   
   m.use(ignore([
@@ -313,6 +314,11 @@ function build(options) {
       }
     }));
   }
+
+  m.use(staticAssets({
+    src: 'img',
+    dest: 'img'
+  }));
 
   if (options.live || options.server) {
     m.use(express());

@@ -15,7 +15,7 @@ function buildImages() {
   let m = new Metalsmith(__dirname);
 
   m.source('src');
-  m.destination('src/img');
+  m.destination('img');
   
   m.use(ignore([
     '**/*',
