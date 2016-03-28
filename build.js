@@ -13,6 +13,7 @@ const fileMetadata = require('metalsmith-filemetadata');
 const gzip = require('metalsmith-gzip');
 const handlebarsHelpers = require('metalsmith-discover-helpers');
 const htmlMinifier = require('metalsmith-html-minifier');
+const hyphenate = require('metalsmith-hyphenate');
 const ignore = require('metalsmith-ignore');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
@@ -117,9 +118,8 @@ function build(options) {
     // ignore image etc. metadata
     '**/*.meta.json',
     
-    // publish only the processed images from /img
-    '**/*.+(jpg|jpeg|png|gif)',
-    '!img/**'
+    // publish only the processed images
+    '**/*.+(jpg|jpeg|png|gif)'
   ]));
 
   m.use(markdown());
@@ -216,6 +216,10 @@ function build(options) {
       '!pinterest-*.html'
     ]
   }));
+  
+  m.use(hyphenate({
+    useLangAttribute: true
+  }));  
 
   m.use(srcset());
 

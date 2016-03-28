@@ -43,7 +43,7 @@ Operace jsou přerozdělovnami hrazeny protože je to pro lidí trpících dysfo
 
 ### ICD-11
 
-<figure class="pull-right" lang="en">
+<figure class="pull-right" lang="en-us">
   <img src="assigned-male-300px.jpeg" 
        alt="Distinguishing 'transgender' from 'transsexual' only reaffirms the medicalization of trans bodies. Enough with the false dichotomy. Don't categorize trans people by their genitals.">
   <figcaption>
