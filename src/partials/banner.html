@@ -2,7 +2,7 @@
 
   <div class="banner-image">
     {{#if this.image}}
-      <img src="{{ this.path.href }}{{ this.image }}" 
+      <img src="{{ resolveUrl this.path.href this.image }}" 
             width="200" alt=""
             {{#if this.bannerStyle}} style="{{ this.bannerStyle  }}" {{/if}}
             >
