@@ -27,7 +27,7 @@ Naprosto netuším odkud se to bere. Ty argumenty, které slýchám, jsou jak p�
 
 Nedochází jim, že když se vyjadřují autoritativně o rodu jiných osob, otevírají tím dveře ostatním transfobům, kteří se ovšem nebudou rozpakovat použít jiná kritéria. Třeba tvar genitálií při narození. Nebo chromozomy. Protože v čem přesně je rozdíl mezi "**nerespektuji tě jako ženu, nelíbí se mi tvoje tělo**" a "*nerespektuji tě jako ženu, nelíbí se mi jaké tělo jsi měla jako dítě*," případně ultimátní "*souška učitelka nám v prvouce říkala, že žena=XX a muž=XY*"? 
 
-Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo se před operací tak moc nenáviděly? Chodily čůrat na pánské záchody, protože na dámských by mohly někoho omylem znásilnit? Možná jen nejsou spokojeny s výsledky svojí [české inverze](/aikchol-vs-motol/), a když se mají blbě ony, tak ať trpí všichni.
+Nevím, zda jsou si tak nejisté svým rozhodnutím, svojí identitou, že teprve až po operaci, jakožto objektivním zásahu a potvrzení lékařskou autoritou, samy sebe začnou akceptovat jako ženy. A nebo se považovaly za ženy i před operací, ale tuto základní slušnost nejsou schopny poskytnout ostatním. Nebo se před operací tak moc nenáviděly? Možná jen nejsou spokojeny s výsledky svojí [české inverze](/aikchol-vs-motol/), a když se mají blbě ony, tak ať trpí všichni.
 
 A nebo třeba jenom považují své překonání byrokratických překážek, šikany s dočasnými jmény, psychologických vyšetření, komise na ministerstvu a všech ostatních českých post-komunistických nesmyslů za jakousi zásluhu, "badge of honor," a přijde jim nemyslitelné, že by to najednou ostatní nemuseli podstupovat. 
 
@@ -63,7 +63,7 @@ Snad jediné, co lze nové verzi vytknout, že stále patologizuje rodovou nekon
 
 Úplně vespod žebříčku jsou crossdresseři. Z těch je většině trans žen na blití, jelikož se---pravda, celkem oprávněně---děsí, že jemné nuance mezi trans ženou a chlupatym týpkem v lesklejch silonkách jsou pro průměrného voliče hluboko pod rozlišovací schopností.
 
-Ale ani crossdresseři nepřijdou úplně zkrátka. Ti, kteří se jednou za čtvrt roku odváží en femme dojet taxíkem do baru, mohou směle pohrdat těmi, kteří se převlíkají jen doma.
+Ale ani crossdresseři nepřijdou úplně zkrátka. Ti, kteří se jednou za čtvrt roku odváží *en femme* taxíkem do baru, mohou směle pohrdat těmi, kteří se převlíkají jen doma.
 
 ### Závěrem
 
