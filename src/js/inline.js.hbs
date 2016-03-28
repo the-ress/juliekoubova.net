@@ -1,8 +1,4 @@
-(function(win, doc, addEventListener, className, replace, element) {
-
-  function triggerTypekitAnimation(delay) {
-    element[className] = element[className][replace](/\bno-typekit\b/, '');
-  }
+(function(doc, className, replace, element) {
 
   function createScript(src, onLoad) {
     var result = doc.createElement('script');
@@ -12,8 +8,15 @@
     element.appendChild(result);
   }
 
-  setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
-  
+  function getUserAgentVersion(name) {
+    var match = new RegExp(name + '\\/(\\d+)').exec(navigator.userAgent);
+    if (match) return parseInt(match[1], 10);
+  }
+
+  function triggerTypekitAnimation() {
+    element[className] = element[className][replace](/\bno-typekit\b/, '');
+  }
+
   GoogleAnalyticsObject = 'ga';
   ga = {
     l: +new Date,
@@ -39,15 +42,11 @@
       } catch (e) { }
     }
   );
-
+  
   element = doc.documentElement;
   element[className] = element[className][replace](/\bno-js\b/, 'js');
   
-  function getUserAgentVersion(name) {
-    var regExp = new RegExp(name + '\\/(\\d+)');
-    var match = regExp.exec(navigator.userAgent);
-    if (match) return parseInt(match[1], 10);
-  }
+  setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
   
   if (
     !(getUserAgentVersion('Chrome')) &&
@@ -63,9 +62,7 @@
     element.style.webkitFontFeatureSettings = '"liga" 0, "clig" 0';
   }  
 })(
-  this,
   document,
-  'addEventListener',
   'className',
   'replace'
 );
