@@ -4,9 +4,8 @@
     element[className] = element[className][replace](/\bno-typekit\b/, '');
   }
 
-  function createScript(src, id, onLoad) {
+  function createScript(src, onLoad) {
     var result = doc.createElement('script');
-    if (id) result.id = id;
     result.src = 'https://' + src;
     result.async = 1;
     result.onload = result.onreadystatechange = onLoad;
@@ -14,7 +13,7 @@
   }
 
   setTimeout(triggerTypekitAnimation, '{{typekitTimeout}}');
-
+  
   GoogleAnalyticsObject = 'ga';
   ga = {
     l: +new Date,
@@ -30,13 +29,7 @@
   createScript('google-analytics.com/analytics.js');
 
   createScript(
-    'connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}',
-    'facebook-jssdk'
-  );
-
-  createScript(
     'use.typekit.net/{{ typekitId }}.js',
-    0,
     function() {
       try {
         /^(c|l.*d$)/.test(this.readyState || 'c') && Typekit.load({ 
