@@ -295,6 +295,13 @@ function build(options) {
     html: '**/*.html',
     delete: true
   }));
+  
+  m.use(cacheBust({
+    pattern: [
+      '**/*.+(css|js)',
+      '!js/html5shiv-printshiv.min.js'
+    ]
+  }));
 
   if (!options.live) {
     m.use(htmlMinifier("*.html", {
@@ -306,13 +313,6 @@ function build(options) {
       }
     }));
   }
-  
-  m.use(cacheBust({
-    pattern: [
-      '**/*.+(css|js)',
-      '!js/html5shiv-printshiv.min.js'
-    ]
-  }));
 
   if (options.live || options.server) {
     m.use(express());
