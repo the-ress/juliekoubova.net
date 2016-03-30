@@ -1,1 +1,1 @@
-module.exports = s => s.trim();
+module.exports = s => (s || '').trim();
