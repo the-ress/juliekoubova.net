@@ -1,8 +1,9 @@
 {
   "name": "juliekoubova.net",
   "version": "1.0.0",
-  "description": "",
+  "description": "juliekoubova.net",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "node build.js --live",
     "build": "node build.js --production",
@@ -10,8 +11,8 @@
     "images": "node images.js",
     "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Julie Koubova",
+  "license": "UNLICENSED",
   "dependencies": {
     "animate.css": "^3.5.1",
     "cheerio": "^0.20.0",
