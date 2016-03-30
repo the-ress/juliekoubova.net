@@ -24,6 +24,7 @@
     "hyphenation.en-us": "^0.2.1",
     "lodash": "^4.6.1",
     "markdown-it-abbr": "^1.0.3",
+    "markdown-it-footnote": "^2.0.0",
     "markdown-it-implicit-figures": "^0.2.3",
     "metalsmith": "^2.1.0",
     "metalsmith-clean-css": "^2.0.0",

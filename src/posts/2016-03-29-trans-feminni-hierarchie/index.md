@@ -36,7 +36,7 @@ Je smutné, jak je místní diskurs 20 let pozadu za Evropou a Amerikou. Kdyby �
 
 Jedním z oblíbených slaměných strašáků českých trans transfobiček je, že odstranění požadavku sterilizace pro legální uznání rodu povede ke konci konfirmačních operací "<span title="There ain't no such thing as a free surgery.">zadarmo</span>." Proto je třeba bojovat proti non-op lidem, kteří chtějí legální rozpoznání svého rodu. Chtějí nám sebrat Motol, svině slovenský!
 
-Jenže to je holý nesmysl. Zákon vyžaduje sterilizaci, tzn. pouze orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější než celý ten mnohahodinový cirkus s anesteziologem, asistenty, smečkou sester, JIP, následnou několikadenní hospitalizací, etc.
+Jenže to je holý nesmysl. <s>Zákon</s> Ministerstvo [^1] vyžaduje sterilizaci, tzn. pouze orchiektomii, která se dá dělat s lokálním umrtvením nebo epidurálem a je pochopitelně daleko levnější než celý ten mnohahodinový cirkus s anesteziologem, asistenty, smečkou sester, JIP, následnou několikadenní hospitalizací, etc.
 
 Operace jsou přerozdělovnami hrazeny protože je to pro lidí trpících dysforií z primárních sexuálních znaků jediný způsob léčby. S prerekvizitami legální změny rodu to nemá vůbec nic společného.
 
@@ -67,3 +67,11 @@ Ale ani crossdresseři nepřijdou úplně zkrátka. Ti, kteří se jednou za čt
 ### Závěrem
 
 Tedy jak vidíte, trans lidé jsou úplně, ale opravdu úplně normální. Mají dostatek nenávisti, strachu, nebo alespoň pohrdání pro kohokoliv, kdo není přesně jako oni, a nijak se to neostýchají dát najevo.
+
+[^1]: **Update 15:20** Nový občanský zákoník vyžaduje "přeměnu pohlavních orgánů," ale nespecifikuje, jak taková přeměna má vypadat.
+
+    > Změna pohlaví člověka nastává chirurgickým zákrokem při současném 
+    > znemožnění reprodukční funkce a přeměně pohlavních orgánů. 
+    > <cite>[Zákon č. 89/2012 Sb. § 29 (1)](http://business.center.cz/business/pravo/zakony/obcansky-zakonik/cast1h2d2.aspx#par29)</cite>
+    
+    V praxi je (snad) uznávaná i samotná orchiektomie. Každopádně je to krok úplně špatným směrem.

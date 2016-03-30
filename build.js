@@ -20,6 +20,7 @@ const layouts = require('metalsmith-layouts');
 const markdownit = require('metalsmith-markdownit');
 const markdownAbbr = require('markdown-it-abbr');
 const markdownFigures = require('markdown-it-implicit-figures');
+const markdownFootnote = require('markdown-it-footnote');
 const metadata = require('metalsmith-metadata');
 const moveUp = require('metalsmith-move-up');
 const myth = require('metalsmith-myth');
@@ -72,6 +73,8 @@ function markdown() {
   md.use(markdownFigures, {
     figcaption: true
   });
+
+  md.use(markdownFootnote);
 
   return md;
 }
