@@ -3,5 +3,6 @@
    "build/": true,
    "typings/": true
  },
- "editor.wrappingColumn": 80
+ "editor.wrappingColumn": 80,
+ "npm.runInTerminal": false
 }
