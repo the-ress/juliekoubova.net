@@ -2,7 +2,6 @@
 title: První rande
 description: Včera jsem šla na rande. Nedopadlo to dobře. Navazování vztahů je minové pole.
 image: index.jpeg
-publish: unlisted
 ---
 
 <aside class="pull-right">
