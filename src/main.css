@@ -45,7 +45,11 @@ h1 a, h1 a:visited, h1 a:hover, h1 a:active, h1:focus {
   text-decoration: none;
 }
 
-article time, footer, figcaption, .cookie-law {
+article aside {
+  letter-spacing: 0.2px;
+}
+
+article aside p, article time, footer, figcaption, .cookie-law {
   font-size: 0.75em; /* 12px */
   line-height: 2.3334em; /* 28px */
 }
@@ -137,7 +141,7 @@ abbr[title], span[title] {
   transition: padding-top 400ms ease-in-out;
 }
 
-.typekit-animation, p, 
+.typekit-animation, aside, p, 
 h1, h2, h3, h4, h5, h6, 
 time, footer, figcaption, blockquote {
   transition: opacity 800ms ease-out;
@@ -146,6 +150,7 @@ time, footer, figcaption, blockquote {
 
 /* uncss:ignore */
 .js.no-typekit .typekit-animation,
+.js.no-typekit aside, 
 .js.no-typekit p, 
 .js.no-typekit h1,
 .js.no-typekit h2,
@@ -515,6 +520,10 @@ blockquote cite:before {
 
 @media screen and (min-width: 480px) {
   p { text-align: justify; }
+  article aside {
+    max-width: 17em;
+  }
+  
   .contacts li { margin: 0 0.6em; }
   .cookie-law { 
     margin-left: -2em; 
@@ -523,11 +532,11 @@ blockquote cite:before {
   .cookie-law > div { display: inline; }
   .pull-right { 
     float: right;
-    margin: 0 0 0 1.5em; 
+    margin-left: 1.5em; 
   }
   .pull-left { 
     float: left;
-    margin: 0 1.5em 0 0; 
+    margin-right: 1.5em; 
   }
 }
 

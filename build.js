@@ -223,6 +223,7 @@ function build(options) {
   }));
   
   m.use(hyphenate({
+    elements: [ 'a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong' ],
     useLangAttribute: true
   }));  
 
