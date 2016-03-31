@@ -10,7 +10,6 @@
 
 .contacts li {
   display: inline-block;
-  margin: 0 0.2em;
 }
 
 .contacts li.homepage-link {

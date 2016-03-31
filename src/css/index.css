@@ -22,6 +22,10 @@
   transition: margin-top 400ms ease-in-out;
 }
 
+.contacts--index li {
+  margin: 0 0.2em;
+}
+
 .tags {
   list-style: none;
   padding: 0;
