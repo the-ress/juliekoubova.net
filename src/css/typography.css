@@ -1,0 +1,282 @@
+html {
+  font-family: proxima-nova, sans-serif;
+  color: var(--gray);  
+  background: #fff;
+  
+  /* makes the switch to non-GPU text rendering when transitions
+     and animations finish less harsh in Safari */
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body, .headroom header {
+  min-width: 314px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 3px;
+}
+
+h1 {
+  font-family: proxima-nova-soft, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 2em; /* 32px */
+  line-height: 1.75em; /* 56px */
+  margin-top: 1.75em;
+  margin-bottom: 0.875em;
+}
+
+h1 a, h1 a:visited, h1 a:hover, h1 a:active, h1:focus {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+article aside {
+  letter-spacing: 0.2px;
+}
+
+article aside p, article time, footer, figcaption, .cookie-law {
+  font-size: 0.75em; /* 12px */
+  line-height: 2.3334em; /* 28px */
+}
+
+article time, footer, .cookie-law {
+  margin-top: 2.3333em;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  margin-bottom: 4.6666em;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 1.75em; /* 28px */
+  line-height: 1em; /* 28px */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+h2 a:link,
+h2 a:active,
+h2 a:focus,
+h2 a:hover,
+h2 a:visited  {
+  color: var(--gray);
+}
+
+h3 {
+  font-size: 1.25em; /* 20px */
+  line-height: 1.4em; /* 28px */
+  margin-top: 2.8em;
+  margin-bottom: 1.4em;
+  font-weight: 400;
+}
+
+a:visited {
+  color: var(--light-red);
+}
+
+a:link, a:active, a:hover, a:focus {
+  color: var(--dark-red);
+}
+
+p {
+  font-size: 1em; /* 16px */
+  line-height: 1.75em; /* 28px */
+  margin: 0 0 1.75em 0;
+}
+
+abbr[title], span[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+figure, .hero {
+  margin: 0 0 28px 0;
+}
+
+figure img, .hero img {
+  max-width: 100%;
+  display: block;
+}
+
+figcaption {
+  margin: 0;
+  text-align: right;
+  color: var(--light-red);
+}
+
+.pull-right figcaption, .pull-left figcaption {
+  text-align: left;
+}
+
+blockquote {
+  margin: 0 0 0 0.5em;
+  padding-left: 1.5em;
+  font-style: italic;
+  border-left: 3px solid var(--light-red);
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+}
+
+blockquote cite:before {
+  content: "\2014 ";
+}
+
+.footnotes-sep {
+  border: none;
+  color: var(--light-red);
+  background: var(--light-red);
+  height: 1px;
+  margin: 0 auto 27px auto;
+  max-width: 15em;
+}
+
+.footnotes ol, .footnotes li {
+  padding-left: 0;
+  margin: 0;
+}
+
+.copy a {
+  text-decoration: none;
+}
+
+time .d, time .m {
+  font-weight: 600;
+}
+
+.typekit-animation,
+aside,
+p, 
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6, 
+time,
+footer,
+figcaption,
+blockquote {
+  transition: opacity 800ms ease-out;
+  opacity: 1;
+}
+
+/* uncss:ignore */
+.js.no-typekit .typekit-animation,
+.js.no-typekit aside, 
+.js.no-typekit p, 
+.js.no-typekit h1,
+.js.no-typekit h2,
+.js.no-typekit h3,
+.js.no-typekit h4,
+.js.no-typekit h5,
+.js.no-typekit h6,
+.js.no-typekit time,
+.js.no-typekit footer,
+.js.no-typekit figcaption,
+.js.no-typekit blockquote {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.print-only { display: none; }
+
+::selection {
+  background: var(--dark-red);
+  color: #fff;
+}
+
+@media (--landscape) {
+  body, .headroom header {
+    max-width: 520px; 
+  }
+}
+
+@media (--medium-screen) {
+  p {
+    text-align: justify;
+  }
+  
+  article aside {
+    max-width: 17em;
+  }
+  
+  .pull-right { 
+    float: right;
+    margin-left: 1.5em; 
+  }
+  
+  .pull-left { 
+    float: left;
+    margin-right: 1.5em; 
+  }
+}
+
+@media (--large-screen) {
+  body, .headroom header { 
+    max-width: 580px;
+  }
+  figure, .hero { 
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  .pull-right {
+    margin-right: -40px; 
+  }
+  .pull-left {
+    margin-left: -40px; 
+  }
+}
+
+.portrait-wrapper {
+  float: left;
+  margin-right: 0.5em;  
+}
+
+.portrait {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  margin: 12px 0; /*32+2*12=56 (%28px) */
+  width: 32px;
+  height: 32px;
+}
+
+.portrait img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.copy {
+  transition: margin-top 400ms ease-in-out;
+}
+
+iframe {
+  display: block;
+  margin: 0;
+}
+
+.fb-like {
+  display: block !important;
+  clear: both;
+  padding: 4px 0;
+}
+
+.fb-like, .fb-comments {
+  overflow-x: hidden;
+}

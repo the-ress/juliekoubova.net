@@ -1,0 +1,155 @@
+.index h1 {  
+  font-weight: 300;
+  font-size: 2.375em; /* 38px */
+  line-height: 1.4737em; /* 56px */
+  margin-top: 0.7368em;
+  margin-bottom: 0;
+}
+
+.index {
+  text-align: center;
+  padding-top: 1.75em;
+  transition: padding-top 400ms ease-in-out;
+}
+
+.index .typekit-animation {
+  /*delay to interfer less with the fadeInDown animation*/
+  transition-delay: 400ms;
+}
+
+.contacts--index {
+  margin: 10px 0; /*64 + 2*10 = 84 (%28px)*/  
+  transition: margin-top 400ms ease-in-out;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  font-weight: 300;
+  line-height: 1.75em; /* 28px */
+  margin: 1.75em 0 0 0;
+  transition: margin-top 400ms ease-in-out;
+}
+
+.tags li {
+  display: inline-block;
+  margin: 0 0.4em;
+}
+
+.tags li::before {
+  content: "#";
+}
+
+.index .portrait-wrapper {
+  float: none;
+  margin-right: 0;
+}
+
+.index .portrait {
+  width: 168px;
+  height: 168px;
+  margin: 0; /*168 (%28px)*/
+}
+
+.cookie-law span, .cookie-law s {
+  display: inline-block;
+}
+
+.cookie-law s {
+  animation-delay: 5s;
+  animation-duration: 3s;
+  transition: width 400ms ease-in;
+  transform-origin: bottom left;
+  z-index: var(--z-below-text);
+}
+
+@keyframes falling-eurocrat {
+  0% {
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  40%, 80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+
+.falling-eurocrat {
+  animation-name: falling-eurocrat;
+  transform-origin: center left;
+}
+
+@media (--medium-screen) {
+  .contacts--index li { 
+    margin: 0 0.6em; 
+  }
+  
+  .cookie-law { 
+    margin-left: -2em; 
+    margin-right: -2em; 
+  }
+  
+  .cookie-law > div {
+    display: inline;
+  }
+}
+
+@media screen and (min-height: 560px) {
+  .contacts--index { 
+    margin-top: 2.375em;
+  }
+  .index .portrait {
+    margin: 2px 0; /*192 + 2*2 = 196 (%28px)*/
+    width: 192px;
+    height: 192px;
+  }
+}
+
+@media screen and (min-height: 670px) {  
+  .index { padding-top: 3.5em; }
+  .tags { margin-top: 1.75em; }
+  .copy { margin-top: 2.333em; }
+}
+
+@media (--landscape) {
+  .index header { overflow: auto; }
+  
+  .index h1 {
+    font-size: 3em; /* 48px */
+    line-height: 1.1667em; /* 56px */
+    margin-top: 0.29165em;
+    margin-bottom: 0.29165em;
+  }
+  .index .portrait { 
+    float: left;
+  }
+  .tags {
+    clear: both;
+  }
+}
+
+@media print {
+  .index .portrait { display: none;}
+  .index {
+    text-align: left;
+  }
+  .index p {
+    font-size: 16pt;
+  }
+  .index h1 {
+    line-height: 1;
+    font-size: 24pt;
+  }
+  .tags { display: none; }
+}

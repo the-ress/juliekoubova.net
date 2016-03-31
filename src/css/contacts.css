@@ -1,0 +1,155 @@
+
+.header-wrapper {
+  position: relative;
+}
+
+.contacts {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts li {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+.contacts li.homepage-link {
+  display: none;
+}
+
+.contacts path {
+  fill: white;
+}
+
+.contacts circle {
+  fill: var(--light-red);
+}
+
+.contacts a:focus {
+  outline: none;
+}
+
+.contacts a:hover svg,
+.contacts a:focus svg  {
+  transform: scale(1.05);
+  transition: transform 200ms;
+}
+
+.contacts a:hover circle,
+.contacts a:focus circle {
+  fill: var(--dark-red);
+}
+
+.contacts a:hover path,
+.contacts a:focus path {
+  fill: white;
+}
+
+
+@keyframes rollInFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(200%, 0, 0) rotate3d(0, 0, 1, 180deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.contacts--animated li {
+  animation-name: rollInFromRight;
+  animation-duration: 1s;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+}
+.contacts--animated li:nth-child(1) {
+  animation-delay: 1s;
+}
+.contacts--animated li:nth-child(2) {
+  animation-delay: 1.2s;
+}
+.contacts--animated li:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+.contacts--colorful .facebook-link a circle {
+  fill: #3e5c98;
+}
+
+.contacts--colorful .twitter-link a circle {
+  fill:#2aa3ef;
+}
+
+.contacts--small {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.contacts--small li {
+  margin: 0 0 0 5px;
+}
+
+.contacts--small a {
+  opacity: 0.6;
+  transition: opacity 200ms ease-in;
+}
+
+.contacts--small a:focus,
+.contacts--small a:hover,
+.contacts--small a:active {
+  opacity: 1;
+}
+
+.contacts--small svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contacts--small path {
+  transform: scale(0.85);
+  transform-origin: center center;
+}
+
+@media screen and (min-width: 380px) {
+  .contacts--small {
+    display: block;
+  }
+}
+
+@media print {
+  .contacts {
+    line-height: 2;
+  }
+  .contacts li {
+    display: block;
+    font-size: 16pt;
+    font-weight: 300;
+  }
+  
+  .contacts li.homepage-link {
+    display: block;
+    font-weight: 400;
+  }
+  
+  .contacts a[href], 
+  .contacts a[href]:after {
+    text-decoration: none;
+  }
+  
+  .contacts a[href]:after, .copy a[href]:after {
+    content: attr(href);
+  }
+  .contacts svg {
+    max-height: 1.25em;
+    max-width: 1.25em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .contacts circle {
+    fill: var(--gray);
+  }
+}

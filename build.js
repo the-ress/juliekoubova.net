@@ -17,19 +17,24 @@ const hyphenate = require('metalsmith-hyphenate');
 const ignore = require('metalsmith-ignore');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
-const markdownit = require('metalsmith-markdownit');
-const markdownAbbr = require('markdown-it-abbr');
-const markdownFigures = require('markdown-it-implicit-figures');
-const markdownFootnote = require('markdown-it-footnote');
 const metadata = require('metalsmith-metadata');
 const moveUp = require('metalsmith-move-up');
-const myth = require('metalsmith-myth');
 const paths = require('metalsmith-paths');
 const publish = require('metalsmith-publish');
 const staticAssets = require('metalsmith-static');
 const uglify = require('metalsmith-uglify');
 const uncss = require('metalsmith-uncss');
 const watch = require('metalsmith-watch');
+
+const markdownit = require('metalsmith-markdownit');
+const markdownAbbr = require('markdown-it-abbr');
+const markdownFigures = require('markdown-it-implicit-figures');
+const markdownFootnote = require('markdown-it-footnote');
+
+const postcss = require('metalsmith-postcss');
+const postcssCssnext = require('postcss-cssnext');
+const postcssCsso = require('postcss-csso');
+const postcssImport = require('postcss-import');
 
 const cacheBust = require('./lib/metalsmith-cachebust');
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
@@ -54,13 +59,6 @@ const ConcatConfig = {
     'js/post.js'
   ]
 };
-
-function mythImports() {
-  var mm = require('myth');
-  return myth({
-    features: _.fromPairs(mm.features.map(f => [f, f == 'import']))
-  });
-}
 
 function markdown() {
   let md = markdownit({
@@ -233,7 +231,19 @@ function build(options) {
     baseUrl: BaseUrl
   }));
 
-  m.use(mythImports());
+  // ===========================================================================
+  // CSS PROCESSING
+  // ===========================================================================
+
+  // we can safely ignore the partials, postcssImport reads them from disk anyway
+  m.use(ignore('css/**/*'));
+
+  // inline @import's
+  m.use(postcss([
+    postcssImport({
+      root: m.source()
+    })
+  ]));
 
   // uncss main.css based on index.html into index.css
   // which will be later inlined into index.html
@@ -267,12 +277,13 @@ function build(options) {
     }
   }));
 
-  // compress uncss output
-  m.use(myth({
-    compress: !options.live
-  }));
+  // postcss
+  m.use(postcss([
+    postcssCssnext(),
+    postcssCsso(),
+  ]));
 
-  m.use(cleanCss());
+  // m.use(cleanCss());
 
   // ===========================================================================
   // INLINE AND COMBINE CSS AND JS

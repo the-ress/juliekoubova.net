@@ -1,0 +1,42 @@
+@media print {
+  * {
+    background: transparent !important;
+    /* Black prints faster: h5bp.com/s */
+    color: black !important; 
+    text-shadow: none !important; 
+    filter:none !important; 
+    -ms-filter: none !important; 
+    opacity: 1 !important;
+  }
+  a[href]:after {
+    text-decoration: underline;
+    content: " (" attr(href) ")"; 
+  }
+  abbr[title]:after, span[title]:after { content: " (" attr(title) ")"; }
+  /* Don't show links for images, or javascript/internal links */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 1.5cm 2cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+  body {max-width: none;}
+  
+  .print-only { display: initial; }
+  
+  h1 a[href]:after {
+    content: '';
+  }
+ 
+  .cookie-law, .fb-like {
+    display: none !important; /* fb-like overrides probably */
+  }
+  
+  footer {
+    page-break-after: always;
+  }
+}
