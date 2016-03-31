@@ -1,15 +1,14 @@
-{{#if image}}
-<div class="hero">
-  <img src="{{ image }}" alt="{{ imageAlt }}" width="660">
-  {{#if imageAlt}}
-  <figcaption>{{ imageAlt }}</figcaption>
-  {{/if}}
-</div>
-{{/if}}
-
-{{> header.html }}
-
 <article>
+  {{#if image}}
+  <div class="hero">
+    <img src="{{ image }}" alt="{{ imageAlt }}" width="660">
+    {{#if imageAlt}}
+    <figcaption>{{ imageAlt }}</figcaption>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{> header.html }}
   
   {{#if published}}
   <time datetime="{{ iso8601 published }}">

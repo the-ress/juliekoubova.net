@@ -64,20 +64,6 @@ article time, footer, .cookie-law {
   font-weight: 300;
 }
 
-article time {
-  font-weight: 400;
-  margin-left: 0.1em;  
-}
-
-article time .d, article time .m {
-  font-weight: 600;
-}
-
-time {
-  text-transform: uppercase;
-  color: var(--light-red);
-}
-
 footer {
   clear: both;
   text-align: center;
@@ -473,13 +459,21 @@ blockquote cite:before {
   margin: 0;
 }
 
+time, .banner-next, .banner-prev {
+  display: block;
+  font-weight: 400;
+  margin-left: 0.1em;  
+  text-transform: uppercase;
+  color: var(--light-red);
+}
+
 .banner time, .banner-next, .banner-prev {
   font-size: .625em; /*10px*/
   margin-top: 1.6em;  /*16px*/
-  display: block;
-  font-weight: 400;
-  color: var(--light-red);
-  text-transform: uppercase;
+}
+
+time .d, time .m {
+  font-weight: 600;
 }
 
 .headroom {
@@ -503,12 +497,15 @@ blockquote cite:before {
 
 .headroom--pinned.headroom--not-top {
   transform: translateY(0%);
-  transition: transform 200ms linear;
+  transition: transform 400ms linear;
 }
 
 .headroom--unpinned, .headroom--top {
   transform: translateY(-100%);
-  transition: transform 200ms linear;
+  transition: transform 400ms linear;
+}
+
+.headroom--top {
   visibility: hidden;
 }
 
