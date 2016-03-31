@@ -1,0 +1,43 @@
+<ul class="contacts {{ cssClass }}">
+  
+  {{#if homepage}}
+  <li class="homepage-link {{ itemCssClass }}">
+    <a href="{{ baseUrl }}">
+      {{> svg/home.svg }}
+    </a>
+  </li>
+  {{/if}}
+  
+  {{#if facebook}}
+  <li class="facebook-link {{ itemCssClass }}">
+    <a title="Facebook" href="https://facebook.com/julie.e.harshaw">
+      {{> svg/facebook.svg }}
+    </a>
+  </li>
+  {{/if}}
+  
+  {{#if twitter}}
+  <li class="twitter-link {{ itemCssClass }}">
+    <a title="Twitter" href="https://twitter.com/julieeharshaw">
+      {{> svg/twitter.svg }}
+    </a>
+  </li>
+  {{/if}}
+  
+  {{#if github}}  
+  <li class="github-link {{ itemCssClass }}">
+    <a title="GitHub" href="https://github.com/juliekoubova">
+      {{> svg/github.svg }}
+    </a>
+  </li>
+  {{/if}}
+
+  {{#if email}}
+  <li class="email-link {{ itemCssClass }}">
+    <a title="Email" href="mailto:juliekoubova@icloud.com">
+      {{> svg/email.svg }}
+    </a>
+  </li>
+  {{/if}}
+
+</ul>

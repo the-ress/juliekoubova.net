@@ -1,14 +1,23 @@
 <header>
-  <a href="/">
-    {{> portrait.html src=portrait.default size=32 }}
-  </a>
-  
-  <h1>
+  <div class="header-wrapper">
     <a href="/">
-      {{ siteTitle }}
-      <span class="print-only">
-        {{ siteTitlePrintSuffix }}
-      </span>
+      {{> portrait.html src=portrait.default size=32 }}
     </a>
-  </h1>
+    
+    <h1>
+      <a href="/">
+        {{ siteTitle }}
+        <span class="print-only">
+          {{ siteTitlePrintSuffix }}
+        </span>
+      </a>
+    </h1>
+    
+    {{> contacts.html 
+          cssClass="contacts--colorful contacts--small contacts--animated"
+          facebook=true
+          twitter=true
+          email=true
+    }}
+  </div>
 </header>

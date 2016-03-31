@@ -4,7 +4,6 @@
 
   function ready() {
     var original = doc[querySelector]('header');
-    var originalH1 = original[querySelector]('h1');
     var container = doc.createElement('div');
     var headroom;
         
@@ -19,7 +18,7 @@
     });
 
     function onWindowResize() {
-      headroom[offset] = originalH1[offset + 'Top'];
+      headroom[offset] = original[offset + 'Top'];
       var figures = doc[querySelector + 'All']('.hero img, figure img'),
           i = figures.length,
           img; 

@@ -30,6 +30,10 @@ body, .headroom header {
   padding: 0 3px;
 }
 
+.header-wrapper {
+  position: relative;
+}
+
 h1 {
   font-family: proxima-nova-soft, sans-serif;
   font-weight: 300;
@@ -175,7 +179,7 @@ time, footer, figcaption, blockquote {
   padding: 0;
 }
 
-.contacts {
+.contacts--index {
   margin: 10px 0; /*64 + 2*10 = 84 (%28px)*/  
   transition: margin-top 400ms ease-in-out;
 }
@@ -216,6 +220,74 @@ time, footer, figcaption, blockquote {
 .contacts a:focus path {
   fill: white;
 }
+
+
+@keyframes rollInFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(200%, 0, 0) rotate3d(0, 0, 1, 180deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.contacts--animated li {
+  animation-name: rollInFromRight;
+  animation-duration: 1s;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+}
+.contacts--animated li:nth-child(1) {
+  animation-delay: 1s;
+}
+.contacts--animated li:nth-child(2) {
+  animation-delay: 1.2s;
+}
+.contacts--animated li:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+.contacts--colorful .facebook-link a circle {
+  fill: #3e5c98;
+}
+
+.contacts--colorful .twitter-link a circle {
+  fill:#2aa3ef;
+}
+
+.contacts--small {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.contacts--small li {
+  margin: 0 1px;
+}
+
+.contacts--small a {
+  opacity: 0.6;
+  transition: opacity 200ms ease-in;
+}
+
+.contacts--small a:focus, .contacts--small a:hover, .contacts--small a:active {
+  opacity: 1;
+}
+
+.contacts--small svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contacts--small path {
+  transform: scale(0.84);
+  transform-origin: center center;
+}
+
 
 .tags {
   font-weight: 300;
@@ -518,13 +590,19 @@ blockquote cite:before {
   }
 }
 
+@media screen and (min-width: 380px) {
+  .contacts--small {
+    display: block;
+  }
+}
+
 @media screen and (min-width: 480px) {
   p { text-align: justify; }
   article aside {
     max-width: 17em;
   }
   
-  .contacts li { margin: 0 0.6em; }
+  .contacts--index li { margin: 0 0.6em; }
   .cookie-law { 
     margin-left: -2em; 
     margin-right: -2em; 
@@ -558,7 +636,9 @@ blockquote cite:before {
 }
 
 @media screen and (min-height: 560px) {
-  .contacts { margin-top: 2.375em; }
+  .contacts--index { 
+    margin-top: 2.375em;
+  }
   .index .portrait {
     margin: 2px 0; /*192 + 2*2 = 196 (%28px)*/
     width: 192px;
