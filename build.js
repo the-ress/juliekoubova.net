@@ -35,6 +35,7 @@ const postcss = require('metalsmith-postcss');
 const postcssCssnext = require('postcss-cssnext');
 const postcssCsso = require('postcss-csso');
 const postcssImport = require('postcss-import');
+const postcssPerfectionist = require('perfectionist');
 
 const cacheBust = require('./lib/metalsmith-cachebust');
 const canonicalUrls = require('./lib/metalsmith-canonical-urls');
@@ -277,11 +278,20 @@ function build(options) {
     }
   }));
 
-  // postcss
   m.use(postcss([
     postcssCssnext(),
-    postcssCsso(),
+    postcssCsso()
   ]));
+  
+  if (options.live) {
+    m.use(postcss([
+      postcssPerfectionist({
+        indent: 2
+      })
+    ]));
+  }
+  
+  // postcss
 
   // m.use(cleanCss());
 
