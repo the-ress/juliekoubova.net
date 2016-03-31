@@ -9,7 +9,7 @@
     "build": "node build.js --production",
     "test": "node build.js --server",
     "images": "node images.js",
-    "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\".*\" demonka:/data/www/juliekoubova.net"
+    "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\\\".*\\\" demonka:/data/www/juliekoubova.net"
   },
   "author": "Julie Koubova",
   "license": "UNLICENSED",
