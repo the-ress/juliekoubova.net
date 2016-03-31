@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const Metalsmith = require('metalsmith');
 const Q = require('q');
 
@@ -18,6 +19,7 @@ function buildImages() {
   m.destination('img');
   
   m.use(ignore([
+    'img-map.json',
     '**/*',
     '**/.*',
     '!**/*.+(jpg|jpeg|gif|png)',
@@ -46,4 +48,9 @@ function buildImages() {
   return Q.nfcall(m.build.bind(m));  
 }
 
-buildImages().done();
+buildImages().then(() => 
+  fs.createReadStream(__dirname + '/img/map.json').pipe(
+    fs.createWriteStream(__dirname + '/src/img-map.json')
+  )
+)
+.done();
