@@ -4,7 +4,6 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
-const cleanCss = require('metalsmith-clean-css');
 const collections = require('metalsmith-collections');
 const concat = require('metalsmith-concat');
 const define = require('metalsmith-define');
@@ -32,9 +31,10 @@ const markdownFigures = require('markdown-it-implicit-figures');
 const markdownFootnote = require('markdown-it-footnote');
 
 const postcss = require('metalsmith-postcss');
+const postcssCssnano = require('cssnano');
 const postcssCssnext = require('postcss-cssnext');
-const postcssCsso = require('postcss-csso');
 const postcssImport = require('postcss-import');
+const postcssMqpacker = require('css-mqpacker');
 const postcssPerfectionist = require('perfectionist');
 
 const cacheBust = require('./lib/metalsmith-cachebust');
@@ -112,14 +112,14 @@ function build(options) {
   m.use(metadata({
     imageMap: 'img-map.json'
   }));
-  
+
   m.use(ignore([
     // ignore hidden files
     '**/.*',
-    
+
     // ignore image etc. metadata
     '**/*.meta.json',
-    
+
     // publish only the processed images
     '**/*.+(jpg|jpeg|png|gif)'
   ]));
@@ -178,7 +178,7 @@ function build(options) {
     siteUrl: BaseUrl,
     siteTitle: SiteTitle,
     siteDescription: SiteDescription,
-    generator: BaseUrl 
+    generator: BaseUrl
   }));
 
   // initialize Handlebars
@@ -220,11 +220,11 @@ function build(options) {
       '!pinterest-*.html'
     ]
   }));
-  
+
   m.use(hyphenate({
-    elements: [ 'a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong' ],
+    elements: ['a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong'],
     useLangAttribute: true
-  }));  
+  }));
 
   m.use(srcset());
 
@@ -263,7 +263,7 @@ function build(options) {
   // uncss main.css based on remaining html files
   m.use(uncss({
     css: ['main.css'],
-    html: [ '**/*.html', '!index.html' ],
+    html: ['**/*.html', '!index.html'],
     output: 'main.css',
     uncss: {
       ignore: [
@@ -280,20 +280,20 @@ function build(options) {
 
   m.use(postcss([
     postcssCssnext(),
-    postcssCsso()
-  ]));
-  
-  if (options.live) {
-    m.use(postcss([
-      postcssPerfectionist({
+    postcssMqpacker({
+      sort: true
+    }),
+    options.live
+      ? postcssPerfectionist({
         indent: 2
       })
-    ]));
-  }
-  
-  // postcss
-
-  // m.use(cleanCss());
+      : postcssCssnano({
+        autoprefixer: false,
+        discardComments: {
+          removeAll: true
+        }
+      })
+  ]));
 
   // ===========================================================================
   // INLINE AND COMBINE CSS AND JS
@@ -327,7 +327,7 @@ function build(options) {
     html: '**/*.html',
     delete: true
   }));
-  
+
   m.use(cacheBust({
     pattern: [
       '**/*.+(css|js)',
