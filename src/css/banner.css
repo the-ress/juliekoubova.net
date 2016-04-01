@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-.banner-container-post {
+.banner-container--post {
   margin-top: 1.75em;
 }
 
@@ -77,7 +77,20 @@ time, .banner-next, .banner-prev {
     width: 148px;
     height: 196px;
     float: left;
-    margin: 0 5px 1.75em 5px;
+    margin: 0 6px 1.75em 6px;
+  }
+
+  .banner-container--post .banner {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+  
+  .banner-container--post .banner:first-child {
+    margin-left: 0;
+  }
+  
+  .banner-container--post .banner:last-child {
+    margin-right: 0;
   }
   
   .banner p { max-height: 84px; }
@@ -88,5 +101,11 @@ time, .banner-next, .banner-prev {
 }
 
 @media (--large-screen) {
-  .banner { width: 180px; }
+  .banner { 
+    width: 180px; 
+  }
+  .banner-container--post .banner {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
