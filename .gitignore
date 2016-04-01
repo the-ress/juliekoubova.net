@@ -1,3 +1,4 @@
 build/
-npm-debug.log
 img/
+src/img-map.json
+npm-debug.log
