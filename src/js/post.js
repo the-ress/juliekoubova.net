@@ -19,7 +19,7 @@
 
     function onWindowResize() {
       headroom[offset] = original[offset + 'Top'];
-      var figures = doc[querySelector + 'All']('.hero img, figure img'),
+      var figures = doc[querySelector + 'All']('figure img'),
           i = figures.length,
           img; 
       

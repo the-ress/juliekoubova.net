@@ -99,11 +99,11 @@ abbr[title], span[title] {
   cursor: help;
 }
 
-figure, .hero {
+figure {
   margin: 0 0 28px 0;
 }
 
-figure img, .hero img {
+figure img {
   max-width: 100%;
   display: block;
 }
@@ -229,7 +229,7 @@ blockquote {
   body, .headroom header { 
     max-width: 580px;
   }
-  figure, .hero { 
+  figure { 
     margin-left: -40px;
     margin-right: -40px;
   }
