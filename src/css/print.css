@@ -32,7 +32,7 @@
     content: '';
   }
  
-  .cookie-law, .fb-like {
+  .cookie-law, .social {
     display: none !important; /* fb-like overrides probably */
   }
   
