@@ -5,14 +5,16 @@ iframe {
 }
 
 .social {
-  padding-top: 3px;
+  padding: 4px 0;
   margin-bottom: 1.75em;
+}
+
+.social, .fb-comments {
+  overflow-x: hidden;
 }
 
 .fb-like, .twitter-share-button {
   display: inline-block;
+  vertical-align: bottom;
 }
 
-.fb-like, .fb-comments {
-  overflow-x: hidden;
-}
