@@ -25,12 +25,22 @@
   {{{ contents }}}
   
   {{#notEqual publish 'unlisted'}}
-  <div class="fb-like" 
-      data-href="{{ baseUrl }}{{ path.href }}" 
-      data-layout="standard" 
-      data-action="like" 
-      data-share="true"
-      data-show-faces="false">
+  <div class="social">
+
+    <a class="twitter-share-button" 
+      href="https://twitter.com/intent/tweet"
+      data-via="{{ twitterHandle twitterSite }}">
+      Tweet
+    </a>
+    
+    <div class="fb-like" 
+        data-href="{{ baseUrl }}{{ path.href }}" 
+        data-layout="standard" 
+        data-action="like" 
+        data-share="true"
+        data-show-faces="false">
+    </div>
+    
   </div>
   {{/notEqual}}
   
@@ -40,18 +50,22 @@
 
 {{> footer.html }}
 
+<script async src="/js/post-combined.min.js"></script>
+
 {{#notEqual publish 'unlisted'}}
 <div class="fb-comments" 
      data-href="{{ baseUrl }}{{ path.href }}"
      data-numposts="5"
      data-width="100%">
 </div>
-
 <div id="fb-root"></div>
+
 <script async 
   id="facebook-jssdk"
   src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={{fbAppId}}">
 </script>
+<script async
+  id="twitter-wjs"
+  src="https://platform.twitter.com/widgets.js">
+</script>
 {{/notEqual}}
-
-<script async src="/js/post-combined.min.js"></script>

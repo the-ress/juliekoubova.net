@@ -1,0 +1,18 @@
+
+iframe {
+  display: block;
+  margin: 0;
+}
+
+.social {
+  padding-top: 3px;
+  margin-bottom: 1.75em;
+}
+
+.fb-like, .twitter-share-button {
+  display: inline-block;
+}
+
+.fb-like, .fb-comments {
+  overflow-x: hidden;
+}

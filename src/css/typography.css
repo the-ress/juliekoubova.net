@@ -37,6 +37,7 @@ article aside {
 article aside p, article time, footer, figcaption, .cookie-law {
   font-size: 0.75em; /* 12px */
   line-height: 2.3334em; /* 28px */
+  margin-bottom: 2.3334em; /* 28px */
 }
 
 article time, footer, .cookie-law {
@@ -266,19 +267,4 @@ blockquote {
 
 .copy {
   transition: margin-top 400ms ease-in-out;
-}
-
-iframe {
-  display: block;
-  margin: 0;
-}
-
-.fb-like {
-  display: block !important;
-  clear: both;
-  padding: 4px 0;
-}
-
-.fb-like, .fb-comments {
-  overflow-x: hidden;
 }
