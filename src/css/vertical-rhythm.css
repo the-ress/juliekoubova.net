@@ -1,0 +1,109 @@
+html {
+  font-size:   87.5%; /* 14px */
+  line-height:  2;    /* 28px */
+}
+
+h1 {
+  font-size:     2.18em;   /* 30px */
+  line-height:   1.8349;   /* 56px */
+  margin-top:    1.8349em; /* 56px */
+  margin-bottom: 0.9174em; /* 28px */
+}
+
+h2 {
+  font-size:     1.64em;   /* 22.96px */
+  line-height:   1.22;     /* 28px */
+  margin-bottom: 1.22em;   /* 28px */
+  margin-top:    0;
+}
+
+h3 {
+  font-size:     1.45em;  /* 20.3px */
+  line-height:   1.38;   /* 28px */
+  margin-top:    2.76em; /* 56px */
+  margin-bottom: 1.38em; /* 28px */
+}
+
+aside p, article time, figcaption, footer, .cookie-law {
+  font-size:      .8474em; /* 11.86px */
+  line-height:   2.3609em; /* 28px */
+  margin-bottom: 2.3609em; /* 28px */
+}
+
+article time, footer, .cookie-law {
+  margin-top:    2.3609em; /* 28px */
+  margin-bottom: 0;
+}
+
+footer {
+  margin-bottom: 4.7218em;
+}
+
+p, figure {
+  margin: 0 0 2em 0; /* 28px */
+}
+
+.portrait {
+  margin: 12px 0; /*32+2*12=56 (%28px) */
+  width: 32px;
+  height: 32px;
+}
+
+@media (--medium-screen) {
+  p[data-pullquote]:before {
+    font-size:   1.45em;  /*20.3px*/
+    line-height: 1.725em; /*35px (4:5 %28)*/
+    position: relative;
+    top: -0.21em;
+  }
+}
+
+@media (--large-screen) {
+  html {
+    font-size: 100%;    /* 16px */
+    line-height: 1.875; /* 30px */
+  }
+  
+  h1 {
+    line-height:   1.73;   /* 60px */
+    margin-top:    1.73em; /* 60px */
+    margin-bottom:  .87em; /* 30px */
+  }
+  
+  p, figure {
+    margin-bottom: 1.875em; /* 30px */
+  }
+  
+  aside p, article time, figcaption, .cookie-law {
+    margin-bottom: 2.215em; /* 30px */
+    line-height:   2.215;   /* 30px */
+  }
+  
+  article time, footer, .cookie-law {
+    margin-top:    2.215em; /* 30px */
+    margin-bottom: 0;
+  }
+
+  footer {
+    margin-bottom: 4.426em;
+  }
+
+  h2 {
+    line-height:   1.144;   /* 30px */
+    margin-bottom: 1.144em; /* 30px */
+    margin-top:    0;
+  }
+  
+  h3 {
+    line-height:   1.294;   /* 30px */
+    margin-top:    2.586em; /* 60px */
+    margin-bottom: 1.294em; /* 30px */
+  }
+  
+  p[data-pullquote]:before {
+    font-size:   1.45em;  /*23.2px*/
+    line-height: 1.616em; /*37.5px (4:5 %30)*/
+    position: relative;
+    top: -.16em;
+  }
+}

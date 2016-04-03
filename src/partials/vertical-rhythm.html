@@ -7,26 +7,43 @@
     doc.addEventListener && 
     doc.addEventListener('DOMContentLoaded', function () {
       
-      var checkbox = doc.querySelector('#toggle-vertical-rhythm input');
-      
-      function toggleVerticalRhythm() {
-        sessionStorage.setItem(key, checkbox.checked)
-        doc.documentElement.classList[checkbox.checked ? 'add' : 'remove'](
-          'vertical-rhythm'
-        );
+      function pixelImageLine(baseline) {
+        var canvas = document.createElement('canvas');
+        canvas.height = baseline;
+        canvas.width = 2;
+
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#777';
+        ctx.fillRect(0, baseline - 1, 1, 1);
+
+        return 'url(' + canvas.toDataURL() + ')';
       }
       
-      checkbox.onchange = toggleVerticalRhythm;
+      var checkbox = doc.querySelector('#toggle-vertical-rhythm input');
+      
+      function updateVerticalRhythm() {
+
+        var root = doc.documentElement;
+        var style = window.getComputedStyle(root);
+        
+        var baseline = parseInt(style.lineHeight.replace(/px$/, ''), 10);
+
+        sessionStorage.setItem(key, checkbox.checked)
+        root.style.backgroundImage = (checkbox.checked)
+          ? pixelImageLine(baseline)
+          : '';
+      }
+      
+      
+      window.onresize = updateVerticalRhythm;
+      checkbox.onchange = updateVerticalRhythm;
       checkbox.checked = sessionStorage.getItem(key) === "true";
-      toggleVerticalRhythm();
+      
+      updateVerticalRhythm();
     });
   })(document, 'verticalRhythmDebug');
 </script>
 <style>
-.vertical-rhythm {
-  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAcCAYAAABLam7PAAAAF0lEQVQIW2NkgALGkcMoLy//39nZyQgAItIEHTMomsIAAAAASUVORK5CYII=);
-}
-
 #toggle-vertical-rhythm {
   font-family: sans-serif;
   opacity: 0.5;

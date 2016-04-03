@@ -1,6 +1,4 @@
-(function(
-  win, doc, addEventListener, appendChild, offset, querySelector, clientHeight,
-  LineHeight) {
+(function(win, doc, addEventListener, appendChild, offset, querySelector, clientHeight) {
 
   function ready() {
     var original = doc[querySelector]('header');
@@ -19,6 +17,12 @@
 
     function onWindowResize() {
       headroom[offset] = original[offset + 'Top'];
+      
+      var lineHeight = parseInt(
+        win.getComputedStyle(doc.documentElement).lineHeight.replace(/px$/, ''),
+        10
+      );
+      
       var figures = doc[querySelector + 'All']('figure img'),
           i = figures.length,
           img; 
@@ -26,7 +30,7 @@
       while (i--) {
         img = figures[i];
         img.parentElement.style.paddingBottom =
-          LineHeight * (Math.ceil(img[clientHeight] / LineHeight)) -
+          lineHeight * (Math.ceil(img[clientHeight] / lineHeight)) -
           img[clientHeight] + 'px';
       }  
     }
@@ -54,6 +58,5 @@
   'appendChild',
   'offset',
   'querySelector',
-  'clientHeight',
-  28
+  'clientHeight'
 );
