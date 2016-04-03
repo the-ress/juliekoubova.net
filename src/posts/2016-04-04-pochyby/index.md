@@ -1,5 +1,7 @@
 ---
 title: 'Pochyby: Jsem skutečně trans?'
+image: index.jpeg
+imageAlt: '© Tereza Tomcová'
 description: Dva roky se pre­zen­tu­ji jako žena, rok a půl beru hor­mo­ny, pod­stou­pi­la jsem chi­rur­gic­kou změ­nu. Jsem trans?
 publish: unlisted
 ---
@@ -25,7 +27,7 @@ Jasně, stereotypní chlapeček jsem fakt nebyla. Z dětství si vzpomenu spíš
 Ale to jsou takové maličkosti, kvůli tomu svůj rod nezačnete zpochybňovat.
 
 
-### Sex, něžnosti
+### Sex! Porno!
 
 Později se to zkomplikovalo sexem. Někdy okolo dvacítky ztratil svůj pel novosti a já zjistila, že mě vlastně až tak neuspokojuje. Nevěděla jsem, že toužím po ženském těle pro sebe, pletla jsem si přitažlivost se závistí. Ale byla jsem závislá na pocitu blízkosti a splynutí. A jak jsem si potřebovala neustále dokazovat, že jsem fakt chlapák, tak vyspat se s každou, která přišla do cesty, byl docela funkční způsob.
 
@@ -36,7 +38,7 @@ Ostatně i teď, když si někdy porno pustím, tak je to občas závod jestli s
 Zejména díky [Fronémině fluiditě](https://facebook.com/notes/10153648079717979) jsem nakonec objevila, jaký sex mě skutečně naplňuje. Ale odtud vedla ještě dlouhá cesta. Velká výhra feminismu je, že můžete být chlapeček který holkám na druhém rande oblíká připínáky, a vůbec se kvůli tomu nemusíte cítit blbě.
 
 
-### Láska
+### ...vztahy
 
 Sex byla ta snažší část mých pseudo-lesbických vztahů. Vždycky se ve mně bila touha po někom silnějším, s kým bych si mohla dovolit být slabá, se standardními hetero maskulinními očekáváními. Občas zahodit maskulinitu v posteli je jednoduché, ale vědomě se jí vzdát napořád jsem tehdy nedokázala.
 
