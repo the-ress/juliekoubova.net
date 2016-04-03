@@ -11,7 +11,7 @@
   {{> header.html }}
   
   {{#if published}}
-  <time datetime="{{ iso8601 published }}">
+  <time class="article__time" datetime="{{ iso8601 published }}">
     <span class="d">{{ moment published 'D ' }}</span>
     <span class="m">{{ moment published 'MMMM ' }}</span>
     <span class="y">{{ moment published 'YYYY' }}</span>

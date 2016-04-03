@@ -1,6 +1,6 @@
 <a class="banner" href="{{ this.path.href }}" title="{{ trim this.description }}">
 
-  <div class="banner-image">
+  <div class="banner__image">
     {{#if this.image}}
       <img src="{{ resolveUrl this.path.href this.image }}" 
             width="200" alt=""
@@ -10,12 +10,12 @@
   </div>
   
   {{#if this.isPrevBanner}}
-    <div class="banner-prev">následující</div>
+    <div class="banner__time">následující</div>
   {{else}}
     {{#if this.isNextBanner}}
-      <div class="banner-next">předchozí</div>
+      <div class="banner__time">předchozí</div>
     {{else}}
-      <time datetime="{{ iso8601 published }}">
+      <time class="banner__time" datetime="{{ iso8601 published }}">
         {{ moment published 'D. M. YYYY' }}
       </time>
     {{/if}}

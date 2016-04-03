@@ -5,8 +5,7 @@ iframe {
 }
 
 .social {
-  line-height: 1.75em;
-  margin-bottom: 1.75em;
+  white-space: nowrap;
 }
 
 .social, .fb-comments {

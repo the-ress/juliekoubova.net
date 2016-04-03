@@ -1,65 +1,41 @@
 
 .banner-container {
   text-align: left;
-  margin-top: 3.5em;
   margin-left: auto;
   margin-right: auto;
 }
 
-.banner-container--post {
-  margin-top: 1.75em;
-}
-
-.banner {
-  display: block;
-  min-height: 7em;
-  height: 224px;
-  margin-bottom: 1.75em;
-  text-decoration: none;
-}
-
 .banner:link, .banner:visited {
+  text-decoration: none;
   color: var(--gray);
 }
 
-.banner-image {
-  height: 112px;
-  width: 100%;
+.banner__image {
   position: relative;
   overflow: hidden;
   background: var(--light-red);
 }
 
-.banner-image img {
+.banner__image img {
   width: 100%;
   height: auto;
   position: absolute;  
 }
 
 .banner h2 {
-  font-size: 1em; /* 16px */
-  line-height: 1.75em; /* 28px */
-  margin-top: 0;
-  margin-bottom: 0;
   font-weight: 400;
-  height: 1.75em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .banner p {
-  font-size: .75em; /* 12px */
-  line-height: 2.3333em; /* 28px */
   text-align: left;
-  min-height: 28px;
-  max-height: 56px;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin: 0;
 }
 
-time, .banner-next, .banner-prev {
+.banner__time {
   display: block;
   font-weight: 400;
   margin-left: 0.1em;  
@@ -67,17 +43,12 @@ time, .banner-next, .banner-prev {
   color: var(--light-red);
 }
 
-.banner time, .banner-next, .banner-prev {
-  font-size: .625em; /*10px*/
-  margin-top: 1.6em;  /*16px*/
-}
-
-@media screen and (min-width: 326px) {
+@media screen and (min-width: 329px) {
   .banner { 
     width: 148px;
     height: 196px;
     float: left;
-    margin: 0 6px 1.75em 6px;
+    margin: 0 6px 28px 6px;
   }
 
   .banner-container--post .banner {
@@ -95,7 +66,7 @@ time, .banner-next, .banner-prev {
   
   .banner p { max-height: 84px; }
   
-  .banner-image {
+  .banner__image {
     height: 56px;
   }
 }
