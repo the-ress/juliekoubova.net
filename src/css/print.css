@@ -15,7 +15,7 @@
   abbr[title]:after, span[title]:after { content: " (" attr(title) ")"; }
   /* Don't show links for images, or javascript/internal links */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  pre, blockquote { page-break-inside: avoid; }
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
@@ -28,7 +28,7 @@
   
   .print-only { display: initial; }
   
-  h1 a[href]:after {
+  a.dont-print-url[href]:after {
     content: '';
   }
  

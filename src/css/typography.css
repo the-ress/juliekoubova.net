@@ -22,7 +22,7 @@ h1 {
   font-size: 2em; /* 32px */
   line-height: 1.75em; /* 56px */
   margin-top: 1.75em;
-  margin-bottom: 0.875em;
+  margin-bottom: 0.875em; /* 28px */
 }
 
 h1 a, h1 a:visited, h1 a:hover, h1 a:active, h1:focus {
