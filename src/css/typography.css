@@ -30,7 +30,7 @@ aside {
   color: var(--light-red);
 }
 
-article time, footer, .cookie-law {
+article time, footer {
   font-weight: 300;
 }
 

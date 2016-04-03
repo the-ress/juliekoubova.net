@@ -3,10 +3,11 @@
   function ready() {
     var original = doc[querySelector]('header');
     var container = doc.createElement('div');
+    var body = doc.body;
     var headroom;
         
     container[appendChild](original.cloneNode(true));
-    doc.body[appendChild](container);
+    body[appendChild](container);
 
     headroom = new Headroom(container, {
       tolerance: {
@@ -19,7 +20,7 @@
       headroom[offset] = original[offset + 'Top'];
       
       var lineHeight = parseInt(
-        win.getComputedStyle(doc.documentElement).lineHeight.replace(/px$/, ''),
+        win.getComputedStyle(body).lineHeight.replace(/px$/, ''),
         10
       );
       

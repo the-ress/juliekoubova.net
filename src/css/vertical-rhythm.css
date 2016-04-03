@@ -1,4 +1,4 @@
-html {
+body {
   font-size:   87.5%; /* 14px */
   line-height:  2;    /* 28px */
 }
@@ -24,18 +24,19 @@ h3 {
   margin-bottom: 1.38em; /* 28px */
 }
 
-aside p, article time, figcaption, footer, .cookie-law {
+aside p, article time, figcaption, footer {
   font-size:      .8474em; /* 11.86px */
   line-height:   2.3609em; /* 28px */
   margin-bottom: 2.3609em; /* 28px */
 }
 
-article time, footer, .cookie-law {
+article time {
   margin-top:    2.3609em; /* 28px */
   margin-bottom: 0;
 }
 
 footer {
+  margin-top:    2.3609em; /* 28px */
   margin-bottom: 4.7218em;
 }
 
@@ -53,28 +54,24 @@ p, figure {
   margin-bottom: 2em;
 }
 
-.banner-container {
-  margin-top: 4em;
-}
-
 .banner-container--post {
   margin-top: 2em;
 }
 
-.banner {
+.banner-container--post .banner {
   display: block;
   height: 16em;
   margin-bottom: 2em;
 }
 
-.banner h2 {
+.banner-container--post .banner h2 {
   font-size:   1.18em;  /* 16.52px */
   line-height: 1.695;   /* 28px */
   height:      1.695em; /* 28px */
   margin:      0;
 }
 
-.banner p {
+.banner-container--post .banner p {
   font-size:  .8475em; /* 11.865px */
   line-height: 2.37;   /* 28px */
   min-height: 28px;
@@ -82,11 +79,11 @@ p, figure {
   margin: 0;
 }
 
-.banner__image {
+.banner-container--post .banner__image {
   height: 8em;
 }
 
-.banner__time {
+.banner-container--post .banner__time {
   font-size:   0.7143em; /*10px*/
   margin-top:  1em;      /*10px*/
   line-height: 1.8;      /*18px*/
@@ -102,7 +99,7 @@ p, figure {
 }
 
 @media (--large-screen) {
-  html {
+  body {
     font-size: 100%;    /* 16px */
     line-height: 1.875; /* 30px */
   }
@@ -117,17 +114,18 @@ p, figure {
     margin-bottom: 1.875em; /* 30px */
   }
   
-  aside p, article time, figcaption, .cookie-law {
+  aside p, article time, figcaption {
     margin-bottom: 2.215em; /* 30px */
     line-height:   2.215;   /* 30px */
   }
   
-  article time, footer, .cookie-law {
+  article time {
     margin-top:    2.215em; /* 30px */
     margin-bottom: 0;
   }
 
   footer {
+    margin-top:    2.215em; /* 30px */
     margin-bottom: 4.426em;
   }
 
@@ -154,28 +152,28 @@ p, figure {
     margin-bottom: 1.875em; /* 30px */
   }
 
-  .banner-container {
-    margin-top: 0;
+  .banner-container--post {
+    margin-top: 1.875em;   /* 30px */
   }
   
-  .banner__time {
+  .banner-container--post .banner__time {
     font-size:  .625em; /*10px*/
     margin-top:  1em;   /*10px*/
     line-height: 2;     /*20px*/
   }
 
-  .banner {
+  .banner-container--post .banner {
     height: 15em;
   }
   
-  .banner h2 {
+  .banner-container--post .banner h2 {
     font-size:   1em;     /* 16px */
     line-height: 1.875;   /* 30px */
     height:      1.875em; /* 30px */
     margin:      0;
   }
 
-  .banner p {
+  .banner-container--post .banner p {
     font-size:  .75em;   /* 12px */
     line-height: 2.5;    /* 30px */
     min-height: 30px;
@@ -183,7 +181,7 @@ p, figure {
     margin: 0;
   }
 
-  .banner__image {
+  .banner-container--post .banner__image {
     height: 3.75em; /* 60px */
   }
   

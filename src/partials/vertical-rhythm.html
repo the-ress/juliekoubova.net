@@ -23,13 +23,11 @@
       
       function updateVerticalRhythm() {
 
-        var root = doc.documentElement;
-        var style = window.getComputedStyle(root);
-        
+        var style = window.getComputedStyle(doc.body);
         var baseline = parseInt(style.lineHeight.replace(/px$/, ''), 10);
 
         sessionStorage.setItem(key, checkbox.checked)
-        root.style.backgroundImage = (checkbox.checked)
+        doc.documentElement.style.backgroundImage = (checkbox.checked)
           ? pixelImageLine(baseline)
           : '';
       }
