@@ -40,7 +40,7 @@ Zejména díky [Fronémině fluiditě](https://facebook.com/notes/10153648079717
 
 Sex byla ta snažší část mých pseudo-lesbických vztahů. Vždycky se ve mně bila touha po někom silnějším, s kým bych si mohla dovolit být slabá, se standardními hetero maskulinními očekáváními. Občas zahodit maskulinitu v posteli je jednoduché, ale vědomě se jí vzdát napořád jsem tehdy nedokázala.
 
-A tak jsem občas agresivně vybuchovala ve snaze dokázat si svoji mužnost, jindy se propadala do depresí, jaké požadavky jsou na mne kladeny, a ještě jindy byla zklamaná, že moje partnerky nemají dostatek vnitřní síly aby moje chaotičnění dokázaly brát s nadhledem. Koneckonců, ony ve mně viděly chlapa a čekaly nejspíš přesně to samé. 
+A tak jsem občas agresivně vybuchovala ve snaze dokázat si svoji mužnost, jindy se propadala do depresí, jaké požadavky jsou na mne kladeny a jak budu nahrazena chlapem, který to celé nehraje, a ještě jindy byla zklamaná, že moje partnerky nemají dostatek vnitřní síly aby moje chaotičnění dokázaly brát s nadhledem. Koneckonců, ony ve mně viděly chlapa a čekaly nejspíš přesně to samé. 
 
 
 ### Chybějící velké rozhodnutí
