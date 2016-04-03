@@ -122,8 +122,7 @@
 
 @media screen and (min-height: 670px) {  
   .index { padding-top: 3.5em; }
-  .tags { margin-top: 1.75em; }
-  .copy { margin-top: 2.333em; }
+  .index .tags { margin-top: 1.75em; }
 }
 
 @media (--landscape) {
