@@ -9,10 +9,10 @@ html {
 }
 
 body, .headroom header {
-  min-width: 314px;
+  min-width: 300px;
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 3px;
+  padding: 0 10px;
 }
 
 h1 {
@@ -89,7 +89,7 @@ figcaption {
 
 blockquote {
   margin: 0;
-  padding-left: 1.5em;
+  padding-left: 10px;
   font-style: italic;
   border-left: 3px solid var(--light-red);
 }
@@ -179,6 +179,10 @@ blockquote {
 @media (--medium-screen) {
   p {
     text-align: justify;
+  }
+  
+  blockquote {
+    padding-left: 1em;
   }
     
   p[data-pullquote]:before {
