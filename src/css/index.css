@@ -78,7 +78,7 @@
   font-size:  .8475em; /* 11.865px */
   line-height: 2.37;   /* 28px */
   min-height: 28px;
-  max-height: 56px;
+  max-height: 112px;
   margin: 0;
 }
 
@@ -186,6 +186,11 @@
   
   .cookie-law > div {
     display: inline;
+  }
+
+  .banner-container--index .banner p {
+    max-height: 84px;
+    margin: 0;
   }
 }
 

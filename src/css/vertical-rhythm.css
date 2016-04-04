@@ -75,11 +75,11 @@ p, figure {
   font-size:  .8475em; /* 11.865px */
   line-height: 2.37;   /* 28px */
   min-height: 28px;
-  max-height: 56px;
+  max-height: 112px;
   margin: 0;
 }
 
-.banner-container--post .banner__image {
+.banner-container--post .banner .banner__image {
   height: 8em;
 }
 
@@ -87,6 +87,11 @@ p, figure {
   font-size:   0.7143em; /*10px*/
   margin-top:  1em;      /*10px*/
   line-height: 1.8;      /*18px*/
+}
+
+.footnotes-sep {
+  height: 1px;
+  margin: 0 auto 27px 0;
 }
 
 @media (--medium-screen) {
@@ -181,8 +186,11 @@ p, figure {
     margin: 0;
   }
 
-  .banner-container--post .banner__image {
+  .banner-container--post .banner .banner__image {
     height: 3.75em; /* 60px */
   }
   
+  .footnotes-sep {
+    margin: 0 auto 29px 0;
+  }
 }
