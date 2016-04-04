@@ -1,9 +1,10 @@
 ---
 title: 'Pochyby: Jsem skutečně trans?'
+bannerTitle: 'Pochyby: Jsem trans?'
+bannerStyle: 'top: -35%;'
 image: index.jpeg
 imageAlt: '© Tereza Tomcová'
 description: Dva roky se pre­zen­tu­ji jako žena, rok a půl beru hor­mo­ny, pod­stou­pi­la jsem chi­rur­gic­kou změ­nu. Jsem trans?
-publish: unlisted
 ---
 
 > Prosím vás, už dva roky se prezentuji jako žena, rok a půl beru hormony, před třemi měsíci jsem podstoupila chirurgickou změnu pohlaví. Co myslíte, znamená to, že bych třeba mohla být trans? Nebo jsem jenom zmatená?
@@ -47,7 +48,7 @@ A tak jsem občas agresivně vybuchovala ve snaze dokázat si svoji mužnost, ji
 
 ### Chybějící velké rozhodnutí
 
-Na procesu tranzice je nejhorší, jak dlouho trvá. Ale zase není třeba dělat žádná velká unáhlená rozhodnutí. Odstranění chloupků na obličeji? Alespoň rok bolestivých sezení každý měsíc. Hormonální změny? Počkáte si třeba i [osm měsíců, než dostanete první pilulku](/byt-trans-v-cr/). A potom je to dalších pár měsíců, než to na vás začne být vidět a než dojde k nějakým nevratným změnám (pokud vůbec). Operace? Nejdřív po dalším roce.
+Na procesu tranzice je nejhorší, jak dlouho trvá. Ale zase není třeba dělat žádná velká unáhlená rozhodnutí. Epilace? Alespoň rok bolestivých sezení každý měsíc. Hormonální změny? Počkáte si třeba i [osm měsíců, než dostanete první pilulku](/byt-trans-v-cr/). A potom je to dalších pár měsíců, než to na vás začne být vidět a než dojde k nějakým nevratným změnám (pokud vůbec). Operace? Nejdřív po dalším roce.
 
 <aside class="pull-left">
 
@@ -61,11 +62,11 @@ Děsí mě představa, že se v šedesáti ohlédnu a budu litovat věcí, kter�
 
 Pro mne to všechno vyplynulo tak nějak přirozeně, od jednoho kroku k následujícímu. Vždycky jsem řešila ten aspekt, který mi v tu chvíli způsoboval nejvíce dysforie.
 
-Chloupky na obličeji? Půjdu zase na laser. Je mi do breku před zrcadlem, jak hranatě svalnatě mužsky vypadám? Modré pilulky pomohou. Nepříjemné situace na úřadech? Změním si jméno. Nelíbí se mi jak vypadám nahá a že můj přerostlý klitoris láká lidi dělat věci, které mi nic neříkají? Objednám se k Dr.&nbsp;Supornovi.
+Je mi do breku před zrcadlem, jak hranatě svalnatě mužsky vypadám? Modré pilulky pomohou. Nepříjemné situace na úřadech? Změním si jméno. Nelíbí se mi jak vypadám nahá a že můj přerostlý klitoris láká lidi dělat věci, které mi nic neříkají? Objednám se k Dr.&nbsp;Supornovi.
 
 Po každém kroku jsem se cítila hezčí a spokojenější. Až jsem byla úplně překvapená, jak rychle jsem si  zvykla po operaci. Čekala jsem nějaké období, kdy se budu cítit divně. Přeci jen jsem k tovární konfiguraci žádnou nenávist necítila, jen to nevypadalo dobře a bylo to nepraktické. Ale nic takového se nekonalo.
 
-A ještě výraznější "správný pocit" byla sociální tranzice. Dneska si vůbec nedokážu představit, že bych znovu hrála chlapečka, přestože v tom zřejmě mám desetkrát delší praxi. Ale třeba se jednou budu cítit dostatečně sebejistá, abych zkusila drag a vyrazila někam hrát chlapečka jenom jako. To by mohlo být příjemně validující, kdyby mi to lidi nevěřili.
+A ještě výraznější "správný pocit" byla sociální tranzice. Dneska si vůbec nedokážu představit, že bych znovu hrála chlapečka, přestože v tom teoreticky mám desetkrát delší praxi. Ale třeba se jednou budu cítit dostatečně sebejistá, abych zkusila drag a vyrazila někam hrát chlapečka jenom jako. To by mohlo být příjemně validující, kdyby mi to lidi nevěřili.
 
 ### Tak tedy jsem nebo ne?
 
@@ -73,4 +74,4 @@ To, že o tom přemýšlíte, je samo o sobě dost silná indikace, že cis nebu
 
 Nikdo vám to neřekne. Žádný psycholog to nepozná, žádná kontrolka se nikde nerozsvítí. Žádný objektivní diagnostický postup neexistuje a ani existovat nemůže; jak se člověk cítí je nepřenosné.
 
-Ale to vůbec nevadí. Dělejte co doufáte že vás učiní šťastnými. Máte jenom jeden život. 
+Ale to vůbec nevadí. Dělejte co doufáte že vás učiní šťastnými. Život máte jenom jeden, proč žít cizí? 
