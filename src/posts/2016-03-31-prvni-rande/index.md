@@ -6,7 +6,9 @@ image: index.jpeg
 
 <aside class="pull-right">
 
-PRO TIP: *Pokud chcete sbalit polyamorní ženu, možná je lepší neříkat, že její partnerka vypadá jako chlap. Tím spíš, když to prokazatelně není pravda, jenom váš předsudek vyvolaný klíčovým slovem trans na profilu dotyčné.*
+PRO TIP: *Pokud chcete sbalit polyamorní ženu, možná je lepší neříkat, že její partnerka vypadá jako chlap.*
+
+*Tím spíš, když to prokazatelně není pravda, jenom váš předsudek vyvolaný klíčovým slovem trans na profilu dotyčné.*
 
 </aside> 
 
