@@ -1,4 +1,4 @@
-(function(doc, className, replace, element) {
+(function(doc, ua, className, replace, noCommonLigatures, ontVariantLigatures, element) {
 
   function createScript(src, onLoad) {
     var result = doc.createElement('script');
@@ -9,7 +9,7 @@
   }
 
   function getUserAgentVersion(name) {
-    var match = new RegExp(name + '\\/(\\d+)').exec(navigator.userAgent);
+    var match = new RegExp(name + '\\/(\\d+)').exec(ua);
     if (match) return parseInt(match[1], 10);
   }
 
@@ -50,8 +50,11 @@
   
   if (
     !(getUserAgentVersion('Chrome')) &&
-    (getUserAgentVersion('Safari') <= 601) &&
-    (getUserAgentVersion('AppleWebKit') <= 601)
+    (getUserAgentVersion('AppleWebKit') <= 601) &&
+    (
+      (getUserAgentVersion('Safari') <= 601) ||
+      (/iPad|iPhone|iPod/.test(ua))
+    )
   ) {
     // Safari/601.4.4 on OS X 10.11.3 and Safari/601.1.46 on iOS 9.3 have broken
     // ligatures with soft hypens.
@@ -59,13 +62,19 @@
     // Safari/601.4.4 AppleWebKit/602.1.26+ (nightly build) on OS X seems to be
     // okay
     
+    // iOS UIWebViews do not contain the Safari/XYZ token, so we assume all
+    // AppleWebKits <= 601 on iOS are broken
+    
     var style = element.style;
     
-    style.webkitFontFeatureSettings = '"liga" 0, "clig" 0';
-    style.fontVariantLigatures = 'no-common-ligatures';
+    style['f' + ontVariantLigatures] = noCommonLigatures;
+    style['webkitF' + ontVariantLigatures] = noCommonLigatures;
   }
 })(
   document,
+  navigator.userAgent,
   'className',
-  'replace'
+  'replace',
+  'no-common-ligatures',
+  'ontVariantLigatures'
 );
