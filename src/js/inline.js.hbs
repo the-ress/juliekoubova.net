@@ -59,8 +59,11 @@
     // Safari/601.4.4 AppleWebKit/602.1.26+ (nightly build) on OS X seems to be
     // okay
     
-    element.style.webkitFontFeatureSettings = '"liga" 0, "clig" 0';
-  }  
+    var style = element.style;
+    
+    style.webkitFontFeatureSettings = '"liga" 0, "clig" 0';
+    style.fontVariantLigatures = 'no-common-ligatures';
+  }
 })(
   document,
   'className',
