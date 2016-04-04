@@ -88,10 +88,6 @@
   top: 0;
 }
 
-.contacts--small li {
-  margin: 0 0 0 5px;
-}
-
 .contacts--small a {
   opacity: 0.6;
   transition: opacity 200ms ease-in;
@@ -103,7 +99,13 @@
   opacity: 1;
 }
 
-.contacts--small svg {
+.contacts--small li {
+  margin: 0 0 0 5px;
+  float: left;
+}
+
+.contacts--small li, .contacts--small a, .contacts--small svg {
+  display: block;
   width: 26px;
   height: 26px;
 }

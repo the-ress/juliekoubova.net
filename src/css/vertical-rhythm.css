@@ -112,7 +112,7 @@ p, figure {
   h1 {
     line-height:   1.73;   /* 60px */
     margin-top:    1.73em; /* 60px */
-    margin-bottom:  .87em; /* 30px */
+    margin-bottom:  .86em; /* 30px */
   }
   
   p, figure {
@@ -168,7 +168,8 @@ p, figure {
   }
 
   .banner-container--post .banner {
-    height: 15em;
+    height: 15em;            /* 240px */
+    margin-bottom: 1.875em;  /* 30px */
   }
   
   .banner-container--post .banner h2 {
