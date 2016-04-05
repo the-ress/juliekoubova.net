@@ -4,8 +4,8 @@ const _ = require('lodash');
 const Q = require('q');
 
 const Metalsmith = require('metalsmith');
+const browserify = require('metalsmith-browserify');
 const collections = require('metalsmith-collections');
-const concat = require('metalsmith-concat');
 const define = require('metalsmith-define');
 const express = require('metalsmith-express');
 const fileMetadata = require('metalsmith-filemetadata');
@@ -53,13 +53,6 @@ const SiteTitle = 'Julie Koubová';
 const SiteDescription =
   'Market anarchist. Sex-positive feminist. Software gardeness. ' +
   'Enjoys photography, singing, theatre, and shooting guns.';
-
-const ConcatConfig = {
-  'js/post-combined.js': [
-    'js/headroom.js',
-    'js/post.js'
-  ]
-};
 
 function markdown() {
   let md = markdownit({
@@ -299,13 +292,9 @@ function build(options) {
   // INLINE AND COMBINE CSS AND JS
   // ===========================================================================
 
-  Object.keys(ConcatConfig).forEach(output => {
-    m.use(concat({
-      output: output,
-      files: ConcatConfig[output],
-      keepConcatenated: false
-    }));
-  });
+  m.use(browserify({
+    include: 'js/post.js'
+  }));
 
   // uglify javascripts -> .min.js
   m.use(uglify({
@@ -327,6 +316,12 @@ function build(options) {
     html: '**/*.html',
     delete: true
   }));
+
+  m.use(ignore([
+    'js/**/*',
+    '!js/html5shiv-printshiv.min.js',
+    '!js/post.min.js'
+  ]))
 
   m.use(cacheBust({
     pattern: [

@@ -15,6 +15,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "animate.css": "^3.5.1",
+    "browserify": "^13.0.0",
     "cheerio": "^0.20.0",
     "crypto": "0.0.3",
     "css-mqpacker": "^4.0.1",
@@ -30,8 +31,8 @@
     "markdown-it-footnote": "^2.0.0",
     "markdown-it-implicit-figures": "^0.2.3",
     "metalsmith": "^2.1.0",
+    "metalsmith-browserify": "github:juliekoubova/metalsmith-browserify",
     "metalsmith-collections": "^0.7.0",
-    "metalsmith-concat": "^3.0.3",
     "metalsmith-define": "^1.0.0",
     "metalsmith-discover-helpers": "^0.1.0",
     "metalsmith-express": "^0.1.0",

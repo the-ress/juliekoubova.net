@@ -1,4 +1,6 @@
 (function(win, doc, addEventListener, appendChild, offset, querySelector, clientHeight) {
+  
+  var Headroom = require('./headroom.js');
 
   function ready() {
     var original = doc[querySelector]('header');
@@ -53,7 +55,7 @@
     doc[addEventListener]('DOMContentLoaded', ready);
   }
 })(
-  this,
+  window,
   document,
   'addEventListener',
   'appendChild',
