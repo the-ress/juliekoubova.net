@@ -1,0 +1,102 @@
+@media screen {
+  .footnote-ref.footsie-ref--active {
+    display: none;    
+  }
+  
+  .footsie-button, .footsie-button:any-link, .footnote-backref:any-link {
+    background-color: var(--light-red);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: .4em;
+    opacity: 0.4;
+    transition: opacity ease-in .3s;
+    text-decoration: none;
+    padding: .08em .375em;
+  }
+  
+  .footsie-button:hover, .footnote-backref:hover {
+    opacity: 0.8;
+  }
+  
+  .footsie-button--is-open {
+    opacity: 1;
+  }
+  
+  .footsie-button--fn {
+    font-weight: 600;
+  }
+  
+  .footsie-button--title {
+    vertical-align: middle;
+    margin-left: 4px;
+    padding: 2px;
+  }
+
+  .footnote-backref:any-link {
+    padding: 4px 2px 0 2px;
+  }
+  
+  .footsie-button--title svg {
+    width: 2em;
+    height: .6em;
+  }  
+  
+  .footsie-button--title circle {
+    fill: white;
+  }
+  
+  .footsie--bottom {
+    position: fixed;
+    bottom: 0;  
+    left: 0;
+    right: 0;
+    height: 24%;
+    z-index: var(--z-footsies);
+    
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 250ms ease-out, opacity 200ms linear;
+  }
+  
+  .footsie--bottom.footsie--visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .footsie--bottom .footsie__wrapper {
+    background: white;
+  }
+
+  .footsie__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    box-shadow: 0 0 10px var(--light-red);
+  }
+
+  .footsie__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    margin: 1em 1em 0 1em;
+  }
+  
+  .footsie__content:focus {
+    outline: none;
+  }
+ 
+  .footsie__content .footnote-backref {
+    display: none;
+  }  
+}
+
+@media print {
+  .footsie, .footsie-button {
+    display: none;
+  }
+}

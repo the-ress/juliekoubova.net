@@ -266,7 +266,22 @@ function build(options) {
         '.headroom--pinned',
         '.headroom--pinned.headroom--not-top',
         '.headroom--unpinned',
-        '.headroom--top'
+        '.headroom--top',
+        
+        '.footnote-ref.footsie-ref--active',
+        '.footsie',
+        '.footsie__content',
+        '.footsie__content .footnote-backref',
+        '.footsie--bottom',
+        '.footsie--bottom.footsie--visible',
+        '.footsie--bottom .footsie__wrapper',
+        '.footsie-button',
+        '.footsie-button--is-open',
+        '.footsie-button--fn',
+        '.footsie-button--title',
+        '.footsie-button--title svg',
+        '.footsie-button--title circle',
+        '.footsie__wrapper'
       ]
     }
   }));
@@ -299,6 +314,7 @@ function build(options) {
   // uglify javascripts -> .min.js
   m.use(uglify({
     compress: options.live ? false : undefined,
+    mangle: !options.live,
     output: {
       beautify: options.live
     },
@@ -323,22 +339,15 @@ function build(options) {
     '!js/post.min.js'
   ]))
 
-  m.use(cacheBust({
-    pattern: [
-      '**/*.+(css|js)',
-      '!js/html5shiv-printshiv.min.js'
-    ]
-  }));
-
   if (!options.live) {
-    m.use(htmlMinifier("*.html", {
-      minifyJS: {
-        compress: options.live ? false : undefined,
-        output: {
-          beautify: options.live
-        }
-      }
+    m.use(cacheBust({
+      pattern: [
+        '**/*.+(css|js)',
+        '!js/html5shiv-printshiv.min.js'
+      ]
     }));
+
+    m.use(htmlMinifier("*.html"));
   }
 
   m.use(staticAssets({

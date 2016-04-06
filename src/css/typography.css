@@ -8,7 +8,7 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-body, .headroom header {
+body, .headroom header, .footsie--bottom .footsie__wrapper {
   min-width: 300px;
   max-width: 480px;
   margin: 0 auto;
@@ -129,6 +129,7 @@ time .d, time .m {
 }
 
 .typekit-animation,
+.footnotes-sep,
 aside,
 p, 
 h1, 
@@ -147,6 +148,7 @@ blockquote {
 
 /* uncss:ignore */
 .js.no-typekit .typekit-animation,
+.js.no-typekit .footnotes-sep,
 .js.no-typekit aside, 
 .js.no-typekit p, 
 .js.no-typekit h1,
@@ -171,7 +173,7 @@ blockquote {
 }
 
 @media (--landscape) {
-  body, .headroom header {
+  body, .headroom header, .footsie--bottom .footsie__wrapper {
     max-width: 520px; 
   }
 }
@@ -208,17 +210,20 @@ blockquote {
 }
 
 @media (--large-screen) {
-  body, .headroom header { 
+  body, .headroom header, .footsie--bottom .footsie__wrapper {
     max-width: 580px;
   }
+  
   figure { 
     margin-left: -40px;
     margin-right: -40px;
   }
+  
   p[data-pullquote].pullquote-right:before, .pull-right {
     margin-right: -40px; 
     margin-bottom: 0;
   }
+  
   p[data-pullquote].pullquote-left:before, .pull-left {
     margin-left: -40px; 
     margin-bottom: 0;

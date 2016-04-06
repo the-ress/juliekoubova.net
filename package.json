@@ -17,6 +17,7 @@
     "animate.css": "^3.5.1",
     "browserify": "^13.0.0",
     "cheerio": "^0.20.0",
+    "classlist.js": "^1.1.20150312",
     "crypto": "0.0.3",
     "css-mqpacker": "^4.0.1",
     "cssnano": "^3.5.2",

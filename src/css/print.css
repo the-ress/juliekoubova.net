@@ -36,6 +36,10 @@
     display: none !important; /* fb-like overrides probably */
   }
   
+  .footnote-backref {
+    display: none;
+  }
+  
   footer {
     page-break-after: always;
   }

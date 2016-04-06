@@ -1,6 +1,9 @@
 (function(win, doc, addEventListener, appendChild, offset, querySelector, clientHeight) {
-  
+
+  require('./classList.js');
+    
   var Headroom = require('./headroom.js');
+  var Footsies = require('./footsies.js');
 
   function ready() {
     var original = doc[querySelector]('header');
@@ -17,6 +20,8 @@
         down: 5
       }
     });
+    
+    new Footsies();
 
     function onWindowResize() {
       headroom[offset] = original[offset + 'Top'];
@@ -35,7 +40,7 @@
         img.parentElement.style.paddingBottom =
           lineHeight * (Math.ceil(img[clientHeight] / lineHeight)) -
           img[clientHeight] + 'px';
-      }  
+      }
     }
 
     onWindowResize();
