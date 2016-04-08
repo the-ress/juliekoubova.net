@@ -128,9 +128,11 @@
         (footsie.offsetWidth / 2)
       );
            
-      if ((left + footsie.offsetWidth) > innerWidth) {
-        left = innerWidth - footsie.offsetWidth;
-      } else if (left < 0) {
+      if ((left + footsie.offsetWidth) > document.documentElement.offsetWidth) {
+        left = document.documentElement.offsetWidth - footsie.offsetWidth;
+      } 
+      
+      if (left < 0) {
         left = 0;
       }
 
