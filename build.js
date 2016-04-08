@@ -274,13 +274,18 @@ function build(options) {
         '.footsie__content .footnote-backref',
         '.footsie--bottom',
         '.footsie--bottom.footsie--visible',
+        '.footsie--bottom .footsie__content',
         '.footsie--bottom .footsie__wrapper',
+        '.footsie--popover',
+        '.footsie--popover.footsie--visible',
+        '.footsie--popover p',
+        '.footsie--popover .footsie__content',
+        '.footsie--popover .footsie__wrapper',
+        '.footsie--popover__tip',
+        '.footsie--popover--bottom .footsie--popover__tip',
+        '.footsie--popover--top .footsie--popover__tip',
         '.footsie-button',
         '.footsie-button--is-open',
-        '.footsie-button--fn',
-        '.footsie-button--title',
-        '.footsie-button--title svg',
-        '.footsie-button--title circle',
         '.footsie__wrapper'
       ]
     }

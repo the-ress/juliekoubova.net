@@ -13,6 +13,7 @@
     transition: opacity ease-in .3s;
     text-decoration: none;
     padding: .08em .375em;
+    font-weight: 600;
   }
   
   .footsie-button:hover, .footnote-backref:hover {
@@ -23,27 +24,13 @@
     opacity: 1;
   }
   
-  .footsie-button--fn {
-    font-weight: 600;
-  }
-  
-  .footsie-button--title {
-    vertical-align: middle;
-    margin-left: 4px;
-    padding: 2px;
-  }
-
   .footnote-backref:any-link {
     padding: 4px 2px 0 2px;
   }
   
-  .footsie-button--title svg {
-    width: 2em;
-    height: .6em;
-  }  
-  
-  .footsie-button--title circle {
-    fill: white;
+  .footsie {
+    cursor: default;
+    z-index: var(--z-footsies);
   }
   
   .footsie--bottom {
@@ -52,11 +39,19 @@
     left: 0;
     right: 0;
     height: 24%;
-    z-index: var(--z-footsies);
     
     opacity: 0;
     transform: translateY(100%);
     transition: transform 250ms ease-out, opacity 200ms linear;
+  }
+  
+  .footsie--popover {
+    position: absolute;
+    max-width: 100%;
+    
+    opacity: 0;
+    transform: scale(0.4);
+    transition: transform 250ms ease-out, opacity 200ms linear;    
   }
   
   .footsie--bottom.footsie--visible {
@@ -64,21 +59,36 @@
     opacity: 1;
   }
   
-  .footsie--bottom .footsie__wrapper {
-    background: white;
+  .footsie--popover.footsie--visible {
+    transform: scale(1);
+    opacity: 1;
   }
-
-  .footsie__wrapper {
+  
+  .footsie__wrapper, .footsie--popover__tip {
+    background: white;
+    box-shadow: 0 0 10px var(--light-red);
+  }
+  
+  .footsie--bottom .footsie__wrapper {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    
-    box-shadow: 0 0 10px var(--light-red);
   }
 
-  .footsie__content {
+  .footsie--popover .footsie__wrapper {
+    margin: 1em;
+  }
+  
+  .footsie--popover .footsie__content {    
+    padding: 1em;
+    background: #fff;
+    position: relative;
+    z-index: calc(var(--z-footsies) + 2);
+  }
+
+  .footsie--bottom .footsie__content {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -86,13 +96,34 @@
     margin: 1em 1em 0 1em;
   }
   
+  .footsie--popover__tip {
+    position: absolute;
+    width: 1.3em;
+    height: 1.3em;
+    margin-left: -.65em;
+    z-index: calc(var(--z-footsies) + 1);
+    transform: rotate(45deg);
+  }
+   
+  .footsie--popover--bottom .footsie--popover__tip {
+    top: .35em;
+  }
+   
+  .footsie--popover--top .footsie--popover__tip {
+    bottom: .35em;
+  }
+   
   .footsie__content:focus {
     outline: none;
   }
  
   .footsie__content .footnote-backref {
     display: none;
-  }  
+  }
+  
+  .footsie--popover p {
+    margin: 0;
+  }
 }
 
 @media print {
