@@ -1,6 +1,10 @@
 (function(win, doc, addEventListener, appendChild, offset, querySelector, clientHeight) {
 
   require('./classList.js');
+  
+  if (Promise === undefined) {
+    Promise = require('./es6-promise.js').Promise;
+  }
     
   var Headroom = require('./headroom.js');
   var Footsies = require('./footsies.js');
