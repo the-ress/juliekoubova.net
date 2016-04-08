@@ -135,8 +135,8 @@
       }
 
       var tipPercent = (100 * 
-        (ref.offsetLeft - ref.offsetWidth/2) /
-        (left + footsie.offsetWidth) 
+        (ref.offsetLeft - left + ref.offsetWidth/2) /
+        (footsie.offsetWidth) 
       ) + '%';
         
       var refRect = ref.getBoundingClientRect();
