@@ -40,6 +40,34 @@
         : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   }
 
+  function cancelableCall(fn, delay) {
+    var canceled;
+    var timeout;
+
+    var result = function() {
+      if (timeout) return;
+      canceled = false;
+
+      var args = Array.prototype.slice.call(arguments);
+
+      timeout = setTimeout(
+        function() {
+          if (!canceled) fn.apply(global, args);
+        },
+        delay
+      );
+    };
+
+    result.cancel = function() {
+      if (!timeout) return;
+      clearTimeout(timeout);
+      canceled = true;
+      timeout = undefined;
+    };
+
+    return result;
+  }
+
   if (!doc.querySelector) {
     module.exports = function FootsiesNotSupported() {
       if (!(this instanceof FootsiesNotSupported))
@@ -59,11 +87,15 @@
     }
 
     options.selector = options.selector || DefaultSelector;
+    options.mouseEnterDelay = options.mouseEnterDelay || 400;
+    options.mouseLeaveDelay = options.mouseLeaveDelay || 400;
 
     function Footsie(trigger) {
       this.trigger = trigger;
+      this.triggerEvent = null;
       this.element = null;
       this.contentElement = null;
+      this.isBeingRemoved = false;
     }
 
     Footsie.open = null;
@@ -92,9 +124,10 @@
         this.contentElement = this.element.querySelector('.footsie__content');
       },
 
-      display: function() {
+      display: function(triggerEvent) {
         var self = this;
 
+        self.triggerEvent = triggerEvent;
         self.createElement();
         self.position();
 
@@ -104,9 +137,11 @@
           }
         });
 
-        //self.contentElement.addEventListener('blur', function() {
-        //  self.remove();
-        //});
+        self.contentElement.addEventListener('blur', function(evt) {
+          if (evt.relatedTarget !== self.trigger) {
+            self.remove();
+          }
+        });
 
         setTimeout(function() {
           self.trigger.classList.add('footsie-button--is-open');
@@ -119,17 +154,24 @@
 
       remove: function() {
         var self = this;
-        
         var promise = Promise.resolve();
 
+        if (self.isBeingRemoved) {
+          return promise;
+        }
+
+        self.isBeingRemoved = true;
+
         if (TransitionEndEvent) {
-          promise = promise.then(new Promise(function (resolve, reject) {
-            self.element.addEventListener(
-              TransitionEndEvent,
-              resolve
-            );
-            self.element.classList.remove('footsie--visible');  
-          }));
+          promise = promise.then(function() {
+            return new Promise(function(resolve, reject) {
+              self.element.addEventListener(
+                TransitionEndEvent,
+                function() { resolve(); }
+              );
+              self.element.classList.remove('footsie--visible');
+            });
+          });
         }
 
         promise = promise.then(function() {
@@ -139,9 +181,9 @@
           self.element = null;
           self.contentElement = null;
 
-          Footsie.open = null;          
+          Footsie.open = null;
         });
-        
+
         return promise;
       }
     };
@@ -159,7 +201,8 @@
       }
 
       var rect = FootsieBottom.footnotes.getBoundingClientRect();
-      var viewportHeight = window.innerHeight - Footsie.open.offsetHeight;
+      var viewportHeight =
+        window.innerHeight - Footsie.open.element.offsetHeight;
 
       if (rect.top < viewportHeight) {
         Footsie.open.remove();
@@ -172,12 +215,12 @@
       if (FootsieBottom.footnotes) {
         addEventListener('scroll', FootsieBottom.removeWhenFootnotesVisible)
       }
-      return Footsie.prototype.display.call(this);
+      return Footsie.prototype.display.apply(this, arguments);
     };
 
     FootsieBottom.prototype.remove = function() {
       removeEventListener('scroll', FootsieBottom.removeWhenFootnotesVisible);
-      return Footsie.prototype.remove.call(this);
+      return Footsie.prototype.remove.apply(this, arguments);
     };
 
     function FootsiePopover(trigger, text) {
@@ -198,7 +241,7 @@
     ];
 
     FootsiePopover.prototype.createElement = function() {
-      Footsie.prototype.createElement.call(this);
+      Footsie.prototype.createElement.apply(this, arguments);
       this.popoverTip = this.element.querySelector('.footsie--popover__tip');
     }
 
@@ -285,7 +328,7 @@
         function() {
           var footsie = createFootsie(trigger);
           if (footsie) {
-            footsie.display();
+            footsie.display(evt);
             Footsie.open = footsie;
           }
         }
@@ -324,9 +367,32 @@
       trigger.addEventListener('click', displayFootsie);
       trigger.addEventListener('focus', displayFootsie);
 
-      trigger.addEventListener('mouseenter', function(evt) {
-        setTimeout(displayFootsie.bind(this, evt), 250);
-      });
+      if (ref.title) {
+        var displayFootsieDelayed = cancelableCall(
+          displayFootsie.bind(trigger),
+          options.mouseEnterDelay
+        );
+
+        var removeFootsieDelayed = cancelableCall(
+          function(evt) {
+            if (
+              Footsie.open &&
+              Footsie.open.trigger === trigger &&
+              Footsie.open.triggerEvent.type === 'mouseenter'
+            ) {
+              Footsie.open.remove();
+            }
+          },
+          options.mouseLeaveDelay
+        );
+
+        trigger.addEventListener('mouseenter', displayFootsieDelayed);
+        trigger.addEventListener('mousemove', removeFootsieDelayed.cancel);
+        trigger.addEventListener('mouseout', function() {
+          displayFootsieDelayed.cancel();
+          removeFootsieDelayed();
+        });
+      }
     }
 
     forEach.call(
