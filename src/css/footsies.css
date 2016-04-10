@@ -3,6 +3,10 @@
     display: none;    
   }
   
+  .footsie-background {
+    z-index: var(--z-footsies);
+  }
+    
   .footsie-button, .footsie-button:any-link, .footnote-backref:any-link {
     background-color: var(--light-red);
     color: white;
@@ -30,7 +34,7 @@
   
   .footsie {
     cursor: default;
-    z-index: var(--z-footsies);
+    z-index: calc(var(--z-footsies) + 1);
   }
   
   .footsie--bottom {
@@ -85,7 +89,7 @@
     padding: 1em;
     background: #fff;
     position: relative;
-    z-index: calc(var(--z-footsies) + 2);
+    z-index: calc(var(--z-footsies) + 3);
   }
 
   .footsie--bottom .footsie__content {
@@ -101,7 +105,7 @@
     width: 1.3em;
     height: 1.3em;
     margin-left: -.65em;
-    z-index: calc(var(--z-footsies) + 1);
+    z-index: calc(var(--z-footsies) + 2);
     transform: rotate(45deg);
   }
    
@@ -130,4 +134,8 @@
   .footsie, .footsie-button {
     display: none;
   }
+  
+  [data-footsie-text]:after { 
+    content: " (" attr(data-footsie-text) ")";
+  }  
 }

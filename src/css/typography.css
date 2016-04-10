@@ -67,8 +67,8 @@ a:link, a:active, a:hover, a:focus {
   color: var(--dark-red);
 }
 
-abbr[title], span[title] {
-  border-bottom: 1px dotted;
+abbr[title], span[title], [data-footsie-text] {
+  border-bottom: 1px dotted var(--dark-red);
   cursor: help;
 }
 

@@ -270,6 +270,7 @@ function build(options) {
         
         '.footnote-ref.footsie-ref--active',
         '.footsie',
+        '.footsie-background',
         '.footsie__content',
         '.footsie__content .footnote-backref',
         '.footsie--bottom',
@@ -286,7 +287,8 @@ function build(options) {
         '.footsie--popover--top .footsie--popover__tip',
         '.footsie-button',
         '.footsie-button--is-open',
-        '.footsie__wrapper'
+        '.footsie__wrapper',
+        '[data-footsie-text]'
       ]
     }
   }));

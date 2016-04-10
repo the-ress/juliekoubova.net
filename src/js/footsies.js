@@ -68,6 +68,20 @@
     return result;
   }
 
+  function noop() { }
+
+  var data = (function() {
+    var prefix = String(+new Date()) + '_';
+
+    return function data(el, key, value) {
+      if (arguments.length === 3) {
+        el[prefix + key] = value;
+      }
+
+      return el[prefix + key];
+    }
+  })();
+
   if (!doc.querySelector) {
     module.exports = function FootsiesNotSupported() {
       if (!(this instanceof FootsiesNotSupported))
@@ -92,28 +106,75 @@
 
     function Footsie(trigger) {
       this.trigger = trigger;
-      this.triggerEvent = null;
+      this.triggerEventType = null;
       this.element = null;
       this.contentElement = null;
       this.isBeingRemoved = false;
     }
 
     Footsie.open = null;
+    Footsie.background = (function() {
+
+      // iPhones don't bubble clicks from elements without cursor: pointer.
+      // thanks, Apple! 
+
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        var el = doc.createElement('div');
+        el.className = 'footsie-background';
+        
+        var els = el.style;
+        els.cursor = 'pointer';
+        els.display = 'none';
+        els.position = 'fixed';
+        els.top = els.right = els.bottom = els.left = 0;
+        
+        el.addEventListener('click', function() {
+          if (Footsie.open) {
+            Footsie.open.remove();
+          }
+        });
+
+        doc.body.appendChild(el);
+
+        return {
+          display: function() { els.display = 'block'; },
+          hide: function() { els.display = 'none'; }
+        };
+      } else {
+        addEventListener('click', function(evt) {
+          if (Footsie.open && !Footsie.open.contains(evt.target)) {
+            Footsie.open.remove();
+          }
+        });
+
+        return {
+          display: noop,
+          hide: noop
+        };
+      }
+    })();
 
     Footsie.prototype = {
       additionalElements: [],
-      restore: function() { },
+      isFocusable: false,
       createElement: function() {
         if (this.element) return;
 
-        var html = [
-          '<div class="footsie__wrapper">',
-          '<div class="footsie__content" tabindex="0">',
-          this.html,
-          '</div>'
-        ];
+        var html = [];
+
+        html.push('<div class="footsie__wrapper">');
+        html.push('<div class="footsie__content"');
+
+        if (this.isFocusable) {
+          html.push(' tabindex="0"');
+        }
+
+        html.push('>');
+        html.push(this.html);
+        html.push('</div>')
 
         html = html.concat(this.additionalElements);
+
         html.push('</div>');
 
         this.element = doc.createElement('div');
@@ -124,30 +185,71 @@
         this.contentElement = this.element.querySelector('.footsie__content');
       },
 
-      display: function(triggerEvent) {
+      contains: function(element) {
+        while (element) {
+          if (element === this.element || element === this.trigger) {
+            return true;
+          } else {
+            element = element.parentElement;
+          }
+        }
+
+        return false;
+      },
+
+      display: function(triggerEventType) {
         var self = this;
 
-        self.triggerEvent = triggerEvent;
-        self.createElement();
-        self.position();
+        if (!self.triggerEventType || triggerEventType !== 'mouseenter') {
+          self.triggerEventType = triggerEventType;
+        }
 
-        self.contentElement.addEventListener('keydown', function(evt) {
-          if (evt.keyCode === 27) {
-            self.remove();
+        if (Footsie.open === self) {
+          return Promise.resolve();
+        }
+
+        var promise = Footsie.open ? Footsie.open.remove() : Promise.resolve();
+
+        return promise.then(function() {
+
+          function closeOnEscAndFocusTrigger(evt) {
+            if (evt.keyCode === 27) {
+              self.trigger.focus();
+              self.remove();
+            }
           }
-        });
 
-        self.contentElement.addEventListener('blur', function(evt) {
-          if (evt.relatedTarget !== self.trigger) {
-            self.remove();
+          self.createElement();
+          self.position();
+
+          if (!self.isFocusable) {
+            self.contentElement.addEventListener(
+              'click',
+              self.remove.bind(self)
+            );
           }
-        });
 
-        setTimeout(function() {
-          self.trigger.classList.add('footsie-button--is-open');
-          self.element.classList.add('footsie--visible');
-          self.contentElement.focus();
-        }, 10);
+          self.contentElement.addEventListener(
+            'keydown', closeOnEscAndFocusTrigger
+          );
+
+          self.trigger.addEventListener(
+            'keydown', closeOnEscAndFocusTrigger
+          );
+
+          Footsie.open = self;
+
+          setTimeout(function() {
+            Footsie.background.display();
+
+            self.trigger.classList.add('footsie-button--is-open');
+            self.element.classList.add('footsie--visible');
+
+            if (self.isFocusable) {
+              self.contentElement.focus();
+            }
+          }, 10);
+        });
       },
 
       position: function() { },
@@ -161,6 +263,8 @@
         }
 
         self.isBeingRemoved = true;
+
+        Footsie.background.hide();
 
         if (TransitionEndEvent) {
           promise = promise.then(function() {
@@ -176,12 +280,12 @@
 
         promise = promise.then(function() {
           self.trigger.classList.remove('footsie-button--is-open');
-          self.restore();
           self.element.remove();
           self.element = null;
           self.contentElement = null;
 
           Footsie.open = null;
+          data(self.trigger, 'footsie', null);
         });
 
         return promise;
@@ -195,43 +299,43 @@
 
     FootsieBottom.footnotes = document.querySelector('.footnotes');
 
-    FootsieBottom.removeWhenFootnotesVisible = function() {
-      if (!(Footsie.open instanceof FootsieBottom)) {
-        return;
-      }
-
-      var rect = FootsieBottom.footnotes.getBoundingClientRect();
-      var viewportHeight =
-        window.innerHeight - Footsie.open.element.offsetHeight;
-
-      if (rect.top < viewportHeight) {
-        Footsie.open.remove();
-      }
-    };
-
     FootsieBottom.prototype = new Footsie(null);
+    FootsieBottom.prototype.isFocusable = true;
     FootsieBottom.prototype.type = 'bottom';
+
     FootsieBottom.prototype.display = function() {
       if (FootsieBottom.footnotes) {
-        addEventListener('scroll', FootsieBottom.removeWhenFootnotesVisible)
+        addEventListener(
+          'scroll',
+          this.removeWhenFootnotesVisible.bind(this)
+        );
       }
       return Footsie.prototype.display.apply(this, arguments);
     };
 
     FootsieBottom.prototype.remove = function() {
-      removeEventListener('scroll', FootsieBottom.removeWhenFootnotesVisible);
+      removeEventListener(
+        'scroll',
+        this.removeWhenFootnotesVisible.bind(this)
+      );
       return Footsie.prototype.remove.apply(this, arguments);
+    };
+
+    FootsieBottom.prototype.removeWhenFootnotesVisible = function() {
+      if (!this.element) return;
+
+      var rect = FootsieBottom.footnotes.getBoundingClientRect();
+      var viewportHeight =
+        window.innerHeight - this.element.offsetHeight;
+
+      if (rect.top < viewportHeight) {
+        this.remove();
+      }
     };
 
     function FootsiePopover(trigger, text) {
       Footsie.call(this, trigger);
-
-      trigger.title = '';
-
       this.html = '<p>' + text + '</p>';
-      this.restore = function() {
-        trigger.title = text;
-      };
     }
 
     FootsiePopover.prototype = new Footsie(null);
@@ -294,16 +398,14 @@
     FootsiePopover.prototype.type = 'popover';
 
     function createFootsie(trigger) {
-      var text = trigger.getAttribute('title');
-      if (text) {
-        return new FootsiePopover(trigger, text);
-      }
+      var text = trigger.getAttribute('data-footsie-text');
+      if (text) return new FootsiePopover(trigger, text);
 
       var href = trigger.getAttribute('href');
-      if (!href) return;
+      if (!href) return null;
 
       var footnote = doc.querySelector(href);
-      if (!footnote) return;
+      if (!footnote) return null;
 
       return new FootsieBottom(trigger, footnote);
     }
@@ -312,29 +414,30 @@
       evt.preventDefault();
 
       var trigger = this;
-      var promise = Promise.resolve();
+      var footsie = data(trigger, 'footsie');
 
-      if (Footsie.open) {
-        if (Footsie.open.trigger === trigger) {
-          return;
-        }
-
-        promise = promise.then(
-          function() { return Footsie.open.remove(); }
-        );
+      if (!footsie) {
+        footsie = createFootsie(trigger);
       }
 
-      promise = promise.then(
-        function() {
-          var footsie = createFootsie(trigger);
-          if (footsie) {
-            footsie.display(evt);
-            Footsie.open = footsie;
-          }
-        }
-      );
+      data(trigger, 'footsie', footsie);
 
-      promise.catch(console.error);
+      if (footsie) {
+        footsie.display(evt.type);
+      }
+    }
+
+    function removeFootsieIfOpenedOnEventType(triggerEventType) {
+      return function(evt) {
+        evt.preventDefault();
+
+        var trigger = this;
+        var footsie = data(trigger, 'footsie');
+
+        if (footsie && footsie.triggerEventType === triggerEventType) {
+          footsie.remove();
+        }
+      };
     }
 
     function convertToFootsieButton(ref) {
@@ -343,7 +446,34 @@
       if (ref.title) {
         trigger = ref;
         trigger.tabIndex = 0;
+        trigger.setAttribute('data-footsie-text', trigger.title);
+        trigger.removeAttribute('title');
+
+        trigger.addEventListener('focus', displayFootsie);
+
+        trigger.addEventListener(
+          'blur', removeFootsieIfOpenedOnEventType('focus')
+        );
+
+        var displayFootsieDelayed = cancelableCall(
+          displayFootsie.bind(trigger),
+          options.mouseEnterDelay
+        );
+
+        var removeFootsieDelayed = cancelableCall(
+          removeFootsieIfOpenedOnEventType('mouseenter').bind(trigger),
+          options.mouseLeaveDelay
+        );
+
+        trigger.addEventListener('mouseenter', displayFootsieDelayed);
+        trigger.addEventListener('mousemove', removeFootsieDelayed.cancel);
+        trigger.addEventListener('mouseout', function(evt) {
+          displayFootsieDelayed.cancel();
+          removeFootsieDelayed.call(this, evt);
+        });
+
       } else {
+
         var link = ref.querySelector('a[href]');
         if (!link) return;
 
@@ -352,8 +482,8 @@
 
         var html =
           '<a class="footsie-button" ' +
-          '   href="' + href[0] + '" ' +
-          '   id="' + link.id + '">' +
+          'href="' + href[0] + '" ' +
+          'id="' + link.id + '">' +
           href[1] +
           '</a>';
 
@@ -362,37 +492,10 @@
 
         trigger = ref.nextElementSibling;
         link.id = '';
+
       }
 
       trigger.addEventListener('click', displayFootsie);
-      trigger.addEventListener('focus', displayFootsie);
-
-      if (ref.title) {
-        var displayFootsieDelayed = cancelableCall(
-          displayFootsie.bind(trigger),
-          options.mouseEnterDelay
-        );
-
-        var removeFootsieDelayed = cancelableCall(
-          function(evt) {
-            if (
-              Footsie.open &&
-              Footsie.open.trigger === trigger &&
-              Footsie.open.triggerEvent.type === 'mouseenter'
-            ) {
-              Footsie.open.remove();
-            }
-          },
-          options.mouseLeaveDelay
-        );
-
-        trigger.addEventListener('mouseenter', displayFootsieDelayed);
-        trigger.addEventListener('mousemove', removeFootsieDelayed.cancel);
-        trigger.addEventListener('mouseout', function() {
-          displayFootsieDelayed.cancel();
-          removeFootsieDelayed();
-        });
-      }
     }
 
     forEach.call(

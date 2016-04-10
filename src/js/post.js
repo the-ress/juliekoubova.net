@@ -14,7 +14,7 @@
     var container = doc.createElement('div');
     var body = doc.body;
     var headroom;
-        
+    
     container[appendChild](original.cloneNode(true));
     body[appendChild](container);
 
