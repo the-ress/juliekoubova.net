@@ -1,7 +1,8 @@
 ---
 title: Moje cesta k polyamory
-publish: unlisted
+description: Můj první pokus o takové uspořádání byl po všech stranách špatně. Co myslíte, poučila jsem se?
 image: index.jpeg
+bannerStyle: 'top: -40%;'
 ---
 
 Než jsem---snad již definitivně---přijala <span title='from Greek πολύ poly, "many, several", and Latin amor, "love"'>polyamory</span> za vlastní, musela jsem ujít dlouhou a spletitou cestu, s odbočkami a návraty zpět.
@@ -32,7 +33,7 @@ Když jsme se rozešly, pak znovu daly dohromady a byly samy bez Jakuba, tak jsm
 
 ### Po hře na chlapečka
 
-Když skoncčil i náš vztah verze 2.0, tak jsem se zapřísahala že poly nikdy víc. Pořád jsem rozumově chápala výhody odlišných kompromisů polyamory oproti monogamii, ale měla jsem tolik negativních vzpomínek na svoji žárlivost a pocity nejistoty a strachu z opuštění, a daleko nejjednodušší bylo celou věc zavrhnout.
+Když skončil i náš vztah verze 2.0, tak jsem se zapřísahala že poly nikdy víc. Pořád jsem rozumově chápala výhody odlišných kompromisů polyamory oproti monogamii, ale měla jsem tolik negativních vzpomínek na svoji žárlivost a pocity nejistoty a strachu z opuštění, a daleko nejjednodušší bylo celou věc zavrhnout.
 
 <p class="pullquote-right" data-pullquote='Ani monogamie žádné jistoty neskýtá. Sice se říká “dokud smrt nerozdělí”, ale v 50% přijdou právníci dřív.'>Jenže pak se stala zajímavá věc. Moje tělo konečně začalo fungovat na správných hormonech. Snad poprvé v životě jsem se cítila opravdu dobře. Najednou jsem nemusela téměř neustále hrát tu absurdní roli. Poprvé jsem dokázala mít sebe opravdu ráda, začala jsem si sebe cenit.</p>
 
