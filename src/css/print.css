@@ -23,6 +23,18 @@
     content: " (" attr(title) ")"; 
   }
 
+  p[data-pullquote].pullquote-right:before, .pull-right { 
+    float: right;
+    margin-left: 1em;
+    max-width: 40%;
+  }
+  
+  p[data-pullquote].pullquote-left:before, .pull-left { 
+    float: left;
+    margin-right: 1em; 
+    max-width: 40%;
+  }
+
   /* Don't show links for images, or javascript/internal links */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
   pre, blockquote { page-break-inside: avoid; }
