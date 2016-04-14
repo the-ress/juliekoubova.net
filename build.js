@@ -215,8 +215,8 @@ function build(options) {
   }));
 
   m.use(hyphenate({
-    elements: ['a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong'],
-    useLangAttribute: true
+    attributes: [ 'title', 'data-pullquote' ],
+    elements: ['a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong']
   }));
 
   m.use(srcset());
