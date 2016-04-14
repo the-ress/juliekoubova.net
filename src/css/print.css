@@ -8,10 +8,17 @@
     -ms-filter: none !important; 
     opacity: 1 !important;
   }
+
   a[href]:after {
     text-decoration: underline;
     content: " (" attr(href) ")"; 
   }
+
+  a[data-href-hyphenated]:after {
+    text-decoration: underline;
+    content: " (" attr(data-href-hyphenated) ")"; 
+  }
+
   abbr[title]:after, span[title]:after { 
     content: " (" attr(title) ")"; 
   }
