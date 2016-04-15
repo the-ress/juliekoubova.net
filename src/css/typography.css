@@ -94,6 +94,10 @@ blockquote {
   border-left: 3px solid var(--light-red);
 }
 
+blockquote em {
+  font-style: normal;
+}
+
 blockquote cite {
   display: block;
   text-align: right;
