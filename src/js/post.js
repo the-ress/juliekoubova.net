@@ -35,7 +35,7 @@
         10
       );
       
-      var figures = doc[querySelector + 'All']('figure img'),
+      var figures = doc[querySelector + 'All']('figure img, figure iframe'),
           i = figures.length,
           img; 
       
