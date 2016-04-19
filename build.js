@@ -215,7 +215,7 @@ function build(options) {
   }));
 
   m.use(hyphenate({
-    attributes: [ 'title', 'data-pullquote' ],
+    attributes: ['title', 'data-pullquote'],
     attributesMapped: {
       'href': 'data-href-hyphenated'
     },
@@ -270,7 +270,7 @@ function build(options) {
         '.headroom--pinned.headroom--not-top',
         '.headroom--unpinned',
         '.headroom--top',
-        
+
         '.footnote-ref.footsie-ref--active',
         '.footsie',
         '.footsie-background',
@@ -318,8 +318,16 @@ function build(options) {
   // ===========================================================================
 
   m.use(browserify({
-    include: 'js/post.js'
+    include: 'js/post.js',
+    debug: options.live
   }));
+
+  m.use(ignore([
+    'js/**/*',
+    '!js/html5shiv-printshiv.js',
+    '!js/inline.js*',
+    '!js/post.js*'
+  ]));
 
   // uglify javascripts -> .min.js
   m.use(uglify({
@@ -328,7 +336,8 @@ function build(options) {
     output: {
       beautify: options.live
     },
-    removeOriginal: true
+    // removeOriginal: !options.live,
+    sourceMap: options.live
   }));
 
   m.use(inliner({
@@ -342,12 +351,6 @@ function build(options) {
     html: '**/*.html',
     delete: true
   }));
-
-  m.use(ignore([
-    'js/**/*',
-    '!js/html5shiv-printshiv.min.js',
-    '!js/post.min.js'
-  ]))
 
   if (!options.live) {
     m.use(cacheBust({
