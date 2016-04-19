@@ -6,7 +6,7 @@ image: index.png
 
 Tento víkend jsem se zúčastnila [hlasového workshopu Jde ti o hrdlo?](http://www.hrajdivadlo.cz/#!hrdlo/sx2vv) pořádaného [hrajdivadlo.cz](http://hrajdivadlo.cz).
 
-Bylo to super. Já jsem tedy už dost věcí znala, dřív jsem chodila na hlasový trénink a teď se poukouším zpívat, a je to víceméně to samé. Ale bylo fajn si to znovu připomenout a zopakovat a vyzkoušet v trochu jiném kontextu.
+Bylo to super. Já jsem tedy už dost věcí znala, dřív jsem chodila na hlasový trénink a teď se pokouším zpívat, a je to víceméně to samé. Ale bylo fajn si to znovu připomenout a zopakovat a vyzkoušet v trochu jiném kontextu.
 
 ### Sobota
 
