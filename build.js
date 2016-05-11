@@ -109,6 +109,9 @@ function build(options) {
   m.use(ignore([
     // ignore hidden files
     '**/.*',
+    
+    // keep htaccess
+    '!**/.htaccess',
 
     // ignore image etc. metadata
     '**/*.meta.json',
@@ -394,7 +397,7 @@ function hasSwitch(arg) {
 }
 
 var options = {
-  gzip: hasSwitch('production'),
+  gzip: hasSwitch('gzip'),
   live: hasSwitch('live'),
   server: hasSwitch('server')
 };

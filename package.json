@@ -5,11 +5,13 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node build.js --live",
-    "build": "node build.js --production",
-    "test": "node build.js --server",
+    "build": "node build.js",
     "images": "node images.js",
-    "deploy": "npm run build && rsync -av --progress --del build/ --exclude=\\\".*\\\" demonka:/data/www/juliekoubova.net"
+    "start": "node build.js --live",
+    "test": "node build.js --server",
+    "deploy": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" demonka:/data/www/juliekoubova.net",
+    "dreamhost": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" --include=\\\".htaccess\\\" dreamhost:juliekoubova.net"
+
   },
   "author": "Julie Koubova",
   "license": "UNLICENSED",
