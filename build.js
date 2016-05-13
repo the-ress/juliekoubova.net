@@ -221,7 +221,10 @@ function build(options) {
   m.use(hyphenate({
     attributes: ['title', 'data-pullquote'],
     attributesMapped: {
-      'href': 'data-href-hyphenated'
+      'href': {
+       dest: 'data-href-hyphenated',
+       element: 'a' 
+      }
     },
     elements: ['a', 'aside', 'b', 'em', 'figcaption', 'li', 'p', 'strong']
   }));
