@@ -1,11 +1,20 @@
 Options -Indexes
 
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+RewriteEngine on
 
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^ https://%1/%{REQUEST_URI} [R=301,L]
+
+# Redirect to https://
+RewriteCond %{HTTPS} !on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Direct request of .gz files => 404
 RewriteCond %{THE_REQUEST} \.(css|html|js|xml)\.gz
 RewriteRule \.(css|html|js|xml)\.gz$ - [R=404,L]
 
+# Strip index.html from urls
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
 

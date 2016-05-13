@@ -10,8 +10,7 @@
     "start": "node build.js --live",
     "test": "node build.js --server",
     "deploy": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" demonka:/data/www/juliekoubova.net",
-    "dreamhost": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" --include=\\\".htaccess\\\" dreamhost:juliekoubova.net"
-
+    "dreamhost": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" --include=\\\".htaccess\\\" dreamhost:wwwroot"
   },
   "author": "Julie Koubova",
   "license": "UNLICENSED",
