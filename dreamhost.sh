@@ -4,7 +4,7 @@ rsync -av --progress --del \
       --include=.htaccess  \
       build/               \
       dreamhost:wwwroot    \
-&& \  
+&& \
 rsync -av --progress --del \
       --exclude=\".*\"     \
       --include=.htaccess  \

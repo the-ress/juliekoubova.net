@@ -1,5 +1,13 @@
 Options -Indexes
 
+ExpiresActive  On
+ExpiresDefault "access plus 2 hours"
+Header append Cache-Control "must-revalidate"
+
+<FilesMatch "\.(css|gif|ico|png|jpe?g|js)$">
+  ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
 RewriteEngine on
 
 # Redirect www to non-www
