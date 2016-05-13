@@ -6,10 +6,6 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^ https://%1/%{REQUEST_URI} [R=301,L]
 
-# Redirect to https://
-RewriteCond %{HTTPS} !on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
 # Direct request of .gz files => 404
 RewriteCond %{THE_REQUEST} \.(css|html|js|xml)\.gz
 RewriteRule \.(css|html|js|xml)\.gz$ - [R=404,L]

@@ -1,0 +1,4 @@
+Options -Indexes
+
+RewriteEngine on
+RewriteRule ^ https://juliekoubova.net%{REQUEST_URI} [R=301,L]
