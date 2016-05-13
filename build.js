@@ -190,7 +190,8 @@ function build(options) {
   // but we use Handlebars to template javascripts, too
   m.use(rename({
     pattern: '**/*.hbs',
-    rename: n => n.replace(/\.hbs$/, '')
+    rename: n => n.replace(/\.hbs$/, ''),
+    directoryIndex: 'index.html'
   }));
 
   // apply per-page layouts
