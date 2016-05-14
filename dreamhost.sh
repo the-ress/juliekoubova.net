@@ -1,4 +1,4 @@
-node build.js --gzip &&    \
+node build.js &&           \
 rsync -av --progress --del \
       --exclude=\".*\"     \
       --include=.htaccess  \
