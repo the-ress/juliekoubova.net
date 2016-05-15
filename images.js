@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const Metalsmith = require('metalsmith');
+const mv = require('mv');
 const Q = require('q');
 
 const define = require('metalsmith-define');
@@ -49,8 +50,10 @@ function buildImages() {
 }
 
 buildImages().then(() => 
-  fs.createReadStream(__dirname + '/img/map.json').pipe(
-    fs.createWriteStream(__dirname + '/src/img-map.json')
-  )
+  Q.nfcall(mv.bind(
+    this,
+    __dirname + '/img/map.json', 
+    __dirname + '/src/img-map.json'
+  ))
 )
 .done();
