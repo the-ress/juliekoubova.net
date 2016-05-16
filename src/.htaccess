@@ -8,6 +8,8 @@ Header append Cache-Control "must-revalidate"
   ExpiresDefault "access plus 1 month"
 </FilesMatch>
 
+RedirectMatch 404 ^/\.git(/|$)
+
 RewriteEngine on
 
 # Redirect www to non-www
