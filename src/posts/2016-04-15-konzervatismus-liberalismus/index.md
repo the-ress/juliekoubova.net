@@ -2,10 +2,10 @@
 title: Konzervatismus, liberalismus, oh my…
 image: index.jpeg
 bannerTitle: Konzervatismus
-description: Tento týden jsem měla tu čest shlédnout diskusi mezi Josefem Šímou a Romanem Jochem.
+description: Tento týden jsem měla tu čest zhlédnout diskusi mezi Josefem Šímou a Romanem Jochem.
 ---
 
-Tento týden jsem měla tu čest v [CEVRO Institutu](http://cevroinstitut.cz) shlédnout diskusi [Face to Face: Liberalismus vs. konzervatismus](https://facebook.com/events/969426083143438) ^[konzervatismus se Z! jaká progresivní ortografie! smí se to vůbec?] mezi [Josefem Šímou](https://cs.wikipedia.org/wiki/Josef_%C5%A0%C3%ADma_(ekonom)) a [Romanem Jochem](https://cs.wikipedia.org/wiki/Roman_Joch).
+Tento týden jsem měla tu čest v [CEVRO Institutu](http://cevroinstitut.cz) zhlédnout diskusi [Face to Face: Liberalismus vs. konzervatismus](https://facebook.com/events/969426083143438) ^[konzervatismus se Z! jaká progresivní ortografie! smí se to vůbec?] mezi [Josefem Šímou](https://cs.wikipedia.org/wiki/Josef_%C5%A0%C3%ADma_(ekonom)) a [Romanem Jochem](https://cs.wikipedia.org/wiki/Roman_Joch).
 
 Řešila se závažná, nebála bych se říci až palčivě aktuální témata. Zejména konsensuální kanibalismus, animovaná dětská pornografie a drogy.
 
