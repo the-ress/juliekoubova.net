@@ -9,7 +9,7 @@
     "images": "node images.js",
     "start": "node build.js --live",
     "test": "node build.js --server",
-    "deploy": "node build.js --gzip && rsync -av --progress --del build/ --exclude=\\\".*\\\" demonka:/data/www/juliekoubova.net",
+    "deploy": "dreamhost.sh",
     "dreamhost": "dreamhost.sh"
   },
   "author": "Julie Koubova",
