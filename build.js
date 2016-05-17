@@ -375,6 +375,11 @@ function build(options) {
     dest: 'img'
   }));
 
+  m.use(staticAssets({
+    src: 'static',
+    dest: '/'
+  }));
+  
   if (options.live || options.server) {
     m.use(express());
   }
