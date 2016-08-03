@@ -2,7 +2,7 @@
 title: Orgasmický portrét
 image: index.jpeg
 bannerStyle: 'top: -50%; transform: translateY(15%);'
-description: 'Jak fantazie mého ex: já trpím na nepohodlné stoličce, on sedí na posteli, pokuřuje a občas si mě vyfotí.' 
+description: 'Jak fantazie mého ex: já trpím na nepohodlné stoličce, on sedí na posteli, pokuřuje a občas si mě vyfotí.'
 ---
 Před pár týdny jsem jednou večer na Facebooku narazila na událost vernisáže výstavy Petra Jedináka [Orgasmické portréty](https://facebook.com/events/1256354914375541/). Přijďte, je to v pondělí 8. srpna v Karlíně. Proklikala jsem se na Petrův web a všimla si nenápadné větičky:
 
@@ -28,7 +28,7 @@ To mě trochu zarazilo, známe se sotva hodinu a už mě zkouší subit. Tedy, n
 
 Ale ten požadavek, jak vyšlo najevo, byl nudně technický: Po pěti minutách ze světlocitlivé vrstvy kolodia vyprchá éter a již ji není možno vyvolat. Což se  v případě první desky zřejmě i trochu stalo.
 
-Dál to byla scéna jak z fantazie mého ex: já jsem trpěla na nepohodlné stoličce obložená světly, snažila se udělat do těch pěti minut, a Petr seděl na posteli, pokuřoval, s pobaveným výrazem sledoval dění, a občas si mě u toho vyfotil zrcadlovkou.
+Dál to byla scéna jak z fantazie mého bývalého partnera: já jsem trpěla na nepohodlné stoličce obložená světly, snažila se udělat do těch pěti minut, a Petr seděl na posteli, pokuřoval, s pobaveným výrazem sledoval dění, a občas si mě u toho vyfotil zrcadlovkou.
 
 Na třetí pokus se mi podařilo to stihnout. Ještě jsem vzbudila trochu pohoršení na balkónku s výhledem do parku---nějak se mi v té post-orgasmické spokojenostní rozněžněnosti nechtělo oblékat; a proč taky vlastně. Můj příští byt musí nutně mít balkón na kterém se budu moci nahá <s>předvádět</s> opalovat. Počkala jsem, než na mokrých deskách začne alespoň něco být vidět, a byl čas vyrazit za Terezkou.
 
