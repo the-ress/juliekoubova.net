@@ -9,8 +9,8 @@
     "images": "node images.js",
     "start": "node build.js --live",
     "test": "node build.js --server",
-    "deploy": "dreamhost.sh",
-    "dreamhost": "dreamhost.sh"
+    "deploy": "./dreamhost.sh",
+    "dreamhost": "./dreamhost.sh"
   },
   "author": "Julie Koubova",
   "license": "UNLICENSED",
