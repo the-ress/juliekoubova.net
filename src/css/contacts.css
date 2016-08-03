@@ -12,7 +12,7 @@
   display: inline-block;
 }
 
-.contacts li.homepage-link {
+.contacts li.contacts__homepage {
   display: none;
 }
 
@@ -72,11 +72,11 @@
 .contacts--animated li:nth-child(3) {
   animation-delay: 1.4s;
 }
-.contacts--colorful .facebook-link a circle {
+.contacts--colorful .contacts__facebook a circle {
   fill: #3e5c98;
 }
 
-.contacts--colorful .twitter-link a circle {
+.contacts--colorful .contacts__twitter a circle {
   fill:#2aa3ef;
 }
 
@@ -131,7 +131,7 @@
     font-weight: 300;
   }
   
-  .contacts li.homepage-link {
+  .contacts li.contacts__homepage {
     display: block;
     font-weight: 400;
   }

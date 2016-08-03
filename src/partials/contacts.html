@@ -1,7 +1,7 @@
 <ul class="contacts {{ cssClass }}">
   
   {{#if homepage}}
-  <li class="homepage-link {{ itemCssClass }}">
+  <li class="contacts__homepage">
     <a href="{{ baseUrl }}">
       {{> svg/home.svg }}
     </a>
@@ -9,7 +9,7 @@
   {{/if}}
   
   {{#if facebook}}
-  <li class="facebook-link {{ itemCssClass }}">
+  <li class="contacts__facebook">
     <a title="Facebook" href="https://facebook.com/julie.e.harshaw">
       {{> svg/facebook.svg }}
     </a>
@@ -17,7 +17,7 @@
   {{/if}}
   
   {{#if twitter}}
-  <li class="twitter-link {{ itemCssClass }}">
+  <li class="contacts__twitter">
     <a title="Twitter" href="https://twitter.com/julieeharshaw">
       {{> svg/twitter.svg }}
     </a>
@@ -25,7 +25,7 @@
   {{/if}}
   
   {{#if github}}  
-  <li class="github-link {{ itemCssClass }}">
+  <li class="contacts__github">
     <a title="GitHub" href="https://github.com/juliekoubova">
       {{> svg/github.svg }}
     </a>
@@ -33,8 +33,8 @@
   {{/if}}
 
   {{#if email}}
-  <li class="email-link {{ itemCssClass }}">
-    <a title="Email" href="mailto:juliekoubova@icloud.com">
+  <li class="contacts__email">
+    <a title="Email" href="mailto:julie@juliekoubova.net">
       {{> svg/email.svg }}
     </a>
   </li>
