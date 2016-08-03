@@ -1,6 +1,6 @@
 ---
 title: Jde ti o hrdlo?
-description: Tento víkend jsem se zúčastnila hlasového workshopu pořádaného hrajdivadlo.cz. 
+description: O víkendu jsem se zúčastnila hlasového workshopu pořádaného hrajdivadlo.cz. 
 image: index.png
 ---
 
