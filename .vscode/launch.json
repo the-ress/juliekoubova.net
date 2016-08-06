@@ -7,7 +7,7 @@
 			"request": "launch",
 			"program": "${workspaceRoot}/images.js",
 			"stopOnEntry": false,
-			"args": ["--images"],
+			"args": [],
 			"cwd": "${workspaceRoot}",
 			"runtimeExecutable": null,
 			"runtimeArgs": [
