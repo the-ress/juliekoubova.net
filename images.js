@@ -11,6 +11,8 @@ const path = require('path');
 const Q = require('q');
 const urlBase64 = require('./lib/url-base64')
 
+const imageMagick = gm.subClass({ imageMagick: true });
+
 const options = {
   source: path.join(__dirname, 'src'),
   destination: path.join(__dirname, 'img'),
@@ -115,13 +117,10 @@ function resizeImage(i, size, density) {
       console.log(`resize ${i.path} to ${newSize} => ${newName}`);
       
       const absPath = path.join(options.source, i.path);
-      gm(absPath).resize(newSize, newSize, '>').write(newPath, err => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result);
-        }
-      });
+      
+      imageMagick(absPath)
+        .resize(newSize, newSize, '>')
+        .write(newPath, err => err ? reject(err) : resolve(result));
     });
   });
 }
