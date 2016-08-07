@@ -117,7 +117,7 @@ function resizeImage(i, size, density) {
       console.log(`resize ${i.path} to ${newSize} => ${newName}`);
       
       const absPath = path.join(options.source, i.path);
-      
+
       imageMagick(absPath)
         .resize(newSize, newSize, '>')
         .write(newPath, err => err ? reject(err) : resolve(result));
@@ -164,7 +164,12 @@ function getObsoleteImages(results) {
       if (err) {
         reject(err);
       } else {
-        resolve(_.difference(files, _.map(results, 'name')));
+        resolve(
+          _.difference(
+            _.without(files, '.gitignore'),
+            _.map(results, 'name')
+          )
+        );
       }
     })
   );
