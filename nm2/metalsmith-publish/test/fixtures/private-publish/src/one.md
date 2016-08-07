@@ -1,5 +1,0 @@
----
-publish: private
----
-
-one
