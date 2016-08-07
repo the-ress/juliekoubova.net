@@ -1,0 +1,70 @@
+{
+  "_args": [
+    [
+      "hyphenation.cs",
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "hyphenation.cs@latest",
+  "_id": "hyphenation.cs@0.2.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hyphenation.cs",
+  "_npmUser": {
+    "email": "b.l.stein@gmail.com",
+    "name": "bramstein"
+  },
+  "_npmVersion": "1.2.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "hyphenation.cs",
+    "raw": "hyphenation.cs",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/hyphenation.cs/-/hyphenation.cs-0.2.1.tgz",
+  "_shasum": "877b9f555dca8aaf339916481a4d6115bf658b30",
+  "_shrinkwrap": null,
+  "_spec": "hyphenation.cs",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "email": "b.l.stein@gmail.com",
+    "name": "Bram Stein",
+    "url": "http://www.bramstein.com"
+  },
+  "dependencies": {
+    "hypher": "*"
+  },
+  "description": "Hyphenation language pattern file (cs) for Hypher",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "877b9f555dca8aaf339916481a4d6115bf658b30",
+    "tarball": "http://registry.npmjs.org/hyphenation.cs/-/hyphenation.cs-0.2.1.tgz"
+  },
+  "ender": "./lib/ender.js",
+  "keywords": [
+    "cs",
+    "ender",
+    "hyphenation",
+    "hypher",
+    "language",
+    "pattern"
+  ],
+  "main": "./lib/cs.js",
+  "maintainers": [
+    {
+      "name": "bramstein",
+      "email": "b.l.stein@gmail.com"
+    }
+  ],
+  "name": "hyphenation.cs",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README.md file found!",
+  "version": "0.2.1"
+}

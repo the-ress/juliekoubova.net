@@ -3,3 +3,4 @@ build.git/
 img/
 src/img-map.json
 npm-debug.log
+!node_modules/**

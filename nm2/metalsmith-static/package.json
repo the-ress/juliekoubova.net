@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      "metalsmith-static",
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "metalsmith-static@latest",
+  "_id": "metalsmith-static@0.0.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-static",
+  "_npmUser": {
+    "email": "dnfagnan@gmail.com",
+    "name": "thehydroimpulse"
+  },
+  "_npmVersion": "1.4.21",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "metalsmith-static",
+    "raw": "metalsmith-static",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/metalsmith-static/-/metalsmith-static-0.0.5.tgz",
+  "_shasum": "c0f51305ae75442faa0e1652657ef2c22406ba2f",
+  "_shrinkwrap": null,
+  "_spec": "metalsmith-static",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "Daniel Fagnan"
+  },
+  "bugs": {
+    "url": "https://github.com/thehydroimpulse/metalsmith-static/issues"
+  },
+  "dependencies": {
+    "debug": "~0.7.4",
+    "fs-extra": "~0.10.0",
+    "ncp": "~0.5.0"
+  },
+  "description": "Provides a simple plugin to copy assets from /public (configurable) to the build directory.",
+  "devDependencies": {
+    "assert-dir-equal": "0.0.1",
+    "metalsmith": "1.x"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "c0f51305ae75442faa0e1652657ef2c22406ba2f",
+    "tarball": "http://registry.npmjs.org/metalsmith-static/-/metalsmith-static-0.0.5.tgz"
+  },
+  "gitHead": "8eb0b3235e9c57caf8043215955dca2d2cfa468e",
+  "homepage": "https://github.com/thehydroimpulse/metalsmith-static",
+  "main": "lib/index.js",
+  "maintainers": [
+    {
+      "name": "thehydroimpulse",
+      "email": "dnfagnan@gmail.com"
+    }
+  ],
+  "name": "metalsmith-static",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thehydroimpulse/metalsmith-static.git"
+  },
+  "scripts": {},
+  "version": "0.0.5"
+}

@@ -1,0 +1,93 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:juliekoubova/metalsmith-uncss",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:juliekoubova/metalsmith-uncss",
+        "spec": "github:juliekoubova/metalsmith-uncss",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:juliekoubova/metalsmith-uncss.git",
+          "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-uncss.git",
+          "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-uncss.git",
+          "gitUrl": "git://github.com/juliekoubova/metalsmith-uncss.git",
+          "shortcut": "github:juliekoubova/metalsmith-uncss",
+          "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-uncss/master/package.json"
+        }
+      },
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "juliekoubova/metalsmith-uncss",
+  "_id": "metalsmith-uncss@0.1.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-uncss",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:juliekoubova/metalsmith-uncss",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:juliekoubova/metalsmith-uncss",
+    "spec": "github:juliekoubova/metalsmith-uncss",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:juliekoubova/metalsmith-uncss.git",
+      "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-uncss.git",
+      "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-uncss.git",
+      "gitUrl": "git://github.com/juliekoubova/metalsmith-uncss.git",
+      "shortcut": "github:juliekoubova/metalsmith-uncss",
+      "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-uncss/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/juliekoubova/metalsmith-uncss.git#f26d1dbd565c07bbea5bbe930ef07ef00911df49",
+  "_shasum": "6394ac39d0950b3508cdab19955b27ef6b98e747",
+  "_shrinkwrap": null,
+  "_spec": "github:juliekoubova/metalsmith-uncss",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "Sam Deere",
+    "email": "dev@colophonemes.org"
+  },
+  "bugs": {
+    "url": "https://github.com/colophonemes/metalsmith-uncss/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "multimatch": "^2.1.0",
+    "uncss": "^0.12.1"
+  },
+  "description": "Run uncss from metalsmith",
+  "devDependencies": {},
+  "gitHead": "f26d1dbd565c07bbea5bbe930ef07ef00911df49",
+  "homepage": "https://github.com/colophonemes/metalsmith-uncss#readme",
+  "keywords": [
+    "metalsmith",
+    "plugin",
+    "uncss"
+  ],
+  "license": "GPL",
+  "main": "lib/index.js",
+  "name": "metalsmith-uncss",
+  "optionalDependencies": {},
+  "readme": "# Metalsmith UnCSS\n\nA [metalsmith](http://metalsmith.io) plugin based on Giacomo Martino's [uncss](https://github.com/giakki/uncss)\n\n- [Installation](#installation)\n- [Usage](#usage)\n\t- [Options](#options)\n\n\n## <a name=\"installation\"></a>Installation\n\n1. Install the package with [npm](http://npmjs.org)\n\n```sh\nnpm install --save metalsmith-uncss\n```\n\n2. Include `metalsmith-uncss` in your Metalsmith project dependencies\n\n```js\nvar uncss = require('metalsmith-uncss');\n```\n\n## <a name=\"usage\"></a>Usage\n\nAdd `uncss` to your Metalsmith pipeline\n\n```js\nvar Metalsmith = require('metalsmith');\nvar uncss = require('metalsmith-uncss');\n\nMetalsmith(__dirname)\n\t.source('./src')\n\t.destination('./dest')\n\t.use(uncss({\n\t\tcss: ['bootstrap.css','app.css'],\t// CSS files to run through UnCSS\n\t\thtml: ['index.html','test.html'],\t// HTML files to test the CSS files against\n\t\toutput: 'uncss-output.css',\t\t\t// output CSS filename\n\t\tbasepath: 'styles',\t\t\t\t\t// optional base path where all your css files are stored\n\t\tremoveOriginal: true,\t\t\t\t// remove original CSS files from the build\n\t\tuncss: {\t\t\t\t\t\t\t// uncss options - passed directly to UnCSS\n\t\t\tignore: ['.added-at-runtime','#do-not-remove']\n\t\t}\n\t}))\n\t.build();\n```\n\n\n### <a name=\"options\"></a>Options\n\n#### css <a name=\"optionsCss\"></a>\n\n`String | Array` *required*\n\nA string or array of CSS files to check against the input HTML files. Files will be concatenated by UnCSS in the order that they are supplied.\n\n**This is a required option**\n\n*UnCSS usually works by detecting CSS files linked in the header of the supplied HTML files. However, because at this stage of the process the CSS files only exist as part of Metalsmith's build pipeline, UnCSS won't be able to find them. To get around this, it's necessary to override the default behaviour and manually pass the file contents through to UnCSS as the `raw` option.*\n\n\n#### html  <a name=\"optionsHtml\"></a>\n\n`String | Array` *optional*\n\nThe HTML files that UnCSS will check CSS files against. If not specified, this defaults to every HTML file currently in the project build pipeline. These are passed to UnCSS as the `files` argument.\n\n#### output\n\n`String` *required*\n\nThe name of the output file.\n\n#### basepath <a name=\"optionsBasepath\"></a>\n\n`String` *optional*\n\nOptional base path that will be prepended to all css files (i.e. those supplied by `css` and `output` options).\n\nFor example:\n\n```js\n// Without basepath\n.use(uncss({\n\tcss: ['styles/bootstrap.css','styles/app.css'],\n\toutput: 'styles/uncss-output.css'\n}))\n\n// With basepath\n.use(uncss({\n\tcss: ['bootstrap.css','app.css'],\n\toutput: 'uncss-output.css',\n\tbasepath: 'styles'\n}))\n\n```\n\n#### removeOriginal <a name=\"optionsOriginal\"></a>\n\n`Boolean` *optional*\n\nRemove the original CSS files (i.e. those supplied by `css`) from the build pipeline. Defaults to `true`.\n\n#### uncss <a name=\"optionsUncss\"></a>\n\n`Object` *optional*\n\nObject of options to pass to UnCSS as the `options` argument. Supports all options except for `raw`, which `metalsmith-uncss` uses to feed in css files from its `css` option ([see above](#optionsCss)).\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colophonemes/metalsmith-uncss.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.2"
+}

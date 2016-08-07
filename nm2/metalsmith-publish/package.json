@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:mikestopcontinues/metalsmith-publish",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:mikestopcontinues/metalsmith-publish",
+        "spec": "github:mikestopcontinues/metalsmith-publish",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:mikestopcontinues/metalsmith-publish.git",
+          "sshUrl": "git+ssh://git@github.com/mikestopcontinues/metalsmith-publish.git",
+          "httpsUrl": "git+https://github.com/mikestopcontinues/metalsmith-publish.git",
+          "gitUrl": "git://github.com/mikestopcontinues/metalsmith-publish.git",
+          "shortcut": "github:mikestopcontinues/metalsmith-publish",
+          "directUrl": "https://raw.githubusercontent.com/mikestopcontinues/metalsmith-publish/master/package.json"
+        }
+      },
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "mikestopcontinues/metalsmith-publish",
+  "_id": "metalsmith-publish@0.1.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-publish",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:mikestopcontinues/metalsmith-publish",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:mikestopcontinues/metalsmith-publish",
+    "spec": "github:mikestopcontinues/metalsmith-publish",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:mikestopcontinues/metalsmith-publish.git",
+      "sshUrl": "git+ssh://git@github.com/mikestopcontinues/metalsmith-publish.git",
+      "httpsUrl": "git+https://github.com/mikestopcontinues/metalsmith-publish.git",
+      "gitUrl": "git://github.com/mikestopcontinues/metalsmith-publish.git",
+      "shortcut": "github:mikestopcontinues/metalsmith-publish",
+      "directUrl": "https://raw.githubusercontent.com/mikestopcontinues/metalsmith-publish/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/mikestopcontinues/metalsmith-publish.git#48914de4e2b69c0217d20cb57bd64343ea36e2cd",
+  "_shasum": "bad43289f360730643d492862e5741e6d8162b4d",
+  "_shrinkwrap": null,
+  "_spec": "github:mikestopcontinues/metalsmith-publish",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "Mike Stop Continues",
+    "email": "mikestopcontinues@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mikestopcontinues/metalsmith-publish/issues"
+  },
+  "dependencies": {
+    "debug": "~0.7.4"
+  },
+  "description": "A Metalsmith plugin that adds support for draft, private, and future-dated posts.",
+  "devDependencies": {
+    "metalsmith": "0.x",
+    "mocha": "~2.1.0"
+  },
+  "gitHead": "48914de4e2b69c0217d20cb57bd64343ea36e2cd",
+  "homepage": "https://github.com/mikestopcontinues/metalsmith-publish#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "metalsmith-publish",
+  "optionalDependencies": {},
+  "readme": "# metalsmith-publish\n\nA [Metalsmith](https://github.com/segmentio/metalsmith) plugin that adds support for draft, private, and future-dated posts. Enables you to do multiple builds for production and development. Gives you a callback so you can automate rebuilding metalsmith with a cron job or node script when future-dated posts become published.\n\n## Features\n\n  - works via `publish` metadata\n  - building draft, private, and future-dated posts enabled independently\n  - callback serving future-dated posts so you can automate rebuild\n\n## Installation\n\n    $ npm install metalsmith-publish\n\n## Usage\n\n### Draft\n\nSet post publish state via metadata:\n\n```markdown\n---\ntitle: My Article\npublish: draft\n---\n```\n\nInclude in build via config:\n\n```js\nvar publish = require('metalsmith-publish');\n\nmetalsmith.use(publish({\n  draft: true\n}));\n```\n\n### Private\n\nSet post publish state via metadata:\n\n```markdown\n---\ntitle: My Article\npublish: private\n---\n```\n\nInclude in build via config:\n\n```js\nvar publish = require('metalsmith-publish');\n\nmetalsmith.use(publish({\n  private: true\n}));\n```\n\n### Unlisted\n\nRemoves the `collection` metadata, useful for publishing internally wihtout adding it to your posts lists or RSS feeds.\n\n```markdown\n---\ntitle: My Article\npublish: unlisted\ncollection: blog\n---\n```\n\nInclude in build via config:\n\n```js\nvar publish = require('metalsmith-publish');\n\nmetalsmith.use(publish({\n  unlisted: true\n}));\n```\n\n### Future-dated\n\nSet post publish state via metadata:\n\n```markdown\n---\ntitle: My Article\npublish: 2021-12-21\n---\n```\n\nInclude in build via config:\n\n```js\nvar publish = require('metalsmith-publish');\n\nmetalsmith.use(publish({\n  future: true\n}));\n```\n\nSpecify field to use for date when `publish` unspecified (default: 'date'):\n\n```js\nvar publish = require('metalsmith-publish');\n\nmetalsmith.use(publish({\n  futureMeta: 'date'\n}));\n```\n\nOr pass callback to automate rebuild:\n\n```js\nmetalsmith.use(publish({\n  futureFn: function (futureFiles, metalsmith, done) {\n    Object.keys(futureFiles).forEach(function (file) {\n      console.log('rebuild ' + file + ' @ ' new Date(futureFiles[file].publish).toTime());\n    });\n    done();\n  }\n}));\n```\n\n## CLI Usage\n\nAll of the same options apply, just add them to the `\"plugins\"` key in your `metalsmith.json` configuration:\n\n```json\n{\n  \"plugins\": {\n    \"metalsmith-publish\": {\n      \"articles\": {\n        \"draft\": false,\n        \"private\": false,\n        \"future\": false,\n        \"futureFn\": \"console.log('Callback script passed (futureFiles, metalsmith, done). E.g. futureFiles = ' + Object.keys(futureFiles).join(', ')); done();\"\n      }\n    }\n  }\n}\n```\n\n## License\n\n  MIT\n",
+  "readmeFilename": "Readme.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikestopcontinues/metalsmith-publish.git"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/index.js"
+  },
+  "version": "0.1.4"
+}

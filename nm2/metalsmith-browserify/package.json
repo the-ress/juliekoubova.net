@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:juliekoubova/metalsmith-browserify",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:juliekoubova/metalsmith-browserify",
+        "spec": "github:juliekoubova/metalsmith-browserify",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:juliekoubova/metalsmith-browserify.git",
+          "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-browserify.git",
+          "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-browserify.git",
+          "gitUrl": "git://github.com/juliekoubova/metalsmith-browserify.git",
+          "shortcut": "github:juliekoubova/metalsmith-browserify",
+          "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-browserify/master/package.json"
+        }
+      },
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "juliekoubova/metalsmith-browserify",
+  "_id": "metalsmith-browserify@0.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-browserify",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:juliekoubova/metalsmith-browserify",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:juliekoubova/metalsmith-browserify",
+    "spec": "github:juliekoubova/metalsmith-browserify",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:juliekoubova/metalsmith-browserify.git",
+      "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-browserify.git",
+      "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-browserify.git",
+      "gitUrl": "git://github.com/juliekoubova/metalsmith-browserify.git",
+      "shortcut": "github:juliekoubova/metalsmith-browserify",
+      "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-browserify/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/juliekoubova/metalsmith-browserify.git#2ffba32bf410ba2c2bfa80716c4efd6f89f7d408",
+  "_shasum": "fcc81eb77e739c5d6ff759890fe9efb4029b3da0",
+  "_shrinkwrap": null,
+  "_spec": "github:juliekoubova/metalsmith-browserify",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "Nikhil Sonnad"
+  },
+  "bugs": {
+    "url": "https://github.com/nsonnad/metalsmith-browserify/issues"
+  },
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "exorcist": "^0.4.0",
+    "multimatch": "^2.1.0",
+    "tmp": "0.0.28"
+  },
+  "description": "use browserify in your Metalsmith project",
+  "devDependencies": {},
+  "gitHead": "2ffba32bf410ba2c2bfa80716c4efd6f89f7d408",
+  "homepage": "https://github.com/nsonnad/metalsmith-browserify",
+  "keywords": [
+    "metalsmith"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "metalsmith-browserify",
+  "optionalDependencies": {},
+  "readme": "# metalsmith  browserify\n\nBrowserify javascript in your metalsmith project.\n\n## License\n\nThe MIT License (MIT)\n\nCopyright (c) 2014 Nikhil Sonnad\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nsonnad/metalsmith-browserify.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.0"
+}

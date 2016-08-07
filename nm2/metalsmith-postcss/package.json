@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:juliekoubova/metalsmith-postcss",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:juliekoubova/metalsmith-postcss",
+        "spec": "github:juliekoubova/metalsmith-postcss",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:juliekoubova/metalsmith-postcss.git",
+          "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-postcss.git",
+          "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-postcss.git",
+          "gitUrl": "git://github.com/juliekoubova/metalsmith-postcss.git",
+          "shortcut": "github:juliekoubova/metalsmith-postcss",
+          "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-postcss/master/package.json"
+        }
+      },
+      "/Users/jachymko/src/juliekoubova.net"
+    ]
+  ],
+  "_from": "juliekoubova/metalsmith-postcss",
+  "_id": "metalsmith-postcss@3.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metalsmith-postcss",
+  "_phantomChildren": {
+    "has-flag": "1.0.0",
+    "js-base64": "2.1.9"
+  },
+  "_requested": {
+    "raw": "github:juliekoubova/metalsmith-postcss",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:juliekoubova/metalsmith-postcss",
+    "spec": "github:juliekoubova/metalsmith-postcss",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:juliekoubova/metalsmith-postcss.git",
+      "sshUrl": "git+ssh://git@github.com/juliekoubova/metalsmith-postcss.git",
+      "httpsUrl": "git+https://github.com/juliekoubova/metalsmith-postcss.git",
+      "gitUrl": "git://github.com/juliekoubova/metalsmith-postcss.git",
+      "shortcut": "github:juliekoubova/metalsmith-postcss",
+      "directUrl": "https://raw.githubusercontent.com/juliekoubova/metalsmith-postcss/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/juliekoubova/metalsmith-postcss.git#f1ec9bd87a903b4a3aa2f56c8b66ee64e68522d2",
+  "_shasum": "d337f8c08f4f1f74eed1fa98eb5f482d04f9b40b",
+  "_shrinkwrap": null,
+  "_spec": "github:juliekoubova/metalsmith-postcss",
+  "_where": "/Users/jachymko/src/juliekoubova.net",
+  "author": {
+    "name": "AXA Versicherungen AG"
+  },
+  "bugs": {
+    "url": "https://github.com/axa-ch/metalsmith-postcss/issues"
+  },
+  "dependencies": {
+    "mocha": "^2.5.3",
+    "multimatch": "^2.1.0",
+    "postcss": "^5.1.2",
+    "promise": "^7.0.4"
+  },
+  "description": "A Metalsmith plugin that sends your CSS through any PostCSS plugins.",
+  "devDependencies": {
+    "assert-dir-equal": "^1.0.1",
+    "metalsmith": "^2.1.0",
+    "mocha": "^2.3.3"
+  },
+  "gitHead": "f1ec9bd87a903b4a3aa2f56c8b66ee64e68522d2",
+  "homepage": "https://github.com/axa-ch/metalsmith-postcss",
+  "keywords": [
+    "metalsmith",
+    "postcss",
+    "css",
+    "preprocessor"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "metalsmith-postcss",
+  "optionalDependencies": {},
+  "readme": "# metalsmith-postcss\n\n> A Metalsmith plugin that sends your CSS\n> through any [PostCSS](https://github.com/postcss/postcss) plugins.\n\n## Installation\n\n```sh\nnpm install metalsmith-postcss\n```\n\n## Getting Started\n\nIf you haven't checked out [Metalsmith](http://metalsmith.io/) before,\nhead over to their website and check out the documentation.\n\n## JavaScript API\n\nUsing the JavaScript api for Metalsmith,\njust require the module and add it to your\n`.use()` directives. Here is an example using\n`postcss-pseudoelements` and `postcss-nested` to\ntransform your source files.\n\n```js\nvar postcss = require('metalsmith-postcss');\n\nvar pseudoelements = require('postcss-pseudoelements');\nvar nested = require('postcss-nested');\n\nmetalsmith.use(postcss([\n  pseudoelements(),\n  nested()\n]));\n```\n\n## Sourcemaps\n\nThis plugin doesn't generate sourcemaps by default. However, you\ncan enable them using several ways.\n\n### Inline sourcemaps\n\nAdd `map: true` to the `options` argument to get your\nsourcemaps written into the source file.\n\n```js\nmetalsmith.use(postcss([...], {\n  map: true\n}));\n```\n\nBehind the scenes, this resolves to the following:\n\n```js\nmetalsmith.use(postcss([...], {\n  map: {\n    inline: true\n  }\n}));\n```\n\n### External sourcemaps\n\nIf you don't want to have your files polluted with sourcemaps,\njust set `inline: false`. Using that, you'll get `.map` files\ngenerated beside your sources.\n\n```js\nmetalsmith.use(postcss([...], {\n  map: {\n    inline: false\n  }\n}));\n```\n\n## Test\n\nTo run the tests use:\n\n```sh\nnpm test\n```\n\n## CLI Usage\n\nIt's currently *NOT* possible to use this plugin from your\n`metalsmith.json` file.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/axa-ch/metalsmith-postcss.git"
+  },
+  "scripts": {
+    "test": "mocha test --harmony"
+  },
+  "version": "3.1.0"
+}
