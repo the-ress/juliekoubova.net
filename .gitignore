@@ -3,4 +3,4 @@
 /img/**
 /src/img-map.json
 /npm-debug.log
-!/node_modules/**
+/node_modules/phantomjs/**
