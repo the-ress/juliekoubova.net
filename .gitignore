@@ -1,6 +1,6 @@
 /build/
 /build.git/
 /img/**
-/src/img-map.json
+/node_modules/**
 /npm-debug.log
-/node_modules/phantomjs/**
+/src/img-map.json

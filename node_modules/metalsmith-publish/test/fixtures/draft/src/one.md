@@ -1,5 +1,0 @@
----
-publish: draft
----
-
-one

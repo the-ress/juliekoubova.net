@@ -1,1 +1,0 @@
-testKey: function() { return "Test value"; }()
